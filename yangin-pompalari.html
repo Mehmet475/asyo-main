@@ -1,0 +1,260 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yangın Pompaları | AYSO Yangın Söndürme Sistemleri</title>
+  <meta name="description" content="AYSO yangın pompası ürünleri: Uçtan emişli, ayrılabilir gövdeli, dikey türbin ve jokey yangın pompaları. EN/NFPA/UL-FM sertifikalı.">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <style>
+    a.product-card {
+      display:flex; flex-direction:column;
+      background:#fff; border:1.5px solid #f0f0f0; border-radius:14px;
+      overflow:hidden; text-decoration:none; color:inherit;
+      transition:all .25s ease; box-shadow:0 2px 8px rgba(0,0,0,.04); height:100%;
+    }
+    a.product-card:hover {
+      border-color:#c0392b; box-shadow:0 8px 28px rgba(192,57,43,.12); transform:translateY(-3px);
+    }
+    .pci {
+      width:100%; height:216px; background:#f5f6f7;
+      overflow:hidden; position:relative;
+    }
+    .pci img {
+      position:absolute; inset:12px;
+      width:calc(100% - 24px); height:calc(100% - 24px);
+      object-fit:contain; object-position:center;
+      transition:transform .4s; display:block;
+      mix-blend-mode:multiply;
+    }
+    a.product-card:hover .pci img { transform:scale(1.07); }
+    .pci-cover img {
+      object-fit:cover !important; object-position:center top !important;
+    }
+    .pci-g { width:100%; height:200px; overflow:hidden; display:flex; align-items:center; justify-content:center; }
+    .pci-g i { font-size:3rem; color:rgba(255,255,255,.5); }
+    .pcbd { padding:16px 18px; display:flex; flex-direction:column; flex:1; }
+    .pcbd h4 { font-size:.9rem; font-weight:700; margin-bottom:.45rem; color:#0D1117; line-height:1.4; }
+    .pcbd p { font-size:.78rem; color:#9CA3AF; line-height:1.6; flex:1; margin-bottom:1rem; }
+    .pcdbtn {
+      display:flex; align-items:center; justify-content:space-between;
+      background:#FEF2F2; padding:.6rem 1rem; border-radius:8px;
+      font-size:.78rem; font-weight:700; color:#C0392B; transition:all .2s;
+    }
+    a.product-card:hover .pcdbtn { background:#C0392B; color:#fff; }
+  </style>
+</head>
+<body>
+
+<div id="preloader">
+  <div class="preloader-logo"><div class="logo-text">BU<span>SER</span></div><div class="preloader-spinner"></div></div>
+</div>
+
+<div class="top-bar">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-auto contact-info">
+        <a href="tel:02129457465"><i class="fas fa-phone"></i>0212 945 74 65</a>
+        <a href="mailto:info@ayso.com.tr"><i class="fas fa-envelope"></i>info@ayso.com.tr</a>
+      </div>
+      <div class="col ms-auto d-flex justify-content-end align-items-center gap-3">
+        <span style="color:rgba(255,255,255,.4);font-size:.8rem;">Bizi Takip Edin:</span>
+        <div class="social-links">
+          <a href="https://tr.linkedin.com/company/ayso-tekni%CC%87k-tesi%CC%87sat-elemanlari-sanayi%CC%87-ve-ti%CC%87caret-li%CC%87mi%CC%87ted-%C5%9Fi%CC%87rketi%CC%87" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://www.youtube.com/channel/UC-3MVZJWNgIBlThiwxEnblw" target="_blank" rel="noopener noreferrer" title="YouTube"><i class="fab fa-youtube"></i></a>
+          <a href="https://www.instagram.com/aysoteknik/" target="_blank" rel="noopener noreferrer" title="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<nav class="navbar navbar-expand-lg main-navbar sticky-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+      <img src="images/logo-buser.png" alt="Buser" style="height:130px;width:auto;display:block;max-width:320px;">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" href="index.html">Ana Sayfa</a></li>
+        <li class="nav-item"><a class="nav-link" href="kurumsal.html">Kurumsal</a></li>
+        <li class="nav-item"><a class="nav-link active" href="urunlerimiz.html">Ürünlerimiz</a></li>
+        <li class="nav-item"><a class="nav-link" href="hizmetlerimiz.html">Hizmetlerimiz</a></li>
+        <li class="nav-item"><a class="nav-link" href="sertifikalar.html">Sertifikalar</a></li>
+        <li class="nav-item"><a class="nav-link" href="referanslar.html">Referanslar</a></li>
+        <li class="nav-item"><a class="nav-link" href="medyada-biz.html">Medyada Biz</a></li>
+        <li class="nav-item"><a class="nav-link" href="iletisim.html">İletişim</a></li>
+      </ul>
+      <div class="lang-toggle">
+        <button class="lang-btn active" data-lang="tr">TR</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
+      <a href="iletisim.html#teklif" class="btn btn-accent btn-sm ms-2"><i class="fas fa-file-alt"></i><span data-tr="Hızlı Teklif Al" data-en="Quick Quote">Hızlı Teklif Al</span></a>
+    </div>
+  </div>
+</nav>
+
+<section class="page-banner">
+  <div class="container">
+    <h1 data-aos="fade-up">Yangın Pompaları</h1>
+    <nav aria-label="breadcrumb" data-aos="fade-up" data-aos-delay="100">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="index.html">Ana Sayfa</a></li>
+        <li class="breadcrumb-item"><a href="urunlerimiz.html">Ürünlerimiz</a></li>
+        <li class="breadcrumb-item active">Yangın Pompaları</li>
+      </ol>
+    </nav>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header text-center mb-5" data-aos="fade-up">
+      <div class="section-tag" data-tr="Kategori" data-en="Category">Kategori</div>
+      <h2 class="section-title" data-tr="Yangın Pompaları" data-en="Fire Pumps">Yangın Pompaları</h2>
+      <div class="divider mx-auto"></div>
+      <p class="section-subtitle" data-tr="EN / NFPA / UL-FM standartlarına uygun, yüksek güvenilirlikte yangın pompa sistemleri." data-en="High-reliability fire pump systems compliant with EN / NFPA / UL-FM standards.">EN / NFPA / UL-FM standartlarına uygun, yüksek güvenilirlikte yangın pompa sistemleri.</p>
+    </div>
+    <div class="row g-4">
+
+      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="0">
+        <a href="urun-detay.html?id=p1-uctan-emisli" class="product-card">
+          <div class="pci"><img src="images/p1-uctan-emisli.jpg" alt="Uçtan Emişli Yatay Milli Yangın Pompası" loading="lazy"></div>
+          <div class="pcbd">
+            <h4 data-tr="Uçtan Emişli Yatay Milli Yangın Pompaları" data-en="End-Suction Horizontal Shaft Fire Pumps">Uçtan Emişli Yatay Milli Yangın Pompaları</h4>
+            <p data-tr="Yüksek debi ve basınç kapasitesiyle büyük endüstriyel tesisler için tasarlanmış yatay milli pompa sistemleri." data-en="Horizontal shaft pump systems designed for large industrial facilities with high flow rate and pressure capacity.">Yüksek debi ve basınç kapasitesiyle büyük endüstriyel tesisler için tasarlanmış yatay milli pompa sistemleri.</p>
+            <div class="pcdbtn" data-tr="Detayları Gör" data-en="View Details">Detayları Gör <i class="fas fa-arrow-right"></i></div>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="80">
+        <a href="urun-detay.html?id=p1-ayrilabilir-govdeli" class="product-card">
+          <div class="pci"><img src="images/p1-ayrilabilir-govdeli.jpg" alt="Ayrılabilir Gövdeli Yangın Pompası" loading="lazy"></div>
+          <div class="pcbd">
+            <h4 data-tr="Ayrılabilir Gövdeli Çift Emişli Yangın Pompaları" data-en="Split Case Double-Suction Fire Pumps">Ayrılabilir Gövdeli Çift Emişli Yangın Pompaları</h4>
+            <p data-tr="Kolay bakım imkânı sunan, çift emişli ayrılabilir gövde tasarımıyla yüksek performanslı pompa çözümleri." data-en="High-performance pump solutions with double-suction split case design for easy maintenance.">Kolay bakım imkânı sunan, çift emişli ayrılabilir gövde tasarımıyla yüksek performanslı pompa çözümleri.</p>
+            <div class="pcdbtn" data-tr="Detayları Gör" data-en="View Details">Detayları Gör <i class="fas fa-arrow-right"></i></div>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="160">
+        <a href="urun-detay.html?id=p1-dikey-turbin" class="product-card">
+          <div class="pci"><img src="images/p1-dikey-turbin.jpg" alt="Dikey Türbin Tip Yangın Pompası" loading="lazy"></div>
+          <div class="pcbd">
+            <h4 data-tr="Dikey Türbin Tip Yangın Pompası" data-en="Vertical Turbine Type Fire Pump">Dikey Türbin Tip Yangın Pompası</h4>
+            <p data-tr="Derin kuyular ve sarnıçlar için özel tasarlanmış, dikey montajlı türbin tipi yangın pompası." data-en="Vertically mounted turbine-type fire pump specially designed for deep wells and cisterns.">Derin kuyular ve sarnıçlar için özel tasarlanmış, dikey montajlı türbin tipi yangın pompası.</p>
+            <div class="pcdbtn" data-tr="Detayları Gör" data-en="View Details">Detayları Gör <i class="fas fa-arrow-right"></i></div>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="240">
+        <a href="urun-detay.html?id=p1-jokey" class="product-card">
+          <div class="pci"><img src="images/p1-jokey.jpg" alt="Jokey Yangın Pompası" loading="lazy"></div>
+          <div class="pcbd">
+            <h4 data-tr="Jokey Yangın Pompası" data-en="Jockey Fire Pump">Jokey Yangın Pompası</h4>
+            <p data-tr="Sistem basıncını sürekli izleyerek küçük sızıntıları telafi eden, enerji tasarruflu jokey pompa." data-en="Energy-efficient jockey pump that continuously monitors system pressure and compensates for minor leaks.">Sistem basıncını sürekli izleyerek küçük sızıntıları telafi eden, enerji tasarruflu jokey pompa.</p>
+            <div class="pcdbtn" data-tr="Detayları Gör" data-en="View Details">Detayları Gör <i class="fas fa-arrow-right"></i></div>
+          </div>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="cta-banner" data-aos="fade-up">
+  <div class="container">
+    <h2 data-tr="Projenize özel pompa sistemi için teklif alın" data-en="Get a quote for a pump system tailored to your project">Projenize özel pompa sistemi için teklif alın</h2>
+    <p data-tr="Teknik ekibimiz ihtiyacınıza en uygun yangın pompasını seçmenizde yardımcı olur." data-en="Our technical team will help you select the most suitable fire pump for your needs.">Teknik ekibimiz ihtiyacınıza en uygun yangın pompasını seçmenizde yardımcı olur.</p>
+    <a href="iletisim.html#teklif" class="btn btn-outline-white btn-lg"><i class="fas fa-file-alt"></i><span data-tr="Hızlı Teklif Al" data-en="Quick Quote">Hızlı Teklif Al</span></a>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="row g-5">
+      <div class="col-lg-4 col-md-6">
+        <div class="footer-brand mb-3"><img src="images/logo-buser.png" alt="Buser" style="height:130px;width:auto;display:block;max-width:320px;"></div>
+        <p>Endüstriyel yangın güvenliği alanında 20 yılı aşkın tecrübemizle uluslararası standartlarda ürün ve hizmet sunuyoruz.</p>
+        <div class="footer-social">
+          <a href="https://tr.linkedin.com/company/ayso-tekni%CC%87k-tesi%CC%87sat-elemanlari-sanayi%CC%87-ve-ti%CC%87caret-li%CC%87mi%CC%87ted-%C5%9Fi%CC%87rketi%CC%87" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://www.youtube.com/channel/UC-3MVZJWNgIBlThiwxEnblw" target="_blank" rel="noopener noreferrer" title="YouTube"><i class="fab fa-youtube"></i></a>
+          <a href="https://www.instagram.com/aysoteknik/" target="_blank" rel="noopener noreferrer" title="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-6 col-sm-6">
+        <div class="footer-title">Hızlı Menü</div>
+        <div class="footer-links">
+          <a href="index.html"><i class="fas fa-chevron-right"></i>Ana Sayfa</a>
+          <a href="kurumsal.html"><i class="fas fa-chevron-right"></i>Kurumsal</a>
+          <a href="urunlerimiz.html"><i class="fas fa-chevron-right"></i>Ürünlerimiz</a>
+          <a href="hizmetlerimiz.html"><i class="fas fa-chevron-right"></i>Hizmetlerimiz</a>
+          <a href="sertifikalar.html"><i class="fas fa-chevron-right"></i>Sertifikalar</a>
+          <a href="referanslar.html"><i class="fas fa-chevron-right"></i>Referanslar</a>
+          <a href="medyada-biz.html"><i class="fas fa-chevron-right"></i>Medyada Biz</a>
+          <a href="iletisim.html"><i class="fas fa-chevron-right"></i>İletişim</a>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="footer-title">Ürünlerimiz</div>
+        <div class="footer-links">
+          <a href="yangin-pompalari.html"><i class="fas fa-chevron-right"></i>Yangın Pompaları</a>
+          <a href="alarm-vanalari.html"><i class="fas fa-chevron-right"></i>Alarm Vanaları</a>
+          <a href="sistem-vanalari.html"><i class="fas fa-chevron-right"></i>Sistem Vanaları</a>
+          <a href="sprinkler.html"><i class="fas fa-chevron-right"></i>Sprinkler</a>
+          <a href="itfaiye-ekipmanlari.html"><i class="fas fa-chevron-right"></i>İtfaiye Ekipmanları</a>
+          <a href="kopuklu-sondurme.html"><i class="fas fa-chevron-right"></i>Köpük Sistemi</a>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <div class="footer-title">İletişim</div>
+        <div class="footer-contact-item"><div class="icon"><i class="fas fa-phone"></i></div><div class="text"><a href="tel:02129457465">0212 945 74 65</a></div></div>
+        <div class="footer-contact-item"><div class="icon"><i class="fas fa-envelope"></i></div><div class="text"><a href="mailto:info@ayso.com.tr">info@ayso.com.tr</a></div></div>
+        <div class="footer-contact-item"><div class="icon"><i class="fas fa-globe"></i></div><div class="text"><a href="http://www.ayso.com.tr" target="_blank" rel="noopener">www.ayso.com.tr</a></div></div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6"><span>&copy; 2024 AYSO Yangın Söndürme Sistemleri. Tüm hakları saklıdır.</span></div>
+        <div class="col-md-6 text-md-end mt-2 mt-md-0"><a href="#">Gizlilik Politikası</a><span class="mx-2" style="color:rgba(255,255,255,.2);">|</span><a href="#">Kullanım Koşulları</a></div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a id="whatsappBtn" href="https://wa.me/905421441042" target="_blank" rel="noopener" title="WhatsApp ile iletişime geçin">
+  <i class="fab fa-whatsapp"></i>
+  <span class="wa-label">WhatsApp</span>
+</a>
+<button id="backToTop" title="Yukarı Çık"><i class="fas fa-chevron-up"></i></button>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
