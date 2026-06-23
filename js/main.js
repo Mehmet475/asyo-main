@@ -144,13 +144,7 @@
           data[el.name] = el.value;
         });
 
-        fetch('https://formsubmit.co/ajax/mehmetkucuk@ayso.com.tr', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-          body: JSON.stringify(data)
-        })
-        .then(function (r) { return r.json(); })
-        .then(function () {
+        function onSuccess() {
           if (btn) {
             btn.innerHTML = '<i class="fas fa-check"></i> Gönderildi!';
             btn.style.background = '#198754';
@@ -162,10 +156,11 @@
               btn.style.borderColor = '';
               form.reset();
               form.classList.remove('was-validated');
-            }, 3000);
+            }, 3500);
           }
-        })
-        .catch(function () {
+        }
+
+        function onError() {
           if (btn) {
             btn.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Hata oluştu, tekrar deneyin.';
             btn.style.background = '#dc3545';
@@ -175,8 +170,43 @@
               btn.disabled = false;
               btn.style.background = '';
               btn.style.borderColor = '';
-            }, 3000);
+            }, 3500);
           }
+        }
+
+        /* PHP handler — birincil yol (hosting PHP destekliyorsa) */
+        fetch('form-handler.php', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify(data)
+        })
+        .then(function (r) {
+          if (!r.ok && r.status !== 200) throw new Error('php-unavailable');
+          return r.json();
+        })
+        .then(function (res) {
+          if (res && res.success === true) {
+            onSuccess();
+          } else {
+            throw new Error('php-failed');
+          }
+        })
+        .catch(function (err) {
+          /* Fallback: formsubmit.co AJAX */
+          fetch('https://formsubmit.co/ajax/mehmetkucuk@ayso.com.tr', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+            body: JSON.stringify(data)
+          })
+          .then(function (r) { return r.json(); })
+          .then(function (res) {
+            if (res && (res.success === 'true' || res.success === true)) {
+              onSuccess();
+            } else {
+              onError();
+            }
+          })
+          .catch(function () { onError(); });
         });
       }
 
