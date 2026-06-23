@@ -144,19 +144,19 @@ ul { list-style: none; padding: 0; margin: 0; }
 /* ---- Mobile Navbar ---- */
 @media (max-width: 991.98px) {
   .main-navbar {
-    padding: .3rem 0 !important;
+    padding: .4rem 0 !important;
     border-bottom: 3px solid var(--accent);
   }
   .main-navbar .navbar-brand img {
-    height: 75px !important;
-    max-width: 200px !important;
+    height: 100px !important;
+    width: auto !important;
+    max-width: 300px !important;
   }
-}
-
-/* Top bar: only phone on very small screens */
-@media (max-width: 480px) {
-  .top-bar .contact-info a:last-child { display: none; }
-  .top-bar { padding: .4rem 0; }
+  /* Top bar — mobilde sadece telefon göster */
+  .top-bar .contact-info a:not(:first-child) {
+    display: none;
+  }
+  .top-bar { padding: .45rem 0; }
 }
 .brand-text {
   font-size: 1.35rem;
