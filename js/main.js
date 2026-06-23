@@ -1,5 +1,5 @@
 /* ================================================================
-   AYSO Yangın Söndürme Sistemleri — Ana JavaScript Dosyası
+   BUSER — Ana JavaScript Dosyası
    ================================================================ */
 
 (function () {
@@ -139,12 +139,12 @@
           btn.disabled = true;
         }
 
-        var data = { _subject: 'Yeni Teklif Talebi - AYSO Yangın Söndürme', _captcha: 'false' };
+        var data = { _subject: 'Yeni Teklif Talebi - BUSER', _captcha: 'false' };
         form.querySelectorAll('[name]').forEach(function (el) {
           data[el.name] = el.value;
         });
 
-        fetch('https://formsubmit.co/ajax/mehmet.kucuk@ayso.com.tr', {
+        fetch('https://formsubmit.co/ajax/info@buser.com', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
           body: JSON.stringify(data)
@@ -215,7 +215,7 @@
   /* ================================================================
      11. Dil Değiştirici (TR / EN)
      ================================================================ */
-  var LANG_KEY = 'ayso_lang';
+  var LANG_KEY = 'buser_lang';
 
   var NAV_HREF_EN = {
     'index.html':        'Home',
@@ -325,10 +325,10 @@
     /* ---- Kurumsal ---- */
     'Kurumsal': 'Corporate',
     'Hakkımızda': 'About Us',
-    'AYSO Kimdir?': 'Who is AYSO?',
-    'AYSO, endüstriyel yangın söndürme sistemleri alanında 20 yılı aşkın tecrübesiyle Türkiye\'nin güvenilir çözüm ortaklarından biridir. Bladder tank sistemleri, köpük orantılama ekipmanları, yangın pompaları ve yangın dolabı sistemleri başta olmak üzere geniş bir ürün portföyü sunmaktadır.': 'AYSO is one of Turkey\'s trusted solution partners with over 20 years of experience in industrial fire suppression systems. It offers a wide product portfolio including bladder tank systems, foam proportioning equipment, fire pumps and fire cabinet systems.',
-    'Avrupa ve ABD standartlarına (EN, NFPA, UL/FM) uygun, akredite belgelenmiş ürünleriyle sektörde öncü konumunu koruyan AYSO; rafineriler, petrokimya tesisleri, havalimanları, enerji santralleri ve endüstriyel fabrikalar dahil pek çok sektörde başarılı projeler gerçekleştirmiştir.': 'AYSO, maintaining its pioneering position in the industry with products accredited and documented in compliance with European and US standards (EN, NFPA, UL/FM), has successfully completed projects in many sectors including refineries, petrochemical facilities, airports, power plants and industrial factories.',
-    'Güçlü mühendislik altyapısı ve proje yönetim kapasitesiyle AYSO; projelendirme, tedarik, kurulum, devreye alma ve periyodik bakım hizmetlerini tek çatı altında sunmaktadır.': 'With its strong engineering infrastructure and project management capacity, AYSO provides project design, procurement, installation, commissioning and periodic maintenance services under one roof.',
+    'BUSER Kimdir?': 'Who is BUSER?',
+    'BUSER, endüstriyel yangın söndürme sistemleri alanında 20 yılı aşkın tecrübesiyle Türkiye\'nin güvenilir çözüm ortaklarından biridir. Bladder tank sistemleri, köpük orantılama ekipmanları, yangın pompaları ve yangın dolabı sistemleri başta olmak üzere geniş bir ürün portföyü sunmaktadır.': 'BUSER is one of Turkey\'s trusted solution partners with over 20 years of experience in industrial fire suppression systems. It offers a wide product portfolio including bladder tank systems, foam proportioning equipment, fire pumps and fire cabinet systems.',
+    'Avrupa ve ABD standartlarına (EN, NFPA, UL/FM) uygun, akredite belgelenmiş ürünleriyle sektörde öncü konumunu koruyan BUSER; rafineriler, petrokimya tesisleri, havalimanları, enerji santralleri ve endüstriyel fabrikalar dahil pek çok sektörde başarılı projeler gerçekleştirmiştir.': 'BUSER, maintaining its pioneering position in the industry with products accredited and documented in compliance with European and US standards (EN, NFPA, UL/FM), has successfully completed projects in many sectors including refineries, petrochemical facilities, airports, power plants and industrial factories.',
+    'Güçlü mühendislik altyapısı ve proje yönetim kapasitesiyle BUSER; projelendirme, tedarik, kurulum, devreye alma ve periyodik bakım hizmetlerini tek çatı altında sunmaktadır.': 'With its strong engineering infrastructure and project management capacity, BUSER provides project design, procurement, installation, commissioning and periodic maintenance services under one roof.',
     'Uluslararası Sertifikalar': 'International Certificates',
     'Uzman Mühendis Ekibi': 'Expert Engineering Team',
     '500+ Tamamlanan Proje': '500+ Completed Projects',
@@ -347,7 +347,7 @@
     'Uluslararası standartlarda ürün ve hizmet.': 'Products and services at international standards.',
     'Yenilikçilik': 'Innovation',
     'Sürekli gelişim ve teknoloji takibi.': 'Continuous development and technology monitoring.',
-    'Rakamlarla AYSO': 'AYSO in Numbers',
+    'Rakamlarla BUSER': 'BUSER in Numbers',
     '20 Yılın Birikimi': 'The Accumulation of 20 Years',
     'Yıl Deneyim': 'Years of Experience',
     'Tamamlanan Proje': 'Completed Projects',
@@ -360,7 +360,7 @@
     'Sertifikalar': 'Certificates',
     'Akreditasyonlar': 'Accreditations',
     'Uluslararası Sertifikalar ve Akreditasyonlar': 'International Certificates and Accreditations',
-    'AYSO ürünleri ve hizmetleri, uluslararası kurum ve kuruluşlar tarafından denetlenerek sertifikalandırılmıştır. Kalite ve güvenlik taahhüdümüzün belgesi.': 'AYSO products and services have been inspected and certified by international institutions and organizations. The proof of our quality and safety commitment.',
+    'BUSER ürünleri ve hizmetleri, uluslararası kurum ve kuruluşlar tarafından denetlenerek sertifikalandırılmıştır. Kalite ve güvenlik taahhüdümüzün belgesi.': 'BUSER products and services have been inspected and certified by international institutions and organizations. The proof of our quality and safety commitment.',
     'Kalite Yönetim Sistemi belgesi ile tüm süreçlerde uluslararası kalite standartları uygulanmaktadır.': 'International quality standards are applied in all processes with the Quality Management System certificate.',
     'TSE Belgesi': 'TSE Certificate',
     'Türk Standartları Enstitüsü tarafından verilen TSE belgesi ile ürünlerin ulusal standartlara uygunluğu onaylanmıştır.': 'The compliance of products with national standards has been confirmed with the TSE certificate issued by the Turkish Standards Institution.',
@@ -377,7 +377,7 @@
     'Neden Önemli': 'Why It Matters',
     'Sertifikasyon Neden Kritik?': 'Why is Certification Critical?',
     'Endüstriyel yangın söndürme sistemleri, insan hayatını ve büyük değerdeki tesisleri korumakla görevlidir. Bu nedenle kullanılan ürünlerin ve sistemlerin uluslararası standartlara uygunluğu, hem yasal bir zorunluluk hem de etik bir sorumluluktur.': 'Industrial fire suppression systems are responsible for protecting human lives and high-value facilities. Therefore, compliance of the products and systems used with international standards is both a legal requirement and an ethical responsibility.',
-    'AYSO olarak sunduğumuz tüm ürün ve sistemler, bağımsız test kuruluşları tarafından onaylanmış ve belgelenmiştir. Müşterilerimiz, satın aldıkları sistemlerin gerçek bir yangın anında beklendiği şekilde çalışacağından emin olabilirler.': 'All products and systems we offer at AYSO have been approved and documented by independent testing organizations. Our customers can be confident that the systems they purchase will operate as expected in a real fire.',
+    'BUSER olarak sunduğumuz tüm ürün ve sistemler, bağımsız test kuruluşları tarafından onaylanmış ve belgelenmiştir. Müşterilerimiz, satın aldıkları sistemlerin gerçek bir yangın anında beklendiği şekilde çalışacağından emin olabilirler.': 'All products and systems we offer at BUSER have been approved and documented by independent testing organizations. Our customers can be confident that the systems they purchase will operate as expected in a real fire.',
     'Yasal Uyumluluk': 'Legal Compliance',
     'Kalite Güvencesi': 'Quality Assurance',
     'Sigorta Uyumu': 'Insurance Compliance',
@@ -389,7 +389,7 @@
     'Referanslar': 'References',
     'Güven': 'Trust',
     '100+ Kurumsal Referans': '100+ Corporate References',
-    "Enerji, petrokimya, havacılık, savunma ve daha pek çok sektörde Türkiye'nin önde gelen kuruluşları güvenli tesisler için AYSO'yu tercih ediyor.": "Leading organizations in Turkey in energy, petrochemicals, aviation, defense and many more sectors choose AYSO for safe facilities.",
+    "Enerji, petrokimya, havacılık, savunma ve daha pek çok sektörde Türkiye'nin önde gelen kuruluşları güvenli tesisler için BUSER'yu tercih ediyor.": "Leading organizations in Turkey in energy, petrochemicals, aviation, defense and many more sectors choose BUSER for safe facilities.",
     'Petrokimya ve Enerji': 'Petrochemicals and Energy',
     'Havacılık ve Ulaşım': 'Aviation and Transportation',
     'Savunma ve Sanayi': 'Defense and Industry',
@@ -401,11 +401,11 @@
     'Medyada Biz': 'In the Media',
     'Basın & Medya': 'Press & Media',
     'Basın ve Medya Haberleri': 'Press and Media News',
-    'AYSO Teknik hakkındaki güncel basın yansımaları ve sektörel etkinliklerimiz.': 'Current press coverage and our sector events regarding AYSO Teknik.',
+    'BUSER hakkındaki güncel basın yansımaları ve sektörel etkinliklerimiz.': 'Current press coverage and our sector events regarding BUSER.',
     'Sektör Etkinliği': 'Industry Event',
     'Sektör Haberi': 'Industry News',
-    'TÜYAK Sempozyumu\'nda AYSO Teknik Standına Büyük İlgi': 'Great Interest in AYSO Teknik\'s Booth at TÜYAK Symposium',
-    'Yangın Güvenliğinde AYSO Teknik İmzası': 'AYSO Teknik\'s Signature in Fire Safety',
+    'TÜYAK Sempozyumu\'nda BUSER Teknik Standına Büyük İlgi': 'Great Interest in BUSER Teknik\'s Booth at TÜYAK Symposium',
+    'Yangın Güvenliğinde BUSER Teknik İmzası': 'BUSER Teknik\'s Signature in Fire Safety',
     'Haberin Tamamını Oku': 'Read Full Article',
     'Yangın güvenliği çözümlerimiz hakkında bilgi almak ve teklif talep etmek için iletişime geçin.': 'Contact us to learn about our fire safety solutions and request a quote.',
 
@@ -428,7 +428,7 @@
     'Detaylı ve şeffaf fiyatlandırma': 'Detailed and transparent pricing',
     'Proje Teklif Formu': 'Project Quote Form',
     'Teklif Talebini Gönder': 'Send Quote Request',
-    'İstanbul, Türkiye': 'Istanbul, Turkey',
+    '100. Yıl Bulvarı No:55 A Blok, Ostim OSB, Ankara': '100. Yıl Bulvarı No:55 A Blok, Ostim OSB, Ankara',
 
     /* ---- Ürünlerimiz ---- */
     'Kapsamlı Yangın Söndürme Ürünleri': 'Comprehensive Fire Suppression Products',

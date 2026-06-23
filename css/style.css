@@ -140,6 +140,15 @@ ul { list-style: none; padding: 0; margin: 0; }
   box-shadow: 0 4px 30px rgba(0,0,0,.12);
 }
 .main-navbar .navbar-brand { padding: 0; }
+@media (max-width: 991.98px) {
+  .main-navbar .navbar-brand img {
+    height: 62px !important;
+    max-width: 180px !important;
+  }
+  .main-navbar {
+    padding: .3rem 0 !important;
+  }
+}
 .brand-text {
   font-size: 1.35rem;
   font-weight: 900;
