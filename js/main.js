@@ -174,40 +174,24 @@
           }
         }
 
-        /* PHP handler — birincil yol (hosting PHP destekliyorsa) */
-        fetch('form-handler.php', {
+        /* Web3Forms — backend gerekmez, her ortamda çalışır */
+        var web3key = 'WEB3FORMS_ACCESS_KEY';
+        var payload = Object.assign({ access_key: web3key, subject: 'Yeni Teklif Talebi - BUSER' }, data);
+
+        fetch('https://api.web3forms.com/submit', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-          body: JSON.stringify(data)
+          body: JSON.stringify(payload)
         })
-        .then(function (r) {
-          if (!r.ok && r.status !== 200) throw new Error('php-unavailable');
-          return r.json();
-        })
+        .then(function (r) { return r.json(); })
         .then(function (res) {
-          if (res && res.success === true) {
+          if (res && res.success) {
             onSuccess();
           } else {
-            throw new Error('php-failed');
+            onError();
           }
         })
-        .catch(function (err) {
-          /* Fallback: formsubmit.co AJAX */
-          fetch('https://formsubmit.co/ajax/ayso345934@gmail.com', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-            body: JSON.stringify(data)
-          })
-          .then(function (r) { return r.json(); })
-          .then(function (res) {
-            if (res && (res.success === 'true' || res.success === true)) {
-              onSuccess();
-            } else {
-              onError();
-            }
-          })
-          .catch(function () { onError(); });
-        });
+        .catch(function () { onError(); });
       }
 
       form.classList.add('was-validated');
