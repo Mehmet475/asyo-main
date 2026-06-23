@@ -11,31 +11,36 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
   <style>
-    .coming-soon-box {
-      background: #fff;
-      border: 2px dashed #e2e8f0;
-      border-radius: 16px;
-      padding: 4rem 2rem;
-      text-align: center;
-      max-width: 560px;
-      margin: 0 auto;
+    a.product-card {
+      display:flex; flex-direction:column;
+      background:#fff; border:1.5px solid #f0f0f0; border-radius:14px;
+      overflow:hidden; text-decoration:none; color:inherit;
+      transition:all .25s ease; box-shadow:0 2px 8px rgba(0,0,0,.04); height:100%;
     }
-    .coming-soon-box .cs-icon {
-      font-size: 4rem;
-      color: #cbd5e0;
-      margin-bottom: 1.5rem;
+    a.product-card:hover {
+      border-color:#c0392b; box-shadow:0 8px 28px rgba(192,57,43,.12); transform:translateY(-3px);
     }
-    .coming-soon-box h3 {
-      font-size: 1.6rem;
-      font-weight: 800;
-      color: var(--primary);
-      margin-bottom: .75rem;
+    .pci {
+      width:100%; height:216px; background:#f5f6f7;
+      overflow:hidden; position:relative;
     }
-    .coming-soon-box p {
-      color: var(--text-muted);
-      margin-bottom: 2rem;
-      line-height: 1.7;
+    .pci img {
+      position:absolute; inset:12px;
+      width:calc(100% - 24px); height:calc(100% - 24px);
+      object-fit:contain; object-position:center;
+      transition:transform .4s; display:block;
+      mix-blend-mode:multiply;
     }
+    a.product-card:hover .pci img { transform:scale(1.07); }
+    .pcbd { padding:16px 18px; display:flex; flex-direction:column; flex:1; }
+    .pcbd h4 { font-size:.9rem; font-weight:700; margin-bottom:.45rem; color:#0D1117; line-height:1.4; }
+    .pcbd p { font-size:.78rem; color:#9CA3AF; line-height:1.6; flex:1; margin-bottom:1rem; }
+    .pcdbtn {
+      display:flex; align-items:center; justify-content:space-between;
+      background:#FEF2F2; padding:.6rem 1rem; border-radius:8px;
+      font-size:.78rem; font-weight:700; color:#C0392B; transition:all .2s;
+    }
+    a.product-card:hover .pcdbtn { background:#C0392B; color:#fff; }
   </style>
 </head>
 <body>
@@ -99,30 +104,44 @@
 
 <section class="section">
   <div class="container">
-    <div class="coming-soon-box" data-aos="fade-up">
-      <div class="cs-icon"><i class="fas fa-hourglass-half"></i></div>
-      <h3 data-tr="Yakında Hizmetinizde" data-en="Coming Soon">Yakında Hizmetinizde</h3>
-      <p data-tr="Pasif yangın tedbirleri kategorimiz; yangın kapıları, bölme sistemleri, yangın yalıtım malzemeleri ve duman engelleme çözümlerini kapsayacak şekilde hazırlanmaktadır. Detaylı bilgi almak veya şimdiden teklif talep etmek için iletişim formunu kullanabilirsiniz." data-en="Our passive fire protection category is being prepared to cover fire doors, partition systems, fire insulation materials and smoke barrier solutions. You can use the contact form to get detailed information or request a quote now.">
-        Pasif yangın tedbirleri kategorimiz; yangın kapıları, bölme sistemleri, yangın yalıtım malzemeleri
-        ve duman engelleme çözümlerini kapsayacak şekilde hazırlanmaktadır.<br><br>
-        Detaylı bilgi almak veya şimdiden teklif talep etmek için iletişim formunu kullanabilirsiniz.
-      </p>
-      <div class="d-flex gap-3 justify-content-center flex-wrap">
-        <a href="iletisim.html#teklif" class="btn btn-primary-custom btn-lg">
-          <i class="fas fa-envelope"></i><span data-tr="Bilgi Talep Et" data-en="Request Information">Bilgi Talep Et</span>
-        </a>
-        <a href="urunlerimiz.html" class="btn btn-outline-secondary btn-lg">
-          <i class="fas fa-arrow-left"></i><span data-tr="Tüm Kategoriler" data-en="All Categories">Tüm Kategoriler</span>
+    <div class="section-header text-center mb-5" data-aos="fade-up">
+      <div class="section-tag">Kategori</div>
+      <h2 class="section-title">Duman Tahliye Sistemleri</h2>
+      <div class="divider mx-auto"></div>
+      <p class="section-subtitle">EN 12101-2 / CE sertifikalı ısı ve duman tahliye sistemi çözümleri.</p>
+    </div>
+    <div class="row g-4">
+
+      <div class="col-md-6 col-lg-5" data-aos="fade-up" data-aos-delay="0">
+        <a href="urun-detay.html?id=pasif-troke" class="product-card">
+          <div class="pci"><img src="images/pasif-troke.jpg" alt="Troke Isı Ve Duman Tahliye Sistemleri" loading="lazy"></div>
+          <div class="pcbd">
+            <h4>Troke Isı Ve Duman Tahliye Sistemleri</h4>
+            <p>Duman tahliye sistemleri yangında binaların dumandan en hızlı şekilde arındırılmasını sağlar. Pnömatik veya elektrikli tetikleme; EN 12101-2 uyumlu, CE sertifikalı. 2×3 metreye kadar üretim.</p>
+            <div class="pcdbtn"><span data-tr="Detayları Gör" data-en="View Details">Detayları Gör</span> <i class="fas fa-arrow-right"></i></div>
+          </div>
         </a>
       </div>
+
+      <div class="col-md-6 col-lg-5" data-aos="fade-up" data-aos-delay="100">
+        <a href="urun-detay.html?id=pasif-lamilux-kapaklari" class="product-card">
+          <div class="pci"><img src="images/pasif-lamilux-kapaklari.jpg" alt="Lamilux Duman Tahliye Kapakları" loading="lazy"></div>
+          <div class="pcbd">
+            <h4>Lamilux Duman Tahliye Kapakları</h4>
+            <p>Çok aşamalı çift sızdırmazlık sistemi, patentli fiber takviyeli çerçeve profili ve kendi kendini temizleyen dış tasarım. 50/100 cm – 300/300 cm boyut aralığı. EN 12101-2 / ISO 21927-2 / EN 1873, CE sertifikalı.</p>
+            <div class="pcdbtn"><span data-tr="Detayları Gör" data-en="View Details">Detayları Gör</span> <i class="fas fa-arrow-right"></i></div>
+          </div>
+        </a>
+      </div>
+
     </div>
   </div>
 </section>
 
 <div class="cta-banner" data-aos="fade-up">
   <div class="container">
-    <h2 data-tr="Pasif yangın koruması için uzmanlarımızla konuşun" data-en="Talk to our experts for passive fire protection">Pasif yangın koruması için uzmanlarımızla konuşun</h2>
-    <p data-tr="Mevcut portföyümüzden bağımsız olarak pasif tedbir ihtiyaçlarınız için bize ulaşabilirsiniz." data-en="You can reach us for your passive fire protection needs, regardless of our current portfolio.">Mevcut portföyümüzden bağımsız olarak pasif tedbir ihtiyaçlarınız için bize ulaşabilirsiniz.</p>
+    <h2 data-tr="Duman tahliye sistemi için teklif alın" data-en="Get a quote for smoke evacuation systems">Duman tahliye sistemi için teklif alın</h2>
+    <p data-tr="Troke ve Lamilux çözümleri için teknik danışmanlık ve fiyat teklifi almak üzere ekibimizle iletişime geçin." data-en="Contact our team for technical consulting and price quotes on Troke and Lamilux solutions.">Troke ve Lamilux çözümleri için teknik danışmanlık ve fiyat teklifi almak üzere ekibimizle iletişime geçin.</p>
     <a href="iletisim.html#teklif" class="btn btn-outline-white btn-lg"><i class="fas fa-file-alt"></i><span data-tr="Hızlı Teklif Al" data-en="Quick Quote">Hızlı Teklif Al</span></a>
   </div>
 </div>

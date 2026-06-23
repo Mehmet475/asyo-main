@@ -144,7 +144,7 @@
           data[el.name] = el.value;
         });
 
-        fetch('https://formsubmit.co/ajax/info@buser.com', {
+        fetch('https://formsubmit.co/ajax/mehmetkucuk@ayso.com.tr', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
           body: JSON.stringify(data)
