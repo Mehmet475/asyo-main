@@ -52,7 +52,7 @@ if (!filter_var($eposta, FILTER_VALIDATE_EMAIL)) {
 }
 
 /* Mail içeriği */
-$to      = 'mehmetkucuk@ayso.com.tr';
+$to      = 'ayso345934@gmail.com';
 $subjectText = 'Yeni Teklif Talebi - BUSER';
 $subject = '=?UTF-8?B?' . base64_encode($subjectText) . '?=';
 

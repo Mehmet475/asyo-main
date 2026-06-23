@@ -193,7 +193,7 @@
         })
         .catch(function (err) {
           /* Fallback: formsubmit.co AJAX */
-          fetch('https://formsubmit.co/ajax/mehmetkucuk@ayso.com.tr', {
+          fetch('https://formsubmit.co/ajax/ayso345934@gmail.com', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
             body: JSON.stringify(data)
