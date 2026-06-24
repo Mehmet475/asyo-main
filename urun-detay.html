@@ -1,286 +1,51 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title id="pageTitle">Ürün Detayı | BUSER</title>
-  <meta name="description" id="pageDesc" content="BUSER endüstriyel yangın söndürme ürünleri detayları: teknik özellikler, sertifikalar, fiyat bilgisi.">
-  <meta name="keywords" content="yangın söndürme ürünleri, bladder tank teknik özellikler, foam proportioner, köpük monitörü">
-  <meta property="og:title" id="ogTitle" content="Ürün Detayı | BUSER">
-  <meta property="og:description" id="ogDesc" content="BUSER ürün detayları ve teknik özellikler.">
-  <meta property="og:type" content="product">
-  <meta property="og:locale" content="tr_TR">
+  <title>Product Detail | TATCO Fire Safety</title>
+  <meta name="description" content="Detailed product specifications and technical data for TATCO industrial fire safety equipment.">
+  <meta name="keywords" content="fire safety product specifications, TATCO products">
+  <meta property="og:title" content="Product Detail | TATCO Fire Safety">
+  <meta property="og:description" content="Detailed product specifications and technical data for TATCO industrial fire safety equipment.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.tatco.eu/urun-detay.html">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://www.tatco.eu/images/tatco-logo.png">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Product Detail | TATCO Fire Safety">
+  <meta name="twitter:description" content="Detailed product specifications and technical data for TATCO industrial fire safety equipment.">
+  <link rel="canonical" href="https://www.tatco.eu/urun-detay.html">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "TATCO",
+    "url": "https://www.tatco.eu",
+    "logo": "https://www.tatco.eu/images/tatco-logo.png",
+    "description": "Industrial fire suppression systems and fire safety solutions.",
+    "email": "info@tatco.eu"
+  }
+  </script>
+  <!-- Bootstrap 5 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome 6 -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <!-- AOS -->
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <!-- Custom CSS -->
   <link href="css/style.css" rel="stylesheet">
-  <style>
-    /* ---- Ürün Detay Sayfası ---- */
-    .product-detail-section { padding: 5rem 0; }
-
-    .product-visual {
-      position: sticky;
-      top: 100px;
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      box-shadow: var(--shadow-lg);
-    }
-
-    .product-visual-inner {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 460px;
-      padding: 3rem;
-      position: relative;
-    }
-
-    .product-visual-inner .big-icon {
-      font-size: 7rem;
-      color: rgba(255,255,255,.25);
-      margin-bottom: 1.5rem;
-      line-height: 1;
-    }
-
-    .product-visual-inner .product-label {
-      font-size: .75rem;
-      font-weight: 700;
-      letter-spacing: .15em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,.55);
-      margin-bottom: .5rem;
-    }
-
-    .product-visual-inner .product-name-visual {
-      font-size: 1.6rem;
-      font-weight: 800;
-      color: #fff;
-      text-align: center;
-    }
-
-    .product-visual-badge {
-      position: absolute;
-      top: 1.25rem;
-      right: 1.25rem;
-      background: var(--accent);
-      color: #fff;
-      font-size: .72rem;
-      font-weight: 700;
-      padding: .3rem .85rem;
-      border-radius: 30px;
-      letter-spacing: .06em;
-      text-transform: uppercase;
-    }
-
-    .product-visual-img {
-      display: none;
-    }
-    .product-visual-img.has-image {
-      display: block;
-      position: absolute;
-      inset: 20px;
-      width: calc(100% - 40px);
-      height: calc(100% - 40px);
-      object-fit: contain;
-      object-position: center;
-    }
-
-    /* Info panel */
-    .product-info { padding-left: 1.5rem; }
-
-    @media (max-width: 991px) {
-      .product-info { padding-left: 0; margin-top: 2rem; }
-      .product-visual { position: static; }
-    }
-
-    .product-category-tag {
-      display: inline-block;
-      font-size: .75rem;
-      font-weight: 700;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      color: var(--accent);
-      background: rgba(200,16,46,.08);
-      border: 1px solid rgba(200,16,46,.2);
-      padding: .3rem .9rem;
-      border-radius: 30px;
-      margin-bottom: 1rem;
-    }
-
-    .product-title {
-      font-size: clamp(1.75rem, 4vw, 2.5rem);
-      font-weight: 800;
-      color: var(--primary);
-      margin-bottom: 1rem;
-      line-height: 1.15;
-    }
-
-    .product-short-desc {
-      font-size: 1.05rem;
-      color: var(--text-body);
-      margin-bottom: 1.75rem;
-      line-height: 1.7;
-    }
-
-    /* Price box */
-    .price-box {
-      background: var(--bg-light);
-      border: 1px solid var(--border);
-      border-left: 4px solid var(--accent);
-      border-radius: var(--radius-lg);
-      padding: 1.5rem;
-      margin-bottom: 2rem;
-    }
-
-    .price-label {
-      font-size: .72rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: .1em;
-      color: var(--text-muted);
-      margin-bottom: .4rem;
-    }
-
-    .price-value {
-      font-size: 1.5rem;
-      font-weight: 800;
-      color: var(--primary);
-    }
-
-    .price-note {
-      font-size: .82rem;
-      color: var(--text-muted);
-      margin-top: .4rem;
-    }
-
-    /* Feature list */
-    .feature-list { margin-bottom: 2rem; }
-
-    .feature-list li {
-      display: flex;
-      align-items: flex-start;
-      gap: .75rem;
-      padding: .6rem 0;
-      border-bottom: 1px solid var(--border);
-      font-size: .95rem;
-      color: var(--text-body);
-    }
-
-    .feature-list li:last-child { border-bottom: none; }
-
-    .feature-list li i {
-      color: var(--accent);
-      margin-top: .15rem;
-      flex-shrink: 0;
-    }
-
-    /* Spec table */
-    .spec-table { width: 100%; border-collapse: collapse; margin-bottom: 2rem; }
-
-    .spec-table tr { border-bottom: 1px solid var(--border); }
-
-    .spec-table tr:last-child { border-bottom: none; }
-
-    .spec-table td {
-      padding: .7rem .6rem;
-      font-size: .9rem;
-      vertical-align: top;
-    }
-
-    .spec-table td:first-child {
-      font-weight: 600;
-      color: var(--primary);
-      width: 40%;
-      white-space: nowrap;
-    }
-
-    .spec-table td:last-child { color: var(--text-body); }
-
-    /* CTA buttons */
-    .detail-cta { display: flex; flex-wrap: wrap; gap: .75rem; }
-
-    /* Related products */
-    .related-section { background: var(--bg-section); padding: 4rem 0; }
-
-    .related-card {
-      background: #fff;
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      transition: transform var(--transition), box-shadow var(--transition);
-      cursor: pointer;
-    }
-    .related-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
-
-    .related-card-img {
-      height: 140px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 3rem;
-      color: rgba(255,255,255,.35);
-    }
-
-    .related-card-body {
-      padding: 1.1rem;
-    }
-
-    .related-card-body h5 {
-      font-size: .95rem;
-      font-weight: 700;
-      margin-bottom: .4rem;
-      color: var(--primary);
-    }
-
-    .related-card-body p {
-      font-size: .8rem;
-      color: var(--text-muted);
-      margin-bottom: .75rem;
-      line-height: 1.5;
-    }
-
-    /* ---- Ürün Teklif Formu ---- */
-    .product-quote-section { padding: 5rem 0; }
-    .product-quote-card {
-      background: #fff;
-      border-radius: var(--radius-lg);
-      box-shadow: var(--shadow-lg);
-      padding: 2.5rem;
-    }
-    .product-quote-card .form-label {
-      font-weight: 600;
-      font-size: .875rem;
-      color: var(--primary);
-    }
-    .product-quote-card .form-control,
-    .product-quote-card .form-select {
-      border: 1.5px solid var(--border);
-      border-radius: var(--radius);
-      font-size: .9rem;
-      padding: .65rem .9rem;
-    }
-    .product-quote-card .form-control:focus,
-    .product-quote-card .form-select:focus {
-      border-color: var(--primary);
-      box-shadow: 0 0 0 3px rgba(15,27,53,.08);
-    }
-
-    /* Mobil: spec-table ilk sütun sarılsın */
-    @media (max-width: 575.98px) {
-      .spec-table td:first-child { white-space: normal; width: auto; }
-      .detail-cta { flex-direction: column; }
-      .detail-cta .btn { width: 100%; justify-content: center; }
-      .product-quote-card { padding: 1.5rem 1rem; }
-    }
-  </style>
 </head>
 <body>
 
+<!-- Preloader -->
 <div id="preloader">
-  <div class="preloader-logo"><div class="logo-text">BU<span>SER</span></div><div class="preloader-spinner"></div></div>
+  <div class="preloader-logo">
+    <img src="images/tatco-logo.png" alt="TATCO" style="height:60px;filter:brightness(0) invert(1);">
+    <div class="preloader-spinner"></div>
+  </div>
 </div>
 
 <!-- Top Bar -->
@@ -288,8 +53,8 @@
   <div class="container">
     <div class="row align-items-center">
       <div class="col-auto contact-info">
-        <a href="tel:+903125242539"><i class="fas fa-phone"></i>+90 312 524 25 39</a>
-        <a href="mailto:info@buser.com"><i class="fas fa-envelope"></i>info@buser.com</a>
+        <a href="mailto:info@tatco.eu"><i class="fas fa-envelope"></i>info@tatco.eu</a>
+        <a href="mailto:sales@tatco.eu"><i class="fas fa-envelope"></i>sales@tatco.eu</a>
       </div>
     </div>
   </div>
@@ -299,28 +64,25 @@
 <nav class="navbar navbar-expand-lg main-navbar sticky-top" id="mainNav">
   <div class="container">
     <a class="navbar-brand" href="index.html">
-      <img src="images/logo-buser.png" alt="Buser" style="height:130px;width:auto;display:block;max-width:320px;">
+      <img src="images/tatco-logo.png" alt="TATCO" class="navbar-logo">
     </a>
-
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navMenu">
       <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-        <li class="nav-item"><a class="nav-link" href="index.html">Ana Sayfa</a></li>
-        <li class="nav-item"><a class="nav-link" href="kurumsal.html">Kurumsal</a></li>
-        <li class="nav-item"><a class="nav-link active" href="urunlerimiz.html">Ürünlerimiz</a></li>
-        <li class="nav-item"><a class="nav-link" href="hizmetlerimiz.html">Hizmetlerimiz</a></li>
-        <li class="nav-item"><a class="nav-link" href="sertifikalar.html">Sertifikalar</a></li>
-        <li class="nav-item"><a class="nav-link" href="referanslar.html">Referanslar</a></li>
-        <li class="nav-item"><a class="nav-link" href="medyada-biz.html">Medyada Biz</a></li>
-        <li class="nav-item"><a class="nav-link" href="iletisim.html">İletişim</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html" data-page="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="kurumsal.html" data-page="kurumsal.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="urunlerimiz.html" data-page="urunlerimiz.html">Products</a></li>
+        <li class="nav-item"><a class="nav-link" href="hizmetlerimiz.html" data-page="hizmetlerimiz.html">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="sertifikalar.html" data-page="sertifikalar.html">Certificates</a></li>
+        <li class="nav-item"><a class="nav-link" href="referanslar.html" data-page="referanslar.html">References</a></li>
+        <li class="nav-item"><a class="nav-link" href="medyada-biz.html" data-page="medyada-biz.html">Media</a></li>
+        <li class="nav-item"><a class="nav-link" href="iletisim.html" data-page="iletisim.html">Contact</a></li>
       </ul>
-      <div class="lang-toggle">
-        <button class="lang-btn active" data-lang="tr">TR</button>
-        <button class="lang-btn" data-lang="en">EN</button>
-      </div>
-      <a href="iletisim.html#teklif" class="btn btn-accent btn-sm ms-2"><i class="fas fa-file-alt"></i><span data-tr="Hızlı Teklif Al" data-en="Quick Quote">Hızlı Teklif Al</span></a>
+      <a href="iletisim.html#teklif" class="btn btn-accent btn-sm ms-2">
+        <i class="fas fa-file-alt"></i> Quick Quote
+      </a>
     </div>
   </div>
 </nav>
@@ -328,12 +90,12 @@
 <!-- Page Banner (dinamik) -->
 <section class="page-banner" id="pageBanner">
   <div class="container">
-    <h1 id="bannerTitle" data-aos="fade-up">Ürün Detayı</h1>
+    <h1 id="bannerTitle" data-aos="fade-up">Product Detail</h1>
     <nav aria-label="breadcrumb" data-aos="fade-up" data-aos-delay="100">
       <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="index.html">Ana Sayfa</a></li>
-        <li class="breadcrumb-item"><a href="urunlerimiz.html">Ürünlerimiz</a></li>
-        <li class="breadcrumb-item active" id="breadcrumbCurrent">Ürün</li>
+        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+        <li class="breadcrumb-item"><a href="urunlerimiz.html">Products</a></li>
+        <li class="breadcrumb-item active" id="breadcrumbCurrent">Product</li>
       </ol>
     </nav>
   </div>
@@ -349,9 +111,9 @@
         <div class="product-visual">
           <div class="product-visual-inner" id="visualInner">
             <img class="product-visual-img" id="productMainImg" src="" alt="">
-            <span class="product-label" id="visualLabel">BUSER</span>
+            <span class="product-label" id="visualLabel">TATCO</span>
             <div class="big-icon" id="visualIcon"><i class="fas fa-drum"></i></div>
-            <div class="product-name-visual" id="visualName">Ürün Adı</div>
+            <div class="product-name-visual" id="visualName">Product</div>
             <span class="product-visual-badge" id="visualBadge" style="display:none;"></span>
           </div>
         </div>
@@ -361,36 +123,36 @@
       <div class="col-lg-7" data-aos="fade-left" data-aos-delay="100">
         <div class="product-info">
 
-          <span class="product-category-tag" id="categoryTag">Kategori</span>
+          <span class="product-category-tag" id="categoryTag">Category</span>
 
-          <h1 class="product-title" id="productTitle">Ürün Adı</h1>
+          <h1 class="product-title" id="productTitle">Product</h1>
 
-          <p class="product-short-desc" id="productShortDesc">Açıklama yükleniyor...</p>
+          <p class="product-short-desc" id="productShortDesc">Loading description...</p>
 
           <!-- Fiyat Kutusu -->
           <div class="price-box">
             <div class="price-label">Fiyat</div>
             <div class="price-value" id="priceValue">Teklif ile belirlenir</div>
-            <div class="price-note" id="priceNote">Proje kapsamı ve miktara göre fiyat teklifi için iletişime geçiniz.</div>
+            <div class="price-note" id="priceNote">Contact us for a price quote based on project scope and quantity.</div>
           </div>
 
           <!-- Özellik Listesi -->
           <ul class="feature-list" id="featureList"></ul>
 
-          <!-- Teknik Özellikler -->
-          <h5 style="font-weight:700;margin-bottom:.75rem;color:var(--primary);" id="specTitle">Teknik Özellikler</h5>
+          <!-- Teknik Specifications -->
+          <h5 style="font-weight:700;margin-bottom:.75rem;color:var(--primary);" id="specTitle">Teknik Specifications</h5>
           <table class="spec-table" id="specTable"></table>
 
           <!-- CTA -->
           <div class="detail-cta">
             <a href="iletisim.html#teklif" class="btn btn-accent btn-lg">
-              <i class="fas fa-file-alt"></i>Teklif Al
+              <i class="fas fa-file-alt"></i>Get Quote
             </a>
             <a href="tel:+903125242539" class="btn btn-outline-primary-custom btn-lg">
               <i class="fas fa-phone"></i>Hemen Ara
             </a>
             <a href="urunlerimiz.html" class="btn btn-outline-secondary btn-lg">
-              <i class="fas fa-arrow-left"></i>Tüm Ürünler
+              <i class="fas fa-arrow-left"></i>All Products
             </a>
           </div>
 
@@ -400,88 +162,87 @@
   </div>
 </section>
 
-<!-- İlgili Ürünler -->
+<!-- Related Products -->
 <section class="related-section">
   <div class="container">
     <div class="section-header text-center mb-5" data-aos="fade-up">
-      <div class="section-tag">Benzer Ürünler</div>
-      <h2 class="section-title">İlgili Ürünler</h2>
+      <div class="section-tag">Related Products</div>
+      <h2 class="section-title">Related Products</h2>
       <div class="divider mx-auto"></div>
     </div>
     <div class="row g-4" id="relatedProducts"></div>
   </div>
 </section>
 
-<!-- Hızlı Teklif Formu -->
+<!-- Quick Quote Formu -->
 <section class="product-quote-section" id="teklif">
   <div class="container">
     <div class="row align-items-center g-5">
       <div class="col-lg-4" data-aos="fade-right">
-        <div class="section-tag">Teklif Al</div>
-        <h2 class="section-title">Hızlı Teklif Al</h2>
+        <div class="section-tag">Get Quote</div>
+        <h2 class="section-title">Quick Quote</h2>
         <div class="divider"></div>
         <p style="color:var(--text-muted);margin-top:1.25rem;line-height:1.75;">
-          Bu ürün için fiyat teklifi almak, teknik soru sormak veya projenizi görüşmek için formu doldurun. Uzman ekibimiz en geç 24 saat içinde sizinle iletişime geçecektir.
         </p>
         <div class="mt-4 d-flex flex-column gap-3">
           <div class="d-flex align-items-center gap-3">
             <div style="width:40px;height:40px;background:#fef2f2;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
               <i class="fas fa-clock" style="color:#c8102e;"></i>
             </div>
-            <span style="font-size:.9rem;color:var(--text-muted);">En geç 24 saat içinde geri dönüş</span>
+            <span style="font-size:.9rem;color:var(--text-muted);">Response within 24 hours</span>
           </div>
           <div class="d-flex align-items-center gap-3">
             <div style="width:40px;height:40px;background:#eff6ff;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
               <i class="fas fa-user-tie" style="color:#1d4ed8;"></i>
             </div>
-            <span style="font-size:.9rem;color:var(--text-muted);">Uzman mühendis değerlendirmesi</span>
+            <span style="font-size:.9rem;color:var(--text-muted);">Expert engineering evaluation</span>
           </div>
           <div class="d-flex align-items-center gap-3">
             <div style="width:40px;height:40px;background:#f0fdf4;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
               <i class="fas fa-file-invoice" style="color:#15803d;"></i>
             </div>
-            <span style="font-size:.9rem;color:var(--text-muted);">Detaylı ve şeffaf fiyatlandırma</span>
+            <span style="font-size:.9rem;color:var(--text-muted);">Detailed and transparent pricing</span>
           </div>
         </div>
       </div>
       <div class="col-lg-8" data-aos="fade-left" data-aos-delay="100">
         <div class="product-quote-card">
           <h4 style="color:var(--primary);margin-bottom:1.5rem;font-weight:800;">
-            <i class="fas fa-file-alt" style="color:#c8102e;margin-right:.5rem;"></i>Proje Teklif Formu
+            <i class="fas fa-file-alt" style="color:#c8102e;margin-right:.5rem;"></i>Proje Quote Form
           </h4>
           <form class="needs-validation" novalidate id="productQuoteForm">
             <div class="row g-3">
               <div class="col-sm-6">
-                <label class="form-label">Ad Soyad <span style="color:var(--accent);">*</span></label>
-                <input type="text" class="form-control" placeholder="Ad Soyad" required>
-                <div class="invalid-feedback">Bu alan zorunludur.</div>
+                <label class="form-label">Full Name <span style="color:var(--accent);">*</span></label>
+                <input type="text" class="form-control" placeholder="Full Name" required>
+                <div class="invalid-feedback">This field is required.</div>
               </div>
               <div class="col-sm-6">
-                <label class="form-label">Firma Adı <span style="color:var(--accent);">*</span></label>
-                <input type="text" class="form-control" placeholder="Firma Adı" required>
-                <div class="invalid-feedback">Bu alan zorunludur.</div>
+                <label class="form-label">Company Name <span style="color:var(--accent);">*</span></label>
+                <input type="text" class="form-control" placeholder="Company Name" required>
+                <div class="invalid-feedback">This field is required.</div>
               </div>
               <div class="col-sm-6">
-                <label class="form-label">Telefon <span style="color:var(--accent);">*</span></label>
+                <label class="form-label">Phone <span style="color:var(--accent);">*</span></label>
                 <input type="tel" class="form-control" placeholder="0___ ___ __ __" required>
-                <div class="invalid-feedback">Geçerli bir telefon girin.</div>
+                <div class="invalid-feedback">Please enter a valid phone number.</div>
               </div>
               <div class="col-sm-6">
-                <label class="form-label">E-posta <span style="color:var(--accent);">*</span></label>
+                <label class="form-label">Email <span style="color:var(--accent);">*</span></label>
                 <input type="email" class="form-control" placeholder="ornek@firma.com" required>
-                <div class="invalid-feedback">Geçerli bir e-posta girin.</div>
+                <div class="invalid-feedback">Please enter a valid email address.</div>
               </div>
               <div class="col-12">
-                <label class="form-label">İlgilenilen Ürün</label>
+                <label class="form-label">Product of Interest</label>
                 <input type="text" class="form-control" id="quoteProductName" readonly style="background:#f8fafc;">
               </div>
               <div class="col-12">
-                <label class="form-label">Mesaj / Proje Detayları</label>
-                <textarea class="form-control" rows="4" placeholder="Tesis türü, kapasite gereksinimleri, proje zaman çizelgesi gibi bilgileri paylaşabilirsiniz..."></textarea>
+                <label class="form-label">Message / Project Details</label>
+                <textarea class="form-control" rows="4" placeholder="Please share details such as facility type, capacity requirements, project timeline..."></textarea>
               </div>
               <div class="col-12">
                 <button type="submit" class="btn btn-accent btn-lg w-100">
-                  <i class="fas fa-paper-plane"></i>Teklif Talebini Gönder
+                  <i class="fas fa-paper-plane"></i>Send Quote Request
                 </button>
               </div>
             </div>
@@ -495,872 +256,100 @@
 <!-- CTA Banner -->
 <div class="cta-banner" data-aos="fade-up">
   <div class="container">
-    <h2>Projenize özel çözüm için bizimle iletişime geçin</h2>
-    <p>Uzman teknik ekibimiz, ihtiyacınıza en uygun sistemi tasarlar.</p>
-    <a href="iletisim.html#teklif" class="btn btn-outline-white btn-lg"><i class="fas fa-file-alt"></i>Hızlı Teklif Al</a>
+    <h2>Contact us for a custom solution for your project</h2>
+    <p>Our expert technical team will design the most suitable system for your needs.</p>
+    <a href="iletisim.html#teklif" class="btn btn-outline-white btn-lg"><i class="fas fa-file-alt"></i>Quick Quote</a>
   </div>
 </div>
 
 <!-- Footer -->
+<!-- ===== FOOTER ===== -->
 <footer class="site-footer">
   <div class="container">
     <div class="row g-5">
       <div class="col-lg-4 col-md-6">
-        <div class="footer-brand mb-3"><img src="images/logo-buser.png" alt="Buser" style="height:130px;width:auto;display:block;max-width:320px;"></div>
-        <p>Endüstriyel yangın güvenliği alanında 20 yılı aşkın tecrübemizle uluslararası standartlarda ürün ve hizmet sunuyoruz.</p>
+        <div class="footer-brand mb-3">
+          <img src="images/tatco-logo.png" alt="TATCO">
+        </div>
+        <p>With over 20 years of expertise in industrial fire safety, we provide internationally certified products and services tailored to your needs.</p>
+        <div class="footer-social">
+          <a href="mailto:info@tatco.eu" title="Email"><i class="fas fa-envelope"></i></a>
+          <a href="mailto:sales@tatco.eu" title="Sales"><i class="fas fa-handshake"></i></a>
+        </div>
       </div>
       <div class="col-lg-2 col-md-6 col-sm-6">
-        <div class="footer-title">Hızlı Menü</div>
+        <div class="footer-title">Quick Menu</div>
         <div class="footer-links">
-          <a href="index.html"><i class="fas fa-chevron-right"></i>Ana Sayfa</a>
-          <a href="kurumsal.html"><i class="fas fa-chevron-right"></i>Kurumsal</a>
-          <a href="urunlerimiz.html"><i class="fas fa-chevron-right"></i>Ürünlerimiz</a>
-          <a href="hizmetlerimiz.html"><i class="fas fa-chevron-right"></i>Hizmetlerimiz</a>
-          <a href="sertifikalar.html"><i class="fas fa-chevron-right"></i>Sertifikalar</a>
-          <a href="referanslar.html"><i class="fas fa-chevron-right"></i>Referanslar</a>
-          <a href="medyada-biz.html"><i class="fas fa-chevron-right"></i>Medyada Biz</a>
-          <a href="iletisim.html"><i class="fas fa-chevron-right"></i>İletişim</a>
+          <a href="index.html"><i class="fas fa-chevron-right"></i>Home</a>
+          <a href="kurumsal.html"><i class="fas fa-chevron-right"></i>About</a>
+          <a href="urunlerimiz.html"><i class="fas fa-chevron-right"></i>Products</a>
+          <a href="hizmetlerimiz.html"><i class="fas fa-chevron-right"></i>Services</a>
+          <a href="sertifikalar.html"><i class="fas fa-chevron-right"></i>Certificates</a>
+          <a href="referanslar.html"><i class="fas fa-chevron-right"></i>References</a>
+          <a href="medyada-biz.html"><i class="fas fa-chevron-right"></i>Media</a>
+          <a href="iletisim.html"><i class="fas fa-chevron-right"></i>Contact</a>
         </div>
       </div>
       <div class="col-lg-3 col-md-6 col-sm-6">
-        <div class="footer-title">Ürünlerimiz</div>
+        <div class="footer-title">Products</div>
         <div class="footer-links">
-          <a href="yangin-pompalari.html"><i class="fas fa-chevron-right"></i>Yangın Pompaları</a>
-          <a href="alarm-vanalari.html"><i class="fas fa-chevron-right"></i>Alarm Vanaları</a>
-          <a href="sistem-vanalari.html"><i class="fas fa-chevron-right"></i>Sistem Vanaları</a>
-          <a href="sprinkler.html"><i class="fas fa-chevron-right"></i>Sprinkler</a>
-          <a href="itfaiye-ekipmanlari.html"><i class="fas fa-chevron-right"></i>İtfaiye Ekipmanları</a>
-          <a href="kopuklu-sondurme.html"><i class="fas fa-chevron-right"></i>Köpük Sistemi</a>
+          <a href="yangin-pompalari.html"><i class="fas fa-chevron-right"></i>Fire Pumps</a>
+          <a href="alarm-vanalari.html"><i class="fas fa-chevron-right"></i>Alarm Valves</a>
+          <a href="sistem-vanalari.html"><i class="fas fa-chevron-right"></i>System Valves</a>
+          <a href="sprinkler.html"><i class="fas fa-chevron-right"></i>Sprinkler Systems</a>
+          <a href="itfaiye-ekipmanlari.html"><i class="fas fa-chevron-right"></i>Firefighting Equipment</a>
+          <a href="kopuklu-sondurme.html"><i class="fas fa-chevron-right"></i>Foam Suppression</a>
+          <a href="yivli-boru.html"><i class="fas fa-chevron-right"></i>Grooved Pipe Fittings</a>
+          <a href="pasif-tedbirler.html"><i class="fas fa-chevron-right"></i>Passive Fire Protection</a>
         </div>
       </div>
       <div class="col-lg-3 col-md-6">
-        <div class="footer-title">İletişim</div>
-        <div class="footer-contact-item"><div class="icon"><i class="fas fa-phone"></i></div><div class="text"><a href="tel:+903125242539">+90 312 524 25 39</a></div></div>
-        <div class="footer-contact-item"><div class="icon"><i class="fas fa-envelope"></i></div><div class="text"><a href="mailto:info@buser.com">info@buser.com</a></div></div>
-        <div class="footer-contact-item"><div class="icon"><i class="fas fa-globe"></i></div><div class="text"><a href="https://www.buser.com" target="_blank" rel="noopener">www.buser.com</a></div></div>
+        <div class="footer-title">Contact</div>
+        <div class="footer-contact-item">
+          <div class="icon"><i class="fas fa-envelope"></i></div>
+          <div class="text">
+            <a href="mailto:info@tatco.eu">info@tatco.eu</a><br>
+            <a href="mailto:sales@tatco.eu">sales@tatco.eu</a>
+          </div>
+        </div>
+        <div class="footer-contact-item">
+          <div class="icon"><i class="fas fa-globe"></i></div>
+          <div class="text">
+            <a href="https://www.tatco.eu" target="_blank" rel="noopener">www.tatco.eu</a>
+          </div>
+        </div>
+        <div class="footer-contact-item">
+          <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
+          <div class="text">100. Yıl Bulvarı No:55 A Blok, Ostim OSB, Ankara, Turkey</div>
+        </div>
       </div>
     </div>
   </div>
   <div class="footer-bottom">
     <div class="container">
       <div class="row align-items-center">
-        <div class="col-md-6"><span>&copy; 2024 BUSER. Tüm hakları saklıdır.</span></div>
-        <div class="col-md-6 text-md-end mt-2 mt-md-0"><a href="#">Gizlilik Politikası</a><span class="mx-2" style="color:rgba(255,255,255,.2);">|</span><a href="#">Kullanım Koşulları</a></div>
+        <div class="col-md-6">
+          <span>&copy; 2025 TATCO. All rights reserved.</span>
+        </div>
+        <div class="col-md-6 text-md-end mt-2 mt-md-0">
+          <a href="#">Privacy Policy</a>
+          <span class="mx-2" style="color:rgba(255,255,255,.2);">|</span>
+          <a href="#">Terms of Use</a>
+        </div>
       </div>
     </div>
   </div>
 </footer>
 
-<a id="whatsappBtn" href="https://wa.me/903125242539" target="_blank" rel="noopener" title="WhatsApp ile iletişime geçin">
-  <i class="fab fa-whatsapp"></i>
-  <span class="wa-label">WhatsApp</span>
+<!-- Back to Top -->
+<button id="backToTop" title="Back to Top">
+  <i class="fas fa-chevron-up"></i>
+</button>
+
+<a id="whatsappBtn" href="mailto:info@tatco.eu" target="_blank" rel="noopener" title="Contact TATCO">
+  <i class="fas fa-envelope"></i>
+  <span class="wa-label">Email Us</span>
 </a>
-<button id="backToTop" title="Yukarı Çık"><i class="fas fa-chevron-up"></i></button>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script src="js/main.js"></script>
-<script>
-/* ================================================================
-   ÜRÜN VERİTABANI
-   ================================================================ */
-const PRODUCTS = {
-
-  /* ── 1. YANGIN POMPALARI ── */
-  'p1-uctan-emisli': {
-    name: 'Uçtan Emişli Yatay Milli Yangın Pompaları',
-    category: 'Yangın Pompaları',
-    badge: 'UL/FM',
-    icon: 'fas fa-gauge-high',
-    gradient: 'linear-gradient(135deg,#c8102e,#8b0000)',
-    shortDesc: 'Uçtan emişli santrifüj pompalarda su çarkın uç kısmından giriş yapar ve emiş hattı motorla paraleldir. Debi 22,7–170 m³/h, maks. çalışma basıncı 10,4 bar.',
-    longDesc: 'Uçtan emişli (end-suction) yatay milli yangın pompaları santrifüj prensipli olup su çarkın uç kısmından giriş yapar ve emiş hattı motorla paraleldir. Tek taraflı giriş nedeniyle rulman desteği genellikle motordan sağlanır. Dizel motorlu versiyonlarda motor duvara paralel konumlandırılabildiğinden pompa seti daha az yer kaplar. NFPA 20 standartlarına uygun, UL listeli ve FM onaylı; elektrik veya dizel motor tahrikli. Dinamik dengeli kapalı çark tasarımı ve boruyu sökmeden geri çekme özelliğiyle öne çıkar.',
-    features: ['NFPA 20 uyumlu', 'UL listeli ve FM onaylı', 'Elektrik veya dizel motor seçeneği', 'Dinamik dengeli kapalı çark tasarımı', 'Boruyu sökmeden geri çekme imkânı', 'Farklı malzeme seçenekleri'],
-    specs: [['Debi Aralığı','22,7 – 170 m³/h'], ['Maksimum Çalışma Basıncı','10,4 bar'], ['Gövde Basıncı','16 bar'], ['Basma Flanşı','DN 65 – DN 100']],
-    priceNote: 'Proje kapsamı ve miktara göre fiyat teklifi için iletişime geçiniz.',
-    related: ['p1-ayrilabilir-govdeli','p1-dikey-turbin','p1-jokey']
-  },
-
-  'p1-ayrilabilir-govdeli': {
-    name: 'Ayrılabilir Gövdeli Çift Emişli Yangın Pompaları',
-    category: 'Yangın Pompaları',
-    badge: 'UL/FM',
-    icon: 'fas fa-arrows-split-up-and-left',
-    gradient: 'linear-gradient(135deg,#b91c1c,#7f1d1d)',
-    shortDesc: 'Çarkı barındıran ayrılabilir gövdesiyle kolay bakım imkânı sunan, çift rulmanlı çift emişli yangın pompası. Debi 68–1.700 m³/h, maks. çalışma basıncı 24,1 bar.',
-    longDesc: 'Ayrılabilir (split case) gövdeli çift emişli yangın pompaları, pompanın çarkı barındıran kısmının kaldırılıp içine kolayca müdahale edilmesine olanak tanır. Çift rulmanlı yapısı yüksek vibrasyona karşı dayanıklıdır. Su girişi iki ayrı noktadan gerçekleşir; NFPA-20 standartları emiş borusu uzunluğunu bu nedenle düzenler. Motor kaplin veya aks bağlantısıyla çalışır; yatay montajda daha fazla alan gerekse de, ayrılabilir gövde tasarımı bakım ömrünü önemli ölçüde uzatır.',
-    features: ['Çift emişli impeller tasarımı', 'Ayrılabilir (split case) gövde', 'Düşük NPSH gereksinimleri', 'Yüksek verimlilik', 'Geniş kapasite aralığı', 'Kolay saha bakımı'],
-    specs: [['Debi Aralığı','68 – 1.700 m³/h'], ['Maksimum Çalışma Basıncı','24,1 bar'], ['Gövde Basıncı','16 – 25 bar'], ['Basma Flanşı','DN 125 – DN 400']],
-    priceNote: 'Teknik şartname ve kapasite ihtiyacınıza göre teklif alınız.',
-    related: ['p1-uctan-emisli','p1-dikey-turbin','p1-jokey']
-  },
-
-  'p1-dikey-turbin': {
-    name: 'Dikey Türbin Tip Yangın Pompası',
-    category: 'Yangın Pompaları',
-    badge: 'NFPA 20',
-    icon: 'fas fa-arrow-up',
-    gradient: 'linear-gradient(135deg,#991b1b,#450a0a)',
-    shortDesc: 'Yangın suyunun yüzey seviyesinin altında olduğu durumlarda teknik olarak en iyi çözüm olan dikey kademeli türbin tipi yangın pompası. Debi 56,7–1.363 m³/h, maks. 20,7 bar.',
-    longDesc: 'Yangın suyunun yüzey seviyesinin altında olduğu durumlarda teknik olarak en iyi çözüm dikey kademeli türbin tipi yangın pompasıdır. Çarklar sürekli suya batık durumda çalışır; bu sayede kavitasyon riski azalır ve uzun servis ömrü sağlanır. Elektrik veya dizel motor tahrikli seçeneklerle sunulur. Çok kademeli impeller yapısıyla derin kuyu, sarnıç ve rezervuarlarda yüksek basınç üretilebilir.',
-    features: ['Çok kademeli tasarım', 'Derin kuyu uygulamaları', 'Paslanmaz çelik kolon borusu', 'Dikey elektrik motoru', 'Kolay uzatılabilir yapı', 'NFPA 20 uyumlu'],
-    specs: [['Debi Aralığı','56,7 – 1.363 m³/h'], ['Maksimum Çalışma Basıncı','20,7 bar'], ['Gövde Basıncı','16 – 25 bar']],
-    priceNote: 'Kuyu derinliği ve debi ihtiyacına göre teknik teklif alınız.',
-    related: ['p1-uctan-emisli','p1-ayrilabilir-govdeli','p1-jokey']
-  },
-
-  'p1-jokey': {
-    name: 'Jokey Yangın Pompası',
-    category: 'Yangın Pompaları',
-    badge: null,
-    icon: 'fas fa-circle-play',
-    gradient: 'linear-gradient(135deg,#dc2626,#9b1c1c)',
-    shortDesc: 'Sprinkler söndürme sistemlerinde basıncın ani düşüşü ile devreye giren, sistemdeki mevcut basınç değerlerini koruyan küçük kapasiteli kademeli yardımcı pompa. Debi 22,7–227 m³/h, maks. 15 bar.',
-    longDesc: 'Jokey pompa, yangın söndürme sistemi borularındaki küçük sızıntıları telafi ederek sistem basıncını sürekli koruyan yardımcı bir pompadır. Basınç düştüğünde otomatik devreye girer, ana pompanın gereksiz çalışmasını önler. Kapasitesi, tek bir sprinkler başlığının açılmasında oluşan gerekli debi miktarından daha düşük tutulur; bu sayede gerçek bir yangın olayı ile küçük sızıntı kolayca ayırt edilebilir. Genellikle küçük boyutlu kademeli dikey türbin pompa modellerinden oluşur.',
-    features: ['Otomatik basınç kontrolü', 'Enerji tasarruflu çalışma', 'Kompakt ve az yer kaplayan tasarım', 'Ana pompayı korur', 'Dijital basınç anahtarı', 'Paslanmaz çelik gövde'],
-    specs: [['Debi Aralığı','22,7 – 227 m³/h'], ['Maksimum Çalışma Basıncı','15 bar']],
-    priceNote: 'Sistem basıncı ve debi değerlerinize göre teklif alınız.',
-    related: ['p1-uctan-emisli','p1-ayrilabilir-govdeli','p1-dikey-turbin']
-  },
-
-  /* ── 2. ALARM VANALARI ── */
-  'p2-islak-alarm': {
-    name: 'Islak Alarm Vanası',
-    category: 'Alarm Vanaları',
-    badge: 'EN 12259',
-    icon: 'fas fa-bell',
-    gradient: 'linear-gradient(135deg,#ea580c,#9a3412)',
-    shortDesc: 'Suyun donma tehlikesinin olmadığı 4°C\'nin üzerindeki mahallerde sprinkler söndürme sistemlerinde su akışıyla mekanik ve elektriksel alarm veren ıslak tip alarm vanası.',
-    longDesc: 'Islak alarm vanası, boru ağının her zaman su dolu tutulduğu ıslak boru sprinkler sistemlerinin ana kontrolünü sağlar. Herhangi bir sprinkler başlığının açılmasıyla su geciktirme hücresine akar; basınç anahtarı ve alarm gongu devreye girerek hem mekanik hem elektriksel olarak alarm verilmiş olur. Suyun donma riski olmayan 4°C üzeri ortamlarda kullanılır.',
-    features: ['EN 12259-2 uyumlu', 'UL listeli ve FM onaylı', 'Mekanik alarm gong dahil', 'Basınç anahtarı bağlantısı', 'Kolay test imkânı', 'Geniş çap aralığı'],
-    specs: [['Bağlantı','Flanşlı'], ['Onaylar','UL Listeli, FM Onaylı'], ['Çaplar','3" – 8"'], ['Maksimum Çalışma Basıncı','250 PSI'], ['Maksimum Çalışma Sıcaklığı','80°C']],
-    priceNote: 'Sistem kapasitesi ve çap ihtiyacınıza göre teklif alınız.',
-    related: ['p2-kuru-alarm','p2-deluge','p2-pre-action']
-  },
-
-  'p2-kuru-alarm': {
-    name: 'Kuru Alarm Vanası',
-    category: 'Alarm Vanaları',
-    badge: 'UL/FM',
-    icon: 'fas fa-wind',
-    gradient: 'linear-gradient(135deg,#d97706,#92400e)',
-    shortDesc: 'Ortam sıcaklığının 4°C altına düşmesi beklenen ısıtılmayan hacimlerde (garaj, otopark, depo) kullanılan; boru ağı basınçlı hava veya azot gazı ile tutulan kuru tip alarm vanası.',
-    longDesc: 'Kuru alarm vanası, ısıtılmayan garaj, otopark ve depo gibi donma riski taşıyan ortamlarda suyu donmaktan korur. Boru ağı basınçlı hava veya azot gazı ile tutulur; sprinkler açıldığında hava kaçar ve vana su bırakır. Basınçlı havayı boşaltarak vananın açılışını hızlandıran hızlandırıcı (akseleratör) aksesuarı ile birlikte kullanılabilir.',
-    features: ['Donma riski olan alanlara uygun', 'UL listeli / FM onaylı', 'Hava/azot basıncı ile çalışır', 'Hızlandırıcı (accelerator) opsiyonu', 'Basınç kayıplarını izler', 'Alarm basınç anahtarı'],
-    specs: [['Bağlantı','Flanşlı'], ['Onaylar','UL Listeli, FM Onaylı'], ['Çaplar','3" – 8"'], ['Maksimum Çalışma Basıncı','300 PSI'], ['Hızlandırıcı Basınç Aralığı','27 – 58 PSI (hava/azot)'], ['Su Motor Gongu Malzeme','Korozyona dayanıklı alüminyum alaşım'], ['Su Motor Gongu Su Girişi','¾" BSP'], ['Su Motor Gongu Drenaj','1" BSP']],
-    priceNote: 'Proje gereksinimleri ve ortam koşullarına göre teklif alınız.',
-    related: ['p2-islak-alarm','p2-deluge','p2-pre-action']
-  },
-
-  'p2-deluge': {
-    name: 'Baskın (Deluge) Alarm Vanası',
-    category: 'Alarm Vanaları',
-    badge: 'NFPA 13',
-    icon: 'fas fa-water',
-    gradient: 'linear-gradient(135deg,#b45309,#78350f)',
-    shortDesc: 'Parlayıcı madde deposu, uçak hangarı gibi olası bir yangının çok hızlı yayılım göstereceği yerlerde tüm nozüllere aynı anda söndürücü madde veren baskın (deluge) alarm vanası.',
-    longDesc: 'Baskın (deluge) vanası, tüm sprinklerlerin açık olduğu sistemlerde kullanılır. Parlayıcı madde deposu ve uçak hangarı gibi yangının hızlı yayılabileceği ortamlara uygundur. Yangın algılama sistemi tetiklendiğinde vana açılır ve bağlı tüm nozüllere aynı anda söndürücü madde sağlanarak geniş alanda hızlı söndürme yapılır. Islak pilot, kuru pilot ve elektrik aktivasyonlu üç farklı seçenek sunulur; su veya köpük uyumludur.',
-    features: ['Hızlı aktivasyon', 'NFPA 13 / EN 12259 uyumlu', 'Elektrikli veya pnömatik aktüatör', 'Manuel override imkânı', 'Petrokimya tesislerine uygun', 'Yüksek debi kapasitesi'],
-    specs: [['Bağlantı','Flanşlı, Yivli'], ['Onaylar','UL Listeli, FM Onaylı'], ['Çaplar','1½" – 8"'], ['Maksimum Çalışma Basıncı','250 PSI'], ['Aktivasyon','Islak pilot / Kuru pilot / Elektrik']],
-    priceNote: 'Risk analizi ve sistem tasarımına göre teklif alınız.',
-    related: ['p2-islak-alarm','p2-kuru-alarm','p2-pre-action']
-  },
-
-  'p2-pre-action': {
-    name: 'Ön Tepkimeli (Pre-Action) Alarm Vanası',
-    category: 'Alarm Vanaları',
-    badge: 'UL/FM',
-    icon: 'fas fa-shield-halved',
-    gradient: 'linear-gradient(135deg,#c2410c,#7c2d12)',
-    shortDesc: 'Arşiv, galeri ve müze gibi suyun depolanan nesneler üzerinde hasar verici etkisinin olacağı mahallerde kullanılan; bağımsız algılama hattı gerektiren ön tepkimeli (pre-action) alarm vanası.',
-    longDesc: 'Ön tepkimeli (pre-action) sistem, yangın algılama sistemi ve sprinkler aktivasyonunun aynı anda gerçekleşmesini şart koşar; borulama kuru kalır, sistem tetiklendiğinde suyu boru hattına alır. Arşiv, galeri ve müze gibi su hasarının kritik olduğu alanlara idealdir. Tek kilitlemeli modelde algılama hattından bir sinyal yeterlidir; çift kilitlemeli modelde hem algılama hem sprinkler başlığı devreye girmesi gerekir, böylece yanlışlıkla su baskını riski en aza indirilir.',
-    features: ['Çift bağımlı aktivasyon', 'Kaza ile su baskını önlenir', 'Veri merkezi ve müze uygulamaları', 'UL listeli kontrol paneli entegrasyonu', 'Tek veya çift kilit modu', 'Yüksek güvenilirlik'],
-    specs: [['Bağlantı','Flanşlı, Yivli'], ['Onaylar','UL Listeli, FM Onaylı'], ['Çaplar','1½" – 8"'], ['Maksimum Çalışma Basıncı','250 PSI'], ['Aktivasyon','Islak pilot / Kuru pilot / Elektrik'], ['Kilit Modu','Tek kilit / Çift kilit']],
-    priceNote: 'Özel uygulama ve risk sınıfına göre teklif alınız.',
-    related: ['p2-islak-alarm','p2-kuru-alarm','p2-deluge']
-  },
-
-  /* ── 3. SİSTEM VANALARI ── */
-  'p3-kelebek-vana': {
-    name: 'İzleme Anahtarlı Kelebek Vana',
-    category: 'Sistem Vanaları',
-    badge: 'UL/FM',
-    icon: 'fas fa-gear',
-    gradient: 'linear-gradient(135deg,#1d4ed8,#1e3a8a)',
-    shortDesc: 'Yangın söndürme sistemlerinde bölgesel su akışını kontrol eden; vana konum bilgisini kuru kontak ile alarm paneline ileten izleme anahtarlı kelebek vana.',
-    longDesc: 'İzleme anahtarlı kelebek vana, yangın söndürme sistemlerinde suyun bölgesel kontrolünü sağlar ve açık/kapalı konum göstergeli şalter kutusuyla donatılmıştır. Vana konumu kuru kontak aracılığıyla otomasyon sistemine bildirilir; yetkisiz kapatma durumunda alarm paneline sinyal gönderilir. Kat girişlerinde kompakt tasarımı nedeniyle tercih edilir. Sfero dökme demir gövde, nikel kaplı disk, paslanmaz çelik mil, EPDM conta.',
-    features: ['Tamper switch entegreli', 'UL/FM onaylı', 'Post göstergeli', 'Wafer veya lug tip montaj', 'Renkli vana kolçağı', 'NFPA 13 uyumlu'],
-    specs: [['Çap Aralığı','2" – 12" (DN 50 – DN 300)'], ['Basınç','max. 20.7 bar (300 psi)'], ['Standart','UL 1091 / FM 1112'], ['Malzeme','Sfero dökme demir ASTM A536 / Füzyon epoksi'], ['Switch','Entegre tamper switch'], ['Bağlantı','Wafer / Lug / Grooved']],
-    priceNote: 'Çap ve bağlantı tipine göre teklif alınız.',
-    related: ['p3-cek-vana','p3-osy','p3-nrs']
-  },
-
-  'p3-cek-vana': {
-    name: 'Çek Vana',
-    category: 'Sistem Vanaları',
-    badge: null,
-    icon: 'fas fa-right-left',
-    gradient: 'linear-gradient(135deg,#2563eb,#1e40af)',
-    shortDesc: 'Tek yönlü akışı sağlayan, geri akışı önleyen yatay ve dikey montajlı çek vanalar.',
-    longDesc: 'Çek (geri dönmez) vanalar, su ve köpük hatlarında geri akışı önlemek amacıyla kullanılır. Salıncak tip, yaylı tip ve wafer tip çeşitler sunulur.',
-    features: ['Geri akışı engeller', 'Salıncak veya yay yüklü disk', 'Yatay ve dikey montaj', 'Düşük basınç kaybı', 'Geniş çap aralığı', 'Kolay bakım'],
-    specs: [['Çap Aralığı','DN 25 – DN 300'], ['Basınç','max. 20.7 bar (300 psi)'], ['Montaj','Yatay / Dikey'], ['Tip','Salıncak / Flanşlı / Grooved'], ['Malzeme','Sfero dökme demir ASTM A536 / Füzyon epoksi'], ['Standart','UL / FM Onaylı']],
-    priceNote: 'Akış yönü ve çap ihtiyacına göre teklif alınız.',
-    related: ['p3-kelebek-vana','p3-fsfd','p3-test-drenaj']
-  },
-
-  'p3-fsfd': {
-    name: 'FSFD Akış Anahtarı',
-    category: 'Sistem Vanaları',
-    badge: 'UL/FM',
-    icon: 'fas fa-wave-square',
-    gradient: 'linear-gradient(135deg,#3b82f6,#1d4ed8)',
-    shortDesc: 'Boru içindeki su akışını algılayan ve alarm sinyali üreten paddle tipi akış anahtarı.',
-    longDesc: 'FSFD akış anahtarı, sprinkler sistemlerinde su akışını algılar ve alarm paneline sinyal göndererek yangın ihbarını başlatır.',
-    features: ['UL listeli / FM onaylı', 'Paddle tipi algılama', 'Gecikme ayarı (0–90 sn)', 'Alarm paneli bağlantısı', 'Kolay saha montajı', 'Geniş çap uyumluluğu'],
-    specs: [['Çap Aralığı','DN 25 – DN 300'], ['Çalışma Basıncı','max. 12 bar'], ['Gecikme','0 – 90 saniye ayarlı'], ['Switch','SPDT veya DPDT'], ['Standart','UL 346 / FM 1144'], ['Kablo Girişi','1/2" NPT']],
-    priceNote: 'Boru çapı ve gecikme ayarına göre teklif alınız.',
-    related: ['p3-kelebek-vana','p3-akis-olcer','p3-cek-vana']
-  },
-
-  'p3-osy': {
-    name: 'OS&Y Yükselen Milli Vana',
-    category: 'Sistem Vanaları',
-    badge: 'UL/FM',
-    icon: 'fas fa-arrow-up-from-bracket',
-    gradient: 'linear-gradient(135deg,#1e40af,#1e3a8a)',
-    shortDesc: 'Mili dışarı çıkarak görsel pozisyon kontrolüne imkân tanıyan OS&Y kapı vana sistemi.',
-    longDesc: 'OS&Y kapı vanalar, vana milinin dışarı çıkıp girmesiyle açık/kapalı pozisyon görsel olarak anlaşılır. Yangın sistemlerinde zorunlu olan görsel kontrol sağlar.',
-    features: ['Görsel pozisyon kontrolü', 'Açık mil = açık vana', 'Kapalı mil = kapalı vana', 'Kilit halkası uyumlu', 'Geniş çap aralığı', 'UL listeli'],
-    specs: [['Çap Aralığı','DN 50 – DN 300'], ['Basınç','max. 12 bar'], ['Standart','UL 262 / FM 1120'], ['Malzeme','Dökme demir / Pirinç yüzey'], ['Bağlantı','Flanşlı'], ['Mil','Bronz veya paslanmaz']],
-    priceNote: 'Çap ve flanş standardına göre teklif alınız.',
-    related: ['p3-kelebek-vana','p3-nrs','p3-post-indikator']
-  },
-
-  'p3-nrs': {
-    name: 'NRS Vana',
-    category: 'Sistem Vanaları',
-    badge: null,
-    icon: 'fas fa-circle-nodes',
-    gradient: 'linear-gradient(135deg,#0369a1,#075985)',
-    shortDesc: 'Dışarıya mil çıkmayan (non-rising stem) kompakt tasarımlı kapı vana çözümü.',
-    longDesc: 'NRS vanalar, mil dışarı çıkmadığı için dar alanlarda, yer altı uygulamalarında ve post indikatör bağlantılı sistemlerde tercih edilir.',
-    features: ['Kompakt boyut', 'Dar alan uygulamaları', 'Post indikatör uyumlu', 'Yer altı kurulum imkânı', 'Çelik veya dökme demir gövde', 'Uzun ömürlü sızdırmazlık'],
-    specs: [['Çap Aralığı','DN 50 – DN 250'], ['Basınç','max. 12 bar'], ['Standart','UL 262 / FM 1120'], ['Malzeme','Dökme demir'], ['Bağlantı','Flanşlı / Dişli'], ['Mil','Dahili vidalı']],
-    priceNote: 'Uygulama ve çap ihtiyacına göre teklif alınız.',
-    related: ['p3-osy','p3-post-indikator','p3-kelebek-vana']
-  },
-
-  'p3-kuresel': {
-    name: 'Küresel Vanalar',
-    category: 'Sistem Vanaları',
-    badge: null,
-    icon: 'fas fa-circle-dot',
-    gradient: 'linear-gradient(135deg,#0284c7,#0369a1)',
-    shortDesc: 'Hızlı açma-kapama için çeyrek tur hareketli, sızdırmaz küresel vana çözümleri.',
-    longDesc: 'Küresel (ball) vanalar, 90° çeyrek tur hareketiyle tam açık ya da tam kapalı pozisyona getirilen vanalar olup servis noktalarında kullanılır.',
-    features: ['Çeyrek tur açma-kapama', 'PTFE sızdırmaz koltuk', 'Tam delik pasaj', 'Çelik veya pirinç gövde', 'Dişli veya flanşlı bağlantı', 'Uzun servis ömrü'],
-    specs: [['Çap Aralığı','DN 15 – DN 100'], ['Basınç','max. 40 bar'], ['Malzeme','Paslanmaz çelik / Pirinç'], ['Koltuk','PTFE / RPTFE'], ['Bağlantı','Dişli / Flanşlı'], ['Standart','ISO 17292']],
-    priceNote: 'Çap ve malzeme tercihine göre teklif alınız.',
-    related: ['p3-kelebek-vana','p3-test-drenaj','p3-cek-vana']
-  },
-
-  'p3-test-drenaj': {
-    name: 'Test ve Drenaj Vanası',
-    category: 'Sistem Vanaları',
-    badge: null,
-    icon: 'fas fa-faucet-drip',
-    gradient: 'linear-gradient(135deg,#155e75,#164e63)',
-    shortDesc: 'Sprinkler sistemlerinin periyodik testini ve boşaltılmasını kolaylaştıran kombine vana.',
-    longDesc: 'Test ve drenaj (T&D) vanası, sprinkler bölgelerinin bireysel testi ve sistemi boşaltmak için kullanılan kombine bir armatürdür.',
-    features: ['Kombine test ve drenaj işlevi', 'Orifis plakası dahil', 'Tek operasyonla test', 'Görünür gösterge', 'Kolay montaj', 'NFPA 25 bakım uyumlu'],
-    specs: [['Çap','DN 25 – DN 50'], ['Basınç','max. 16 bar'], ['Orifis','K-faktörüne göre seçim'], ['Standart','NFPA 25'], ['Malzeme','Pirinç / Paslanmaz'], ['Montaj','Dişli bağlantı']],
-    priceNote: 'K-faktörü ve boru çapına göre teklif alınız.',
-    related: ['p3-cek-vana','p3-kuresel','p3-basinc-rahatlatma']
-  },
-
-  'p3-akis-olcer': {
-    name: 'Akış Ölçer',
-    category: 'Sistem Vanaları',
-    badge: null,
-    icon: 'fas fa-chart-line',
-    gradient: 'linear-gradient(135deg,#1e3a8a,#172554)',
-    shortDesc: 'Sistem performansı ve bakım testlerinde boru içi debi değerini doğru ölçen cihaz.',
-    longDesc: 'Yangın söndürme sistemlerinde kullanılan akış ölçerler, pompa test devrelerinde ve sistem devreye alma sırasında gerçek zamanlı debi ölçümü sağlar.',
-    features: ['Gerçek zamanlı debi ölçümü', 'Paddle veya elektromanyetik tip', 'Dijital gösterge', 'Düşük basınç kaybı', 'Kolay kalibrasyon', 'NFPA 20 pompa testi uyumlu'],
-    specs: [['Çap','DN 50 – DN 250'], ['Ölçüm Aralığı','50 – 5000 L/dak'], ['Doğruluk','±2%'], ['Basınç','max. 16 bar'], ['Tip','Paddle / Elektromanyetik / Vorteks'], ['Çıkış','4-20 mA veya puls']],
-    priceNote: 'Debi aralığı ve ölçüm tipine göre teklif alınız.',
-    related: ['p3-fsfd','p3-test-drenaj','p3-basinc-rahatlatma']
-  },
-
-  'p3-post-indikator': {
-    name: 'Post İndikatör',
-    category: 'Sistem Vanaları',
-    badge: 'UL/FM',
-    icon: 'fas fa-traffic-light',
-    gradient: 'linear-gradient(135deg,#312e81,#1e1b4b)',
-    shortDesc: 'Yer altı vanalarının açık/kapalı durumunu yüzeyden görsel olarak gösteren post indikatör.',
-    longDesc: 'Post İndikatör (PI), genellikle NRS kapı vanalara bağlanarak yer altındaki vananın durumunu zemin seviyesinde görsel olarak gösterir.',
-    features: ['Yer üstünden konum görünürlüğü', 'OPEN/SHUT göstergesi', 'Tamper switch opsiyonu', 'NRS vanayla uyumlu', 'Kilitlenebilir kapak', 'UL listeli'],
-    specs: [['Yükseklik','250 – 1500 mm seçenekler'], ['Vana Uyumu','2" – 12" NRS vanalar'], ['Tamper','SPDT switch opsiyonu'], ['Malzeme','Çelik / Epoksi boya'], ['Standart','UL 789 / FM 1140'], ['Kaplama','Kırmızı epoksi boya']],
-    priceNote: 'Vana boyutu ve yükseklik ihtiyacına göre teklif alınız.',
-    related: ['p3-nrs','p3-osy','p3-kelebek-vana']
-  },
-
-  'p3-basinc-rahatlatma': {
-    name: 'Basınç Rahatlatma Vanası',
-    category: 'Sistem Vanaları',
-    badge: null,
-    icon: 'fas fa-compress-arrows-alt',
-    gradient: 'linear-gradient(135deg,#4c1d95,#2e1065)',
-    shortDesc: 'Sistem basıncını belirlenen değerde sınırlayan, aşırı basınca karşı koruma sağlayan vana.',
-    longDesc: 'Basınç rahatlatma (relief) vanası, sistem basıncı belirlenen ayar değerinin üzerine çıktığında otomatik olarak açılır ve fazla suyu dışarı verir.',
-    features: ['Otomatik basınç sınırlama', 'Ayarlanabilir set noktası', 'Ani basınç artışlarına karşı koruma', 'Bakım gerektirmeyen yapı', 'Paslanmaz disk ve koltuk', 'Geniş basınç aralığı'],
-    specs: [['Çap','DN 25 – DN 150'], ['Ayar Basıncı','2 – 16 bar'], ['Malzeme','Dökme demir / Paslanmaz'], ['Koltuk','Paslanmaz çelik'], ['Bağlantı','Flanşlı / Dişli'], ['Standart','EN ISO 4126']],
-    priceNote: 'Çalışma basıncı ve sistem kapasitesine göre teklif alınız.',
-    related: ['p3-basinc-dusurucu','p3-akis-olcer','p3-test-drenaj']
-  },
-
-  'p3-basinc-dusurucu': {
-    name: 'Basınç Düşürücü Vana',
-    category: 'Sistem Vanaları',
-    badge: null,
-    icon: 'fas fa-arrow-down-up-across-line',
-    gradient: 'linear-gradient(135deg,#5b21b6,#3b0764)',
-    shortDesc: 'Yüksek giriş basıncını sabit ve ayarlı çıkış basıncına indirgeyen diferansiyel basınç vanası.',
-    longDesc: 'Basınç düşürücü (PRV) vana, giriş basıncından bağımsız olarak çıkış basıncını sabit tutmak için kullanılır. Yüksek katlı binalarda sprinkler ve hidrant sistemlerini korur.',
-    features: ['Sabit çıkış basıncı', 'Ayarlanabilir set değeri', 'Pilot kontrollü çalışma', 'Dinamik basınç kompanzasyonu', 'Anti-titreşim tasarımı', 'Geniş debi aralığı'],
-    specs: [['Çap','DN 50 – DN 200'], ['Giriş Basıncı','max. 25 bar'], ['Çıkış Basıncı','1 – 16 bar ayarlı'], ['Malzeme','Dökme demir / Pirinç'], ['Pilot','Diyafram kontrollü'], ['Standart','EN 1567']],
-    priceNote: 'Giriş ve çıkış basınç değerlerinize göre teklif alınız.',
-    related: ['p3-basinc-rahatlatma','p3-akis-olcer','p3-kelebek-vana']
-  },
-
-  /* ── 4. SPRİNKLER ── */
-  'p4-standart': {
-    name: 'Standart Tepkili Sprinklerler',
-    category: 'Sprinkler',
-    badge: 'EN 12259',
-    icon: 'fas fa-cloud-rain',
-    gradient: 'linear-gradient(135deg,#15803d,#14532d)',
-    shortDesc: 'Genel amaçlı binalarda kullanılan 57–79°C aktivasyon sıcaklığına sahip standart sprinkler başlıkları.',
-    longDesc: 'Standart tepki elemanlı (SR) sprinkler başlıkları, ticari, endüstriyel ve çok katlı binalarda en yaygın kullanılan yangın söndürme başlıklarıdır. Cam ampul aktivasyon mekanizması ile çalışır.',
-    features: ['UL Listeli / FM Onaylı / ULc Listeli / CE Belgeli', '68°C / 79°C / 93°C / 141°C aktivasyon (Gizli tip: 57°C / 74°C)', 'Sarkık, dik ve gizli tip montaj', 'Pirinç veya krom kaplama', 'K-faktörü: K5.6 (80) veya K8.0 (115)', '5mm cam ampul aktivasyon'],
-    specs: [['K-faktörü','K5.6 (80) / K8.0 (115)'], ['Aktivasyon','68 / 79 / 93 / 141°C (Gizli tip: 57 / 74°C)'], ['Maks. Çalışma Basıncı','175 PSI (12.1 bar)'], ['Bağlantı','½" NPT (15 mm) / ¾" NPT (20 mm)'], ['Standart','UL Listeli / FM Onaylı / ULc Listeli / CE'], ['Ampul','5 mm cam bulb']],
-    priceNote: 'Tavan tipi ve aktivasyon sıcaklığına göre teklif alınız.',
-    related: ['p4-hizli','p4-genis','p4-kuru']
-  },
-
-  'p4-hizli': {
-    name: 'Hızlı Tepkili Sprinklerler',
-    category: 'Sprinkler',
-    badge: 'QR/ELO',
-    icon: 'fas fa-bolt',
-    gradient: 'linear-gradient(135deg,#16a34a,#15803d)',
-    shortDesc: 'RTI değeri ≤50 olan, daha hızlı aktivasyon ile erken söndürme imkânı sunan QR sprinkler başlıkları.',
-    longDesc: 'Hızlı tepkili (QR) sprinklerler, RTI değeri 50 ve altında olan başlıklardır. Standart sprinklerlerden daha erken devreye girerek yangının büyümesini önler.',
-    features: ['UL Listeli / FM Onaylı / ULc Listeli / CE Belgeli', '3 mm cam ampul (hızlı tepki)', '68°C / 79°C / 93°C / 141°C aktivasyon', 'Sarkık, dik, gizli ve yatay duvar tipi', 'Pirinç veya krom kaplama', 'Erken söndürme performansı'],
-    specs: [['K-faktörü','K5.6 (80) / K8.0 (115)'], ['Aktivasyon','68 / 79 / 93 / 141°C'], ['Maks. Çalışma Basıncı','175 PSI (12.1 bar)'], ['Bağlantı','½" NPT (15 mm) / ¾" NPT (20 mm)'], ['Standart','UL Listeli / FM Onaylı / ULc Listeli / CE'], ['Ampul','3 mm cam bulb (QR)']],
-    priceNote: 'Çatı yüksekliği ve risk sınıfına göre teklif alınız.',
-    related: ['p4-standart','p4-genis','p4-depo']
-  },
-
-  'p4-genis': {
-    name: 'Geniş Korumalı Sprinklerler',
-    category: 'Sprinkler',
-    badge: 'CMSA',
-    icon: 'fas fa-expand',
-    gradient: 'linear-gradient(135deg,#4d7c0f,#3f6212)',
-    shortDesc: 'Tek başlıkla büyük alanları örten, 30 m² koruma sahası sunan ESFR/CMSA tipi sprinklerler.',
-    longDesc: 'Geniş korumalı (Extended Coverage veya CMSA) sprinklerler, tek başlıkla daha büyük koruma alanı sağlayarak boru ve başlık sayısını azaltır.',
-    features: ['30 m² tek başlık koruma', 'Daha az boru ve bağlantı', 'Yüksek K-faktörü', 'Büyük alanlı tesisler için', 'ESFR alternatifi', 'Düşük kurulum maliyeti'],
-    specs: [['Koruma Alanı','Tek başlıkta 20 – 30 m²'], ['K-faktörü','11.2 – 16.8'], ['Aktivasyon','68 / 74°C'], ['Basınç','max. 12 bar'], ['Standart','NFPA 13 / EN 12259'], ['Montaj','Sarkık']],
-    priceNote: 'Tavan yüksekliği ve depolama tipine göre teklif alınız.',
-    related: ['p4-standart','p4-hizli','p4-depo']
-  },
-
-  'p4-depo': {
-    name: 'Depo Tipi Sprinklerler',
-    category: 'Sprinkler',
-    badge: 'ESFR',
-    icon: 'fas fa-warehouse',
-    gradient: 'linear-gradient(135deg,#166534,#14532d)',
-    shortDesc: 'Yüksek raflı depolama alanlarında çatı korumaya yönelik yüksek debili ESFR sprinkler başlıkları.',
-    longDesc: 'Depo tipi (ESFR) sprinklerler, yüksek istifleme depolarda yangını erken bastırmak için tasarlanmıştır. Yüksek K-faktörü ve hızlı tepki süresiyle büyük miktarda su uygular.',
-    features: ['UL Listeli / FM Onaylı / ULc Listeli / VDS Onaylı', 'Raf içi sprinkler gerekmez', 'K14.0 / K16.8 / K22.4 / K25 seçenekleri', 'Erken bastırma (ESFR) performansı', '74°C veya 96°C aktivasyon', 'Pirinç gövde'],
-    specs: [['K-faktörü','K14.0 (200) / K16.8 (242) / K22.4 (320) / K25 (363)'], ['Aktivasyon','74°C / 96°C'], ['Maks. Çalışma Basıncı','175 PSI (12.1 bar)'], ['Bağlantı','¾" NPT (20 mm)'], ['Standart','UL Listeli / FM Onaylı / ULc Listeli / VDS'], ['Montaj','Sarkık (pendent) veya Dik (upright)']],
-    priceNote: 'Depolama yüksekliği ve risk sınıfına göre teklif alınız.',
-    related: ['p4-standart','p4-hizli','p4-genis']
-  },
-
-  'p4-kuru': {
-    name: 'Kuru Tip Sprinklerler',
-    category: 'Sprinkler',
-    badge: 'Antifreeze',
-    icon: 'fas fa-snowflake',
-    gradient: 'linear-gradient(135deg,#0f766e,#134e4a)',
-    shortDesc: 'Donma tehlikesi olan soğuk hava depolarında ve açık alanlarda kullanılan kuru uzatmalı sprinkler.',
-    longDesc: 'Kuru tip sprinklerler, ıslak boru sistemlerine bağlanmak üzere uzun bir uzatma borusuyla donatılmıştır. Su donma bölgesinde bulunmadığından soğuk ortamlarda kullanılabilir.',
-    features: ['Donma riski olan alanlara uygun', 'Islak sisteme bağlanır', 'Uzatma borusu: 100 – 900 mm', 'Çeşitli montaj açıları', 'Negatif sıcaklıklara dayanıklı', 'Kolay montaj ve bakım'],
-    specs: [['Uzatma Borusu','100 – 900 mm'], ['Aktivasyon','57 / 68 / 74°C'], ['Sıcaklık Aralığı','-40°C – +65°C'], ['K-faktörü','5.6 – 8.0'], ['Standart','EN 12259 / UL 199'], ['Montaj','Sarkık / Dik / Yatay']],
-    priceNote: 'Ortam sıcaklığı ve kurulum şartlarına göre teklif alınız.',
-    related: ['p4-standart','p4-hizli','p4-genis']
-  },
-
-  /* ── 5. YİVLİ BORU ── */
-  'p5-rijit': {
-    name: 'Rijit Kaplin',
-    category: 'Yivli Boru Ek Parçaları',
-    badge: 'NFPA 13',
-    icon: 'fas fa-link',
-    gradient: 'linear-gradient(135deg,#0369a1,#075985)',
-    shortDesc: 'Boru eksenini sabit tutan, titreşim ve yük aktarımı gereken noktalarda kullanılan rijit yivli kaplin.',
-    longDesc: 'Rijit yivli kaplinler, iki boru ucunu sıkı biçimde birleştirerek boru hattında hareket izni vermez.',
-    features: ['Rijit (hareketsiz) bağlantı', 'Yüksek yük taşıma kapasitesi', 'Hızlı vidasız montaj', 'Geniş çap aralığı', 'Galvanizli çelik', 'UL/FM listeli'],
-    specs: [['Çap Aralığı','1" – 12" (DN 25 – DN 300)'], ['Çalışma Basıncı','max. 20.7 bar (300 psi)'], ['Malzeme','Sfero dökme demir'], ['Kaplama','Turuncu epoksi boya'], ['Contası','EPDM / Nitril'], ['Standart','UL 213 / FM 1920']],
-    priceNote: 'Boru çapı ve proje miktarına göre teklif alınız.',
-    related: ['p5-esnek','p5-dirsek']
-  },
-
-  'p5-esnek': {
-    name: 'Esnek Kaplin',
-    category: 'Yivli Boru Ek Parçaları',
-    badge: 'Sismik',
-    icon: 'fas fa-arrows-left-right',
-    gradient: 'linear-gradient(135deg,#0284c7,#0369a1)',
-    shortDesc: 'Sismik hareketlere ve genleşme/büzülmeye karşı tolerans sağlayan esnek yivli kaplin sistemi.',
-    longDesc: 'Esnek yivli kaplinler, boru bağlantısında belirli miktarda aksiyal, açısal ve defleksiyon hareketine izin verir. NFPA 13 depreme dayanıklı tasarım gereksinimleri için gereklidir.',
-    features: ['Sismik hareketlere karşı tolerans', 'Aksiyal ve açısal hareket', 'Genleşme kompanzasyonu', 'Gürültü ve titreşim azaltma', 'NFPA 13 sismik uyum', 'Prefabrik sistemlere uygun'],
-    specs: [['Çap Aralığı','1" – 12" (DN 25 – DN 300)'], ['Çalışma Basıncı','max. 20.7 bar (300 psi)'], ['Açısal Defleksiyon','±3°'], ['Aksiyal Hareket','±6 mm'], ['Malzeme','Sfero dökme demir'], ['Conta','EPDM']],
-    priceNote: 'Sismik bölge ve boru çapına göre teklif alınız.',
-    related: ['p5-rijit','p5-dirsek']
-  },
-
-  'p5-dirsek': {
-    name: 'Yivli Dirsek',
-    category: 'Yivli Boru Ek Parçaları',
-    badge: null,
-    icon: 'fas fa-turn-up',
-    gradient: 'linear-gradient(135deg,#075985,#0c4a6e)',
-    shortDesc: 'Boru hattı yönlendirmesi için kaynak gerektirmeyen hızlı montajlı yivli dirsek ek parçaları.',
-    longDesc: 'Yivli dirsekler (90° ve 45°), boru hattının yönünü değiştirmek için kullanılan, kaynak gerektirmeyen mekanik bağlantı elemanlarıdır.',
-    features: ['Kaynak gerektirmez', '90° ve 45° seçenekler', 'Hızlı montaj ve söküm', 'Dar alanlarda manevra', 'Dayanıklı epoksi kaplama', 'UL/FM listeli'],
-    specs: [['Çap Aralığı','1" – 8" (DN 25 – DN 200)'], ['Açı','90° / 45°'], ['Çalışma Basıncı','max. 20.7 bar (300 psi)'], ['Malzeme','Sfero dökme demir'], ['Kaplama','Turuncu epoksi boya'], ['Standart','UL 213 / FM 1920']],
-    priceNote: 'Boru çapı ve gerekli açıya göre teklif alınız.',
-    related: ['p5-rijit','p5-esnek']
-  },
-
-  /* ── 6. İTFAİYE EKİPMANLARI ── */
-  'p6-sac-dolabi': {
-    name: 'Sıva Üstü / Sıva Altı Sac Kapaklı Yangın Dolabı',
-    category: 'İtfaiye Ekipmanları',
-    badge: 'TS EN 671',
-    icon: 'fas fa-box',
-    gradient: 'linear-gradient(135deg,#9f1239,#7f1d1d)',
-    shortDesc: 'DKP sac epoksi boyalı, tüplü (6 kg KKT) ve tüpsüz; sıva üstü/sıva altı sac kapaklı yangın dolabı. TS 862 / EN 3-7+A1 / CE belgeli. TS EN 671 uyumlu.',
-    longDesc: 'Sac kapaklı yangın dolapları TS EN 671-1 standartlarına göre üretilir. DKP sac gövde, RAL 3002 kırmızı veya RAL 9010 beyaz epoksi boya. Tüplü modelde 6 kg kuru kimyevi tozlu yangın tüpü (TS 862 / EN 3-7+A1 / CE belgeli) dahildir. 1″ veya 2″ pirinç storz vana; UL/FM onaylı jet-sprey-off nozul; 20–30 m hortum seçenekleri. Sıva üstü ve sıva altı montaj. Hortum, lans ve vana bağlantısıyla eksiksiz teslim edilir.',
-    features: ['TS EN 671-1 uyumlu', 'Sıva üstü veya sıva altı seçenek', 'Elektrostatik boyalı sac kapak', 'Hortum makara ve lans dahil', 'Kırmızı veya krom renk seçeneği', '1.5" ve 2" hortum çapı'],
-    specs: [['Kutu Boyutu','600×400×180 – 750×600×230 mm'], ['Hortum Çapı','1.5" veya 2"'], ['Hortum Uzunluğu','20 – 30 m'], ['Standart','TS EN 671-1'], ['Boya','RAL 3000 Kırmızı elektrostatik'], ['Bağlantı','1" dişli vana']],
-    priceNote: 'Kutu boyutu ve hortum uzunluğuna göre teklif alınız.',
-    related: ['p6-cam-dolabi','p6-hidranti','p6-baglanti-agzi']
-  },
-
-  'p6-cam-dolabi': {
-    name: 'Sıva Üstü / Sıva Altı Cam Kapaklı Yangın Dolabı',
-    category: 'İtfaiye Ekipmanları',
-    badge: 'TS EN 671',
-    icon: 'fas fa-square',
-    gradient: 'linear-gradient(135deg,#be123c,#9f1239)',
-    shortDesc: 'Şeffaf cam kapağıyla içeriği görünür kılan, sıva üstü ve sıva altı uygulamalar için yangın dolabı.',
-    longDesc: 'Cam kapaklı yangın dolapları, şeffaf cam ön yüzeyi sayesinde dolap içindeki ekipmanların görülmesine imkân tanır. Estetik ve görünür tasarımıyla mimari projelerde tercih edilir.',
-    features: ['Şeffaf cam kapaklı', 'Görünür iç düzeni', 'Cam kırarak açılır', 'Sıva üstü ve sıva altı seçenek', 'Elektrostatik kırmızı boya', 'TS EN 671-1 uyumlu'],
-    specs: [['Kutu Boyutu','600×450×180 – 800×600×230 mm'], ['Cam','Laminat güvenlik camı 4 mm'], ['Hortum Çapı','1.5" veya 2"'], ['Hortum Uzunluğu','20 – 30 m'], ['Standart','TS EN 671-1'], ['Bağlantı','1" dişli vana']],
-    priceNote: 'Cam tipi, kutu boyutu ve montaj tipine göre teklif alınız.',
-    related: ['p6-sac-dolabi','p6-hidranti','p6-baglanti-agzi']
-  },
-
-  'p6-hidranti': {
-    name: 'Yangın Hidrantı',
-    category: 'İtfaiye Ekipmanları',
-    badge: 'TS EN 14384',
-    icon: 'fas fa-fire-hydrant',
-    gradient: 'linear-gradient(135deg,#c2410c,#7c2d12)',
-    shortDesc: 'Sulu söndürme sistemlerinde itfaiyenin dışarıdan müdahalesini sağlayan zemin üstü ve yer altı tipi yangın hidrantları. DN100, PN16, TSE belgeli.',
-    longDesc: 'Yangın hidrantları sulu yangın söndürme sistemlerinde itfaiye ekiplerinin dışarıdan yangına müdahale etmesini sağlar. Yeraltı boru hattı tarafından beslenir ve dış sahada kullanılır. Zemin üstü (pillar) ve yer altı (underground) tiplerde sunulur. G-25 pik döküm gövde, paslanmaz çelik hareket mili, EPDM sürgü contası; DN100 / PN16; boy seçenekleri 145, 175, 215 ve 245 cm. TSE belgeli.',
-    features: ['Zemin üstü veya yer altı tipi', 'TS EN 14384 / TS EN 14339', 'Storz veya storz dikrofor çıkış', 'Dökme demir veya sfero gövde', 'Otomatik tahliye özelliği', 'Kırmızı RAL 3000 kaplama'],
-    specs: [['Tip','Zemin üstü (pillar) / Yer altı'], ['Çap','DN 80 / DN 100'], ['Basınç','max. 16 bar'], ['Bağlantı','80 mm Storz 2× çıkış'], ['Gövde','Sfero dökme demir'], ['Standart','TS EN 14384']],
-    priceNote: 'Tip ve bağlantı çapına göre teklif alınız.',
-    related: ['p6-sac-dolabi','p6-baglanti-agzi','p6-baglanti-vanasi']
-  },
-
-  'p6-baglanti-agzi': {
-    name: 'İtfaiye Bağlantı Ağzı',
-    category: 'İtfaiye Ekipmanları',
-    badge: null,
-    icon: 'fas fa-plug-circle-bolt',
-    gradient: 'linear-gradient(135deg,#991b1b,#7f1d1d)',
-    shortDesc: 'Yangın anında itfaiye araçlarının otomatik sprinkler sistemine dışarıdan su takviyesi yapmasını sağlayan pirinç gövdeli bağlantı ağzı. 4″×2½″×2½″ NPT dişli, maks. 300 PSI. UL/FM onaylı.',
-    longDesc: 'İtfaiye bağlantı ağzı, yangın söndürme operasyonları sırasında itfaiye araçlarının harici su kaynağını otomatik sprinkler sistemine bağlamak için kullanılır. Yangın esnasında itfaiye ekiplerinin dışarıdan sisteme su takviyesi yapmasını sağlar. Pirinç gövde, klape ve sit; 4″×2½″×2½″ NPT dişli çap; maks. 300 PSI; UL Listeli / FM Onaylı.',
-    features: ['Storz veya dikrofor tip', 'Kör tapa dahil', 'Pirinç veya alüminyum gövde', 'Korozyona dayanıklı', 'TS EN 1063 uyumlu', 'Çeşitli çap seçenekleri'],
-    specs: [['Tip','Storz A (110 mm) / B (75 mm) / C (52 mm)'], ['Malzeme','Pirinç / Alüminyum'], ['Kör Tapa','Zincirli dahil'], ['Standart','TS EN 1917'], ['Basınç','max. 16 bar'], ['Yüzey','Nikel kaplama opsiyonu']],
-    priceNote: 'Storz tipi ve çap seçimine göre teklif alınız.',
-    related: ['p6-hidranti','p6-baglanti-vanasi','p6-sac-dolabi']
-  },
-
-  'p6-baglanti-vanasi': {
-    name: 'İtfaiye Bağlantı Vanası',
-    category: 'İtfaiye Ekipmanları',
-    badge: null,
-    icon: 'fas fa-faucet',
-    gradient: 'linear-gradient(135deg,#b91c1c,#7f1d1d)',
-    shortDesc: 'İtfaiye bağlantı sistemlerinde kullanılan, çabuk bağlantılı ve kilitleme özellikli bağlantı vanaları.',
-    longDesc: 'İtfaiye bağlantı vanaları, yangın söndürme sistemine eklenen itfaiye besleme hatlarının kontrolü için kullanılır.',
-    features: ['Storz bağlantı entegrasyonu', 'Kilitlenebilir kapak', 'Dökme demir gövde', 'Kolay açma-kapama', 'Çelik vidalı vana', 'TS EN 671 uyumlu'],
-    specs: [['Çap','DN 65 / DN 80'], ['Bağlantı','Flanşlı + Storz'], ['Malzeme','Dökme demir'], ['Basınç','max. 16 bar'], ['Kaplama','Kırmızı epoksi'], ['Standart','TS EN 671']],
-    priceNote: 'Sistem bağlantı tipine göre teklif alınız.',
-    related: ['p6-hidranti','p6-baglanti-agzi','p6-sac-dolabi']
-  },
-
-  /* ── 7. KÖPÜKLÜ SÖNDÜRME ── */
-  'p7-dikey-bladder': {
-    name: 'Dikey Bladder Tank',
-    category: 'Köpüklü Söndürme Sistemi',
-    badge: 'NFPA 11',
-    icon: 'fas fa-database',
-    gradient: 'linear-gradient(135deg,#6b21a8,#4a044e)',
-    shortDesc: 'Köpük konsantresini membran içinde muhafaza ederek sistem basıncıyla oranlayan dikey bladder tank. 300–15.000 L, maks. 175 PSI. CE / FM / UL sertifikalı.',
-    longDesc: 'Dikey bladder tank, köpük konsantresini membran (bladder) içerisinde muhafaza ederek sistem basıncıyla köpük oranlama sistemine enjekte etmek amacıyla tasarlanmıştır. Değişken akış ve basınca maruz kalan su sistemlerinde köpük oranlama mekanizmalarının temel bileşenidir. Harici enerji gerektirmez. Karbon çelik gövde; 300–15.000 L kapasite; maks. 175 PSI / 12 bar; flanşlı köpük/su bağlantıları; ön borulamalı veya sade tank seçeneği. CE / FM / UL sertifikalı.',
-    features: ['Harici enerji gerektirmez', 'Paslanmaz çelik iç torba', 'NFPA 11 / EN 13565 uyumlu', 'FM ve UL onaylı seçenekler', 'Dikey montaj', 'Servis bakımı kolay'],
-    specs: [['Kapasite','300 L – 15.000 L'], ['Çalışma Basıncı','175 PSI / 12 bar'], ['Malzeme','Karbon çelik gövde'], ['Bağlantı','Flanşlı köpük / su bağlantıları'], ['Montaj Seçeneği','Ön borulamalı veya sadece tank'], ['Standart','CE / FM / UL']],
-    priceNote: 'Kapasite ve köpük konsantresi oranına göre teklif alınız.',
-    related: ['p7-yatay-bladder','p7-oranlayici','p7-sistem-vana']
-  },
-
-  'p7-yatay-bladder': {
-    name: 'Yatay Bladder Tank',
-    category: 'Köpüklü Söndürme Sistemi',
-    badge: 'NFPA 11',
-    icon: 'fas fa-server',
-    gradient: 'linear-gradient(135deg,#7c3aed,#5b21b6)',
-    shortDesc: 'Düşük tavan yüksekliği olan alanlar ve büyük kapasiteli tesisler için yatay yerleşimli bladder tank. 500–50.000 L, maks. 175 PSI. CE / FM / UL sertifikalı.',
-    longDesc: 'Yatay bladder tank, köpük konsantresini membran içerisinde muhafaza ederek sistem basıncıyla köpük oranlama sistemine enjekte etmek amacıyla yatay yerleşim için tasarlanmıştır. Bina içi kurulum, düşük tavan yüksekliği olan alanlar veya büyük kapasiteli tesisler için tercih edilir. Karbon çelik gövde; 500–50.000 L geniş kapasite aralığı; maks. 175 PSI / 12 bar; flanşlı köpük/su bağlantıları; ön borulamalı veya sade tank seçeneği. CE / FM / UL sertifikalı.',
-    features: ['Yatay montaj esnekliği', 'Düşük tavan yüksekliği uyumlu', 'Büyük kapasite seçenekleri', 'NFPA 11 uyumlu', 'Epoksi iç kaplama', 'Kolay nakliye ve kurulum'],
-    specs: [['Kapasite','500 L – 50.000 L'], ['Çalışma Basıncı','175 PSI / 12 bar'], ['Malzeme','Karbon çelik gövde'], ['Bağlantı','Flanşlı köpük / su bağlantıları'], ['Montaj Seçeneği','Ön borulamalı veya sadece tank'], ['Standart','CE / FM / UL']],
-    priceNote: 'Kapasite ve kurulum alanına göre teklif alınız.',
-    related: ['p7-dikey-bladder','p7-oranlayici','p7-sistem-vana']
-  },
-
-  'p7-oranlayici': {
-    name: 'Köpük Oranlayıcıları',
-    category: 'Köpüklü Söndürme Sistemi',
-    badge: 'NFPA 11',
-    icon: 'fas fa-sliders',
-    gradient: 'linear-gradient(135deg,#8b5cf6,#6d28d9)',
-    shortDesc: 'Su ile köpük konsantresini %1, %3 veya %6 oranında mekanik olarak karıştıran köpük oranlayıcıları. Köpük mikseri, hat tipi, geniş aralıklı ve bladder tank tipi seçenekler. CE / FM sertifikalı.',
-    longDesc: 'Köpük oranlayıcısı seçimi proje gereksinimlerine bağlıdır; doğru su-köpük karışım oranı kritik önem taşır. Mekanik çalışma prensibiyle enerji gerektirmeyen dört farklı tip sunulur: Köpük mikseri (100–800 L/dak, 4–12 bar, %1/%3/%6, paslanmaz veya bronz, dişli bağlantı), Hat tipi oranlayıcı (2.5″–6″, atmosferik tank uyumlu, flanşlı), Geniş aralıklı oranlayıcı (100–17.000 L/dak, 4″–10″, sprinkler sistemleri için) ve Bladder tank tipi oranlayıcı (100–18.500 L/dak, 2.5″–8″). Tüm ürünlerde CE ve FM sertifikası mevcuttur.',
-    features: ['%1 / %3 / %6 oransal karışım', 'Köpük mikseri: 100–800 L/dak', 'Hat tipi (inline) oranlayıcı: 2.5"–6"', 'Geniş aralıklı: 100–17.000 L/dak', 'Bladder tank tipi: 100–18.500 L/dak', 'Paslanmaz çelik veya bronz gövde'],
-    specs: [['Orantı','%1 / %3 / %6'], ['Köpük Mikseri Debisi','100 – 800 L/dak (4–12 bar)'], ['Hat Tipi Boyut','2,5" / 3" / 4" / 6"'], ['Geniş Aralıklı Debi','100 – 17.000 L/dak (4"–10")'], ['Bladder Tank Tipi Debi','100 – 18.500 L/dak (2,5"–8")'], ['Standart','FM / CE']],
-    priceNote: 'Debi değeri ve konsantre oranına göre teklif alınız.',
-    related: ['p7-dikey-bladder','p7-yatay-bladder','p7-bosaltici']
-  },
-
-  'p7-sistem-vana': {
-    name: 'Köpük Sistem Vanaları',
-    category: 'Köpüklü Söndürme Sistemi',
-    badge: null,
-    icon: 'fas fa-gear',
-    gradient: 'linear-gradient(135deg,#a855f7,#7c3aed)',
-    shortDesc: 'Köpük söndürme sistemlerinde kullanılan, NFPA 11 uyumlu özel tasarım kontrol vanaları.',
-    longDesc: 'Köpük sistemi kontrol vanaları, aktive etme, izolasyon ve test işlevleri için kullanılır. Köpük konsantresine dayanıklı iç yüzeyleriyle özel üretilir.',
-    features: ['Köpük konsantresine dayanıklı', 'Aktive etme ve izolasyon vanası', 'Nitrilli gövde ve iç parçalar', 'NFPA 11 uyumlu', 'Elektrikli veya pnömatik aktüatör', 'FM onaylı'],
-    specs: [['Çap','DN 50 – DN 200'], ['Basınç','max. 16 bar'], ['Malzeme','Dökme demir / Paslanmaz'], ['İç Kaplama','EPDM / Nitril dayanıklı'], ['Aktüatör','Elektrik / Pnömatik'], ['Standart','NFPA 11 / FM Global']],
-    priceNote: 'Sistem tipi ve çap ihtiyacına göre teklif alınız.',
-    related: ['p7-dikey-bladder','p7-oranlayici','p7-bosaltici']
-  },
-
-  'p7-bosaltici': {
-    name: 'Köpük Boşaltıcılar ve Nozullar',
-    category: 'Köpüklü Söndürme Sistemi',
-    badge: null,
-    icon: 'fas fa-spray-can',
-    gradient: 'linear-gradient(135deg,#9333ea,#6b21a8)',
-    shortDesc: 'Tank yüzeyi ve zemin uygulamalarına yönelik köpük boşaltıcı ve nozul ekipmanları.',
-    longDesc: 'Köpük boşaltıcılar ve nozullar, köpük çözeltisini yangın yüzeyine iletmek için kullanılır. Yüzeyden uygulama için köpük dövücü, zemin uygulamaları için nozullar kullanılır.',
-    features: ['Yüzey uygulama köpük dövücü', 'Alt enjeksiyon nozulları', 'Hava indüksiyonlu nozullar', 'Farklı atış debileri', 'Paslanmaz çelik veya alüminyum', 'NFPA 11 uyumlu'],
-    specs: [['Tip','Köpük dövücü / Alt enjeksiyon nozulu'], ['Debi','200 – 4000 L/dak'], ['Köpük Oranı','%3 veya %6'], ['Malzeme','Alüminyum / Paslanmaz çelik'], ['Bağlantı','Flanşlı / Dişli'], ['Standart','NFPA 11 / EN 13565']],
-    priceNote: 'Tank tipi ve söndürme alanına göre teklif alınız.',
-    related: ['p7-oranlayici','p7-monitor','p7-sistem-vana']
-  },
-
-  'p7-monitor': {
-    name: 'Köpük & Su Monitörleri',
-    category: 'Köpüklü Söndürme Sistemi',
-    badge: null,
-    icon: 'fas fa-crosshairs',
-    gradient: 'linear-gradient(135deg,#c026d3,#86198f)',
-    shortDesc: 'Manuel, taşınabilir, kendinden salınımlı ve uzaktan kumandalı; 360° rotasyonlu yüksek debi su-köpük monitörleri. CE / FM sertifikalı.',
-    longDesc: 'Yangın monitörleri, yüksek debide su veya köpük çözeltisini uzak mesafeye fırlatmak için kullanılan hareketli nozul sistemleridir. Pirinç, paslanmaz çelik veya bronz gövde seçenekleriyle dört farklı tip sunulur: Manuel monitörler (2.5″–6″, 1.500–3.000 L/dak, 360° yatay + ±90°/-45° dikey hareket), Taşınabilir monitörler (2.5″ paslanmaz, 1.900–4.700 L/dak), Kendinden salınımlı monitörler (4″ paslanmaz, 4.000–8.000 L/dak, 0–30°/sn hız, 0,7–13,8 bar), Uzaktan kumandalı monitörler (2.5″–4″ paslanmaz, maks. 500 PSI / 34,5 bar, 1.900–5.000 L/dak). CE ve FM sertifikaları mevcuttur.',
-    features: ['Manuel, taşınabilir, kendinden salınımlı ve uzaktan kumanda tipleri', 'Manuel: 1.500–3.000 L/dak', 'Taşınabilir: 1.900–4.700 L/dak', 'Kendinden salınımlı: 4.000–8.000 L/dak', 'Uzaktan kumandalı: max. 34.5 bar', 'CE ve FM sertifikalı'],
-    specs: [['Manuel Debi','1.500 – 3.000 L/dak'], ['Taşınabilir Debi','1.900 – 4.700 L/dak'], ['Salınımlı Debi','4.000 – 8.000 L/dak (0.7–13.8 bar)'], ['Uzaktan Kumanda Basınç','max. 500 PSI / 34.5 bar'], ['Rotasyon','360° yatay / +90° – -45° dikey'], ['Standart','CE / FM']],
-    priceNote: 'Debi kapasitesi ve kontrol tipine göre teklif alınız.',
-    related: ['p7-bosaltici','p7-konsantre','p7-oranlayici']
-  },
-
-  'p7-konsantre': {
-    name: 'Köpük Konsantreleri',
-    category: 'Köpüklü Söndürme Sistemi',
-    badge: 'AFFF/AR',
-    icon: 'fas fa-flask',
-    gradient: 'linear-gradient(135deg,#db2777,#9d174d)',
-    shortDesc: 'A ve B sınıfı yangınlar için AFFF ve AR-AFFF; polar solvent için AR-AFFF; büyük hacimler için yüksek genleşmeli köpük konsantreleri. %1/%3/%6, UL / FM / EN sertifikalı.',
-    longDesc: 'Yangın söndürme köpük konsantreleri su ile karıştırılarak yanıcı sıvı yangınlarını söndürmek için kullanılır. AFFF (Aqueous Film Forming Foam): A ve B sınıfı (hidrokarbon) yangınlar için; UL / FM / CE sertifikalı; 25, 200 ve 1.000 L ambalaj. AR-AFFF (Alcohol-Resistant): Polar solvent içeren B sınıfı yangınlar dahil tüm hidrokarbon yangınlarına karşı etkili; aynı ambalaj ve sertifika seçenekleri. Yüksek genleşmeli köpük konsantresi: baloncuk dayanımı yüksek, yavaş çöken yapı; depolar, gemiler, kargo alanları ve uçak hangarları için ideal. Tüm konsantrelerde raf ömrü 10+ yıl.',
-    features: ['AFFF / AR-AFFF / FFFP / Protein tipleri', '%1 / %3 / %6 kullanım oranı', 'MIL-F-24385 uyumlu AFFF', 'Polar solvent yangınlarına AR-AFFF', 'EN 1568 sertifikalı', 'Uzun raf ömrü (10+ yıl)'],
-    specs: [['Tip','AFFF / AR-AFFF / Fluoroprotein / FFFP / AR-SFFF'], ['Oran','%1 / %3 / %6'], ['Sertifika','UL 162 (tüm tipler) / FM 5130 (AFFF & AR-AFFF)'], ['Ambalaj','20 L / 200 L / 1000 L IBC'], ['Raf Ömrü','10+ yıl'], ['pH','6.5 – 8.5']],
-    priceNote: 'Konsantre tipi, oran ve miktara göre teklif alınız.',
-    related: ['p7-oranlayici','p7-bosaltici','p7-monitor']
-  },
-
-  'p7-yangin-dolabi': {
-    name: 'Köpük & Su Yangın Dolapları',
-    category: 'Köpüklü Söndürme Sistemi',
-    badge: null,
-    icon: 'fas fa-cabinet-filing',
-    gradient: 'linear-gradient(135deg,#e11d48,#9f1239)',
-    shortDesc: 'Hem su hem de köpük hatlarını bir arada barındıran entegre çift sistem yangın dolabı.',
-    longDesc: 'Köpük ve su yangın dolapları, tek bir dolap içinde hem su hattı hem de köpük konsantresi hattını barındırarak kullanıcıya her iki söndürme maddesiyle müdahale imkânı sunar.',
-    features: ['Su ve köpük çift hat', 'Tek dolap entegre çözüm', 'Hortum ve köpük lans dahil', 'Oranlayıcı entegreli', 'Paslanmaz çelik yapı', 'NFPA 11 uyumlu'],
-    specs: [['Kutu Boyutu','800×600×300 mm (özel ölçü)'], ['Su Hattı','2" bağlantı'], ['Köpük Hattı','1.5" bağlantı'], ['Hortum','20 – 30 m köpük hortumu'], ['Orantı','%3 veya %6 dahil'], ['Standart','NFPA 11 / TS EN 671']],
-    priceNote: 'Tesis tipi ve kapasite ihtiyacına göre teklif alınız.',
-    related: ['p7-oranlayici','p7-konsantre','p7-bosaltici']
-  },
-
-  /* ── 8. PASİF TEDBİRLER ── */
-  'pasif-troke': {
-    name: 'Troke Isı Ve Duman Tahliye Sistemleri',
-    category: 'Pasif Tedbirler',
-    badge: 'EN 12101-2',
-    icon: 'fas fa-wind',
-    gradient: 'linear-gradient(135deg,#475569,#1e293b)',
-    shortDesc: 'Duman tahliye sistemleri yangında binaların dumandan en hızlı şekilde arındırılmasını sağlar.',
-    longDesc: 'Troke ısı ve duman tahliye sistemleri, yangın anında binaların dumandan hızla arındırılması için tasarlanmıştır. Pnömatik (silindir) veya elektrikli (24V piston) tetikleme teknolojisiyle çalışır; 140° veya 165° açılma açısı sunar. Çatıdan sağlanan doğal aydınlatma yan cephelerden sağlanana göre beş kat daha etkilidir. Yüksek mukavemetli ekstrüde alüminyum profil gövde; opak polikarbonat veya aerojel dolgulu panel seçenekleriyle parlama önleyen doğal aydınlatma sağlar. Sistemin kendinden tahliyeli tasarımı dış sızdırmazlık maddesi gerektirmez; geri dönüştürülebilir, toksik olmayan malzemelerden üretilir.',
-    features: [
-      'Pnömatik (silindir) veya elektrikli (24V piston) tetikleme',
-      'Günlük havalandırma için opsiyonel 230V veya 24V elektrikli piston',
-      'Opak polikarbonat veya aerojel dolgulu panel ile parlama önleyen doğal aydınlatma',
-      'Yüksek mukavemetli ekstrüde alüminyum profil',
-      'Darbe ve ağırlık dayanımı sertifikalı',
-      'RAL renk kaplaması ile bina uyumu',
-      'Dış sızdırmazlık maddesi gerektirmeyen kendinden tahliyeli tasarım',
-      'Geri dönüştürülebilir, toksik olmayan malzemeler',
-      '2×3 metreye kadar üretim',
-      'EN 12101-2 uyumlu, CE sertifikalı'
-    ],
-    specs: [['Standart','EN 12101-2'], ['Sertifika','CE'], ['Maksimum Boyut','2×3 m'], ['Açılma Açısı','140° veya 165°'], ['Tetikleme','Pnömatik / Elektrikli (24V)']],
-    priceNote: 'Tesis boyutu ve uygulama ihtiyacına göre teklif alınız.',
-    related: ['pasif-lamilux-kapaklari']
-  },
-
-  'pasif-lamilux-kapaklari': {
-    name: 'Lamilux Duman Tahliye Kapakları',
-    category: 'Pasif Tedbirler',
-    badge: 'EN 12101-2',
-    icon: 'fas fa-door-open',
-    gradient: 'linear-gradient(135deg,#64748b,#334155)',
-    shortDesc: 'Çok aşamalı çift sızdırmazlık sistemi, patentli fiber takviyeli çerçeve profili ve CE sertifikalı Lamilux duman tahliye kapakları.',
-    longDesc: 'Lamilux CI sistemi; çatı bağlantı kutusu ve camlı üst bileşenden oluşur. Çok aşamalı çift sızdırmazlık sistemi ile yüksek sistem sızdırmazlığı, ses yalıtımı ve ısı yalıtımı sağlar. Patentli fiber takviyeli çerçeve profili; optimum doğal gün ışığından yararlanmaya yönelik cam sistemi; kendi kendini temizleyen dış tasarım. EN 12101-2, ISO 21927-2 ve EN 1873 standartlarına uygun CE sertifikalıdır.',
-    features: [
-      'Çok aşamalı çift sızdırmazlık sistemi',
-      'Yüksek sistem sızdırmazlığı, ses yalıtımı ve ısı yalıtımı',
-      'Patentli fiber takviyeli çerçeve profili',
-      'Optimum doğal gün ışığı için özel cam sistemi',
-      'Kendi kendini temizleyen dış tasarım',
-      'EN 12101-2, ISO 21927-2 ve EN 1873 uyumlu',
-      'CE sertifikalı'
-    ],
-    specs: [['Mevcut Boyutlar','50/100 cm – 300/300 cm'], ['Standart','EN 12101-2 / ISO 21927-2 / EN 1873'], ['Sertifika','CE']],
-    priceNote: 'Boyut ve uygulama ihtiyacına göre teklif alınız.',
-    related: ['pasif-troke']
-  }
-
-};
-
-
-
-/* ================================================================
-   ÜRÜN GÖRSELLERİ
-   ================================================================ */
-const PRODUCT_IMAGES = {
-  'p1-uctan-emisli':       'images/p1-uctan-emisli.jpg',
-  'p1-ayrilabilir-govdeli':'images/p1-ayrilabilir-govdeli.jpg',
-  'p1-dikey-turbin':       'images/p1-dikey-turbin.jpg',
-  'p1-jokey':              'images/p1-jokey.jpg',
-  'p2-islak-alarm':        'images/p2-islak-alarm-ayso.jpg',
-  'p2-kuru-alarm':         'images/p2-kuru-alarm.jpg',
-  'p2-deluge':             'images/p2-deluge.jpg',
-  'p2-pre-action':         'images/p2-pre-action.jpg',
-  'p3-kelebek-vana':       'images/s3-kelebek.jpg',
-  'p3-cek-vana':           'images/s3-cek-vana.jpg',
-  'p3-fsfd':               'images/s3-fsfd.jpg',
-  'p3-osy':                'images/p3-osy-gate.jpg',
-  'p3-nrs':                'images/s3-nrs.jpg',
-  'p3-kuresel':            'images/s3-kuresel.jpg',
-  'p3-test-drenaj':        'images/s3-test-drenaj.jpg',
-  'p3-akis-olcer':         'images/s3-akis-olcer.jpg',
-  'p3-post-indikator':     'images/s3-post-ind.jpg',
-  'p3-basinc-rahatlatma':  'images/s3-basinc-rah.jpg',
-  'p3-basinc-dusurucu':    'images/s3-basinc-dus.jpg',
-  'p4-standart':           'images/p4-standart.jpg',
-  'p4-hizli':              'images/p4-hizli-ayso.jpg',
-  'p4-genis':              'images/p4-genis.jpg',
-  'p4-kuru':               'images/p4-kuru.jpg',
-  'p4-depo':               'images/p4-depo.jpg',
-  'p5-rijit':              'images/p5-rijit.jpg',
-  'p5-esnek':              'images/p5-esnek-kaplin.jpg',
-  'p5-dirsek':             'images/p5-yivli-dirsek.jpg',
-  'p6-sac-dolabi':         'images/p6-dolap-sac.jpg',
-  'p6-cam-dolabi':         'images/p6-dolap-cam.jpg',
-  'p6-hidranti':           'images/p6-hidranti.jpg',
-  'p6-baglanti-agzi':      'images/p6-baglanti-agzi.jpg',
-  'p6-baglanti-vanasi':    'images/p6-baglanti-vana.jpg',
-  'p7-dikey-bladder':      'images/p7-bladder-dikey.jpg',
-  'p7-yatay-bladder':      'images/p7-bladder-yatay.jpg',
-  'p7-sistem-vana':        'images/p7-sistem-vana.jpg',
-  'p7-oranlayici':         'images/p7-oranlayici.jpg',
-  'p7-bosaltici':          'images/p7-bosaltici.jpg',
-  'p7-monitor':            'images/p7-monitor.jpg',
-  'p7-konsantre':          'images/p7-konsantre.jpg',
-  'p7-yangin-dolabi':      'images/p7-yangin-dolabi.jpg',
-  'pasif-lamilux':         'images/pasif-lamilux.jpg',
-  'pasif-troke':           'images/pasif-troke.jpg',
-  'pasif-lamilux-kapaklari': 'images/pasif-lamilux-kapaklari.jpg',
-};
-
-/* ================================================================
-   SAYFA RENDER
-   ================================================================ */
-(function () {
-  const params = new URLSearchParams(window.location.search);
-  const id = params.get('id') || 'dikey-bladder';
-  const p = PRODUCTS[id];
-
-  if (!p) {
-    document.querySelector('.product-detail-section').innerHTML =
-      '<div class="container text-center py-5"><h2>Ürün bulunamadı.</h2><a href="urunlerimiz.html" class="btn btn-primary-custom mt-3">Tüm Ürünlere Dön</a></div>';
-    return;
-  }
-
-  /* Sayfa başlığı & meta */
-  document.getElementById('pageTitle').textContent = p.name + ' | BUSER';
-  document.getElementById('pageDesc').content = p.shortDesc;
-  var ogTitle = document.getElementById('ogTitle');
-  var ogDesc = document.getElementById('ogDesc');
-  if (ogTitle) ogTitle.content = p.name + ' | BUSER';
-  if (ogDesc) ogDesc.content = p.shortDesc;
-  document.getElementById('bannerTitle').textContent = p.name;
-  document.getElementById('breadcrumbCurrent').textContent = p.name;
-
-  /* Görsel panel */
-  var productImg = PRODUCT_IMAGES[id];
-  if (productImg) {
-    var imgEl = document.getElementById('productMainImg');
-    imgEl.src = productImg;
-    imgEl.alt = p.name;
-    imgEl.classList.add('has-image');
-    document.getElementById('visualInner').style.background = '#f0f2f5';
-    document.getElementById('visualIcon').style.display = 'none';
-    document.getElementById('visualName').style.display = 'none';
-    document.getElementById('visualLabel').style.display = 'none';
-  } else {
-    document.getElementById('visualInner').style.background = p.gradient;
-    document.getElementById('visualLabel').textContent = p.category.toUpperCase();
-    document.getElementById('visualIcon').innerHTML = '<i class="' + p.icon + '"></i>';
-    document.getElementById('visualName').textContent = p.name;
-  }
-
-  const badge = document.getElementById('visualBadge');
-  if (p.badge) {
-    badge.textContent = p.badge;
-    badge.style.display = '';
-  }
-
-  /* Bilgi paneli */
-  document.getElementById('categoryTag').textContent = p.category;
-  document.getElementById('productTitle').textContent = p.name;
-  document.getElementById('productShortDesc').textContent = p.longDesc;
-  document.getElementById('priceNote').textContent = p.priceNote;
-
-  /* Özellik listesi */
-  const fl = document.getElementById('featureList');
-  p.features.forEach(function(f) {
-    fl.insertAdjacentHTML('beforeend',
-      '<li><i class="fas fa-check-circle"></i><span>' + f + '</span></li>'
-    );
-  });
-
-  /* Teknik özellikler tablosu */
-  const st = document.getElementById('specTable');
-  p.specs.forEach(function(row) {
-    st.insertAdjacentHTML('beforeend',
-      '<tr><td>' + row[0] + '</td><td>' + row[1] + '</td></tr>'
-    );
-  });
-
-  /* Teklif formu ürün adı */
-  var qpn = document.getElementById('quoteProductName');
-  if (qpn) qpn.value = p.name;
-
-  /* Form gönderim Bootstrap doğrulama */
-  var form = document.getElementById('productQuoteForm');
-  if (form) {
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      if (!form.checkValidity()) { form.classList.add('was-validated'); return; }
-      var btn = form.querySelector('button[type="submit"]');
-      btn.innerHTML = '<i class="fas fa-check-circle"></i> Talebiniz alındı! En kısa sürede sizi arayacağız.';
-      btn.disabled = true;
-      btn.classList.remove('btn-accent');
-      btn.classList.add('btn-success');
-    });
-  }
-
-  /* İlgili ürünler */
-  const rp = document.getElementById('relatedProducts');
-  (p.related || []).forEach(function(relId) {
-    const r = PRODUCTS[relId];
-    if (!r) return;
-    var rImg = PRODUCT_IMAGES[relId];
-    var relThumb = rImg
-      ? '<div class="related-card-img" style="background:#f0f2f5;position:relative;overflow:hidden;">' +
-          '<img src="' + rImg + '" alt="' + r.name + '" style="position:absolute;inset:10px;width:calc(100% - 20px);height:calc(100% - 20px);object-fit:contain;object-position:center;">' +
-        '</div>'
-      : '<div class="related-card-img" style="background:' + r.gradient + ';display:flex;align-items:center;justify-content:center;">' +
-          '<i class="' + r.icon + '" style="color:rgba(255,255,255,.35);font-size:3rem;"></i>' +
-        '</div>';
-    rp.insertAdjacentHTML('beforeend',
-      '<div class="col-sm-6 col-lg-4" data-aos="fade-up">' +
-        '<a href="urun-detay.html?id=' + relId + '" style="text-decoration:none;">' +
-          '<div class="related-card">' +
-            relThumb +
-            '<div class="related-card-body">' +
-              '<h5>' + r.name + '</h5>' +
-              '<p>' + r.shortDesc + '</p>' +
-              '<span class="btn btn-primary-custom btn-sm">İncele</span>' +
-            '</div>' +
-          '</div>' +
-        '</a>' +
-      '</div>'
-    );
-  });
-})();
-</script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-

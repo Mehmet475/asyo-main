@@ -1,121 +1,99 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ürünlerimiz — Yangın Söndürme Ürünleri Kataloğu | BUSER</title>
-  <meta name="description" content="BUSER yangın söndürme ürünleri: 8 ana kategoride EN / NFPA / UL-FM sertifikalı yangın pompaları, alarm vanaları, sistem vanaları, sprinkler başlıkları, itfaiye ekipmanları, köpüklü söndürme sistemleri, yivli boru ek parçaları ve pasif tedbirler.">
+  <title>Products | TATCO Fire Safety</title>
+  <meta name="description" content="Complete fire safety product portfolio: fire pumps, alarm valves, system valves, sprinklers, foam systems, grooved pipe fittings and firefighting equipment.">
+  <meta name="keywords" content="fire pumps, alarm valves, sprinkler, foam system, grooved pipe, TATCO products">
+  <meta property="og:title" content="Products | TATCO Fire Safety">
+  <meta property="og:description" content="Complete fire safety product portfolio: fire pumps, alarm valves, system valves, sprinklers, foam systems, grooved pipe fittings and firefighting equipment.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.tatco.eu/urunlerimiz.html">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://www.tatco.eu/images/tatco-logo.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Products | TATCO Fire Safety">
+  <meta name="twitter:description" content="Complete fire safety product portfolio: fire pumps, alarm valves, system valves, sprinklers, foam systems, grooved pipe fittings and firefighting equipment.">
+  <link rel="canonical" href="https://www.tatco.eu/urunlerimiz.html">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "TATCO",
+    "url": "https://www.tatco.eu",
+    "logo": "https://www.tatco.eu/images/tatco-logo.png",
+    "description": "Industrial fire suppression systems and fire safety solutions.",
+    "email": "info@tatco.eu"
+  }
+  </script>
+  <!-- Bootstrap 5 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome 6 -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <!-- AOS -->
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <!-- Custom CSS -->
   <link href="css/style.css" rel="stylesheet">
-  <style>
-    /* ── Kategori Fotoğraf Kart Grid ── */
-    .cat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
-    @media (max-width: 991px) { .cat-grid { grid-template-columns: repeat(2, 1fr); } }
-    @media (max-width: 575px)  { .cat-grid { grid-template-columns: 1fr; } }
-
-    .cat-card {
-      background: #fff; border: 1.5px solid #f0f0f0; border-radius: 16px;
-      overflow: hidden; cursor: pointer; transition: all .3s;
-      box-shadow: 0 2px 8px rgba(0,0,0,.04); text-decoration: none; color: inherit;
-      display: flex; flex-direction: column;
-    }
-    .cat-card:hover { border-color: #C0392B; box-shadow: 0 12px 40px rgba(192,57,43,.13); transform: translateY(-5px); }
-
-    .cat-card-img {
-      width: 100%; height: 240px; background: #f5f6f7;
-      overflow: hidden; position: relative;
-    }
-    .cat-card-img img {
-      position: absolute; inset: 16px;
-      width: calc(100% - 32px); height: calc(100% - 32px);
-      object-fit: contain; object-position: center;
-      transition: transform .5s ease; display: block;
-    }
-    .cat-card:hover .cat-card-img img { transform: scale(1.06); }
-
-    .cat-card-body { padding: 22px 24px; flex: 1; display: flex; flex-direction: column; }
-    .cat-card-body h3 { font-size: 1rem; font-weight: 800; color: #0D1117; margin-bottom: 6px; }
-    .cat-card-body p  { font-size: .8rem; color: #9CA3AF; line-height: 1.6; margin-bottom: 16px; flex: 1; }
-
-    .cat-card-btn {
-      display: flex; align-items: center; justify-content: space-between;
-      width: 100%; background: #FEF2F2; border: none; padding: 10px 16px;
-      border-radius: 8px; font-size: .8rem; font-weight: 700;
-      color: #C0392B; transition: all .2s; cursor: pointer;
-    }
-    .cat-card:hover .cat-card-btn { background: #C0392B; color: #fff; }
-
-    /* ── Stats ── */
-    .cat-stats-bar {
-      display: flex; flex-wrap: wrap; gap: .6rem;
-      margin-bottom: 2.5rem; justify-content: center;
-    }
-    .stat-chip {
-      display: inline-flex; align-items: center; gap: .35rem;
-      padding: .35rem .85rem;
-      background: #fff; border: 1.5px solid #e9ecef;
-      border-radius: 30px; font-size: .78rem; font-weight: 600;
-      color: #4a5568; box-shadow: 0 1px 4px rgba(0,0,0,.04);
-    }
-    .stat-chip i { color: #c8102e; font-size: .72rem; }
-  </style>
 </head>
 <body>
 
+<!-- Preloader -->
 <div id="preloader">
-  <div class="preloader-logo"><div class="logo-text">BU<span>SER</span></div><div class="preloader-spinner"></div></div>
+  <div class="preloader-logo">
+    <img src="images/tatco-logo.png" alt="TATCO" style="height:60px;filter:brightness(0) invert(1);">
+    <div class="preloader-spinner"></div>
+  </div>
 </div>
 
+<!-- Top Bar -->
 <div class="top-bar">
   <div class="container">
     <div class="row align-items-center">
       <div class="col-auto contact-info">
-        <a href="tel:+903125242539"><i class="fas fa-phone"></i>+90 312 524 25 39</a>
-        <a href="mailto:info@buser.com"><i class="fas fa-envelope"></i>info@buser.com</a>
+        <a href="mailto:info@tatco.eu"><i class="fas fa-envelope"></i>info@tatco.eu</a>
+        <a href="mailto:sales@tatco.eu"><i class="fas fa-envelope"></i>sales@tatco.eu</a>
       </div>
     </div>
   </div>
 </div>
 
+<!-- Navbar -->
 <nav class="navbar navbar-expand-lg main-navbar sticky-top" id="mainNav">
   <div class="container">
     <a class="navbar-brand" href="index.html">
-      <img src="images/logo-buser.png" alt="Buser" style="height:130px;width:auto;display:block;max-width:320px;">
+      <img src="images/tatco-logo.png" alt="TATCO" class="navbar-logo">
     </a>
-
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navMenu">
       <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-        <li class="nav-item"><a class="nav-link" href="index.html">Ana Sayfa</a></li>
-        <li class="nav-item"><a class="nav-link" href="kurumsal.html">Kurumsal</a></li>
-        <li class="nav-item"><a class="nav-link active" href="urunlerimiz.html">Ürünlerimiz</a></li>
-        <li class="nav-item"><a class="nav-link" href="hizmetlerimiz.html">Hizmetlerimiz</a></li>
-        <li class="nav-item"><a class="nav-link" href="sertifikalar.html">Sertifikalar</a></li>
-        <li class="nav-item"><a class="nav-link" href="referanslar.html">Referanslar</a></li>
-        <li class="nav-item"><a class="nav-link" href="medyada-biz.html">Medyada Biz</a></li>
-        <li class="nav-item"><a class="nav-link" href="iletisim.html">İletişim</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html" data-page="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="kurumsal.html" data-page="kurumsal.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="urunlerimiz.html" data-page="urunlerimiz.html">Products</a></li>
+        <li class="nav-item"><a class="nav-link" href="hizmetlerimiz.html" data-page="hizmetlerimiz.html">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="sertifikalar.html" data-page="sertifikalar.html">Certificates</a></li>
+        <li class="nav-item"><a class="nav-link" href="referanslar.html" data-page="referanslar.html">References</a></li>
+        <li class="nav-item"><a class="nav-link" href="medyada-biz.html" data-page="medyada-biz.html">Media</a></li>
+        <li class="nav-item"><a class="nav-link" href="iletisim.html" data-page="iletisim.html">Contact</a></li>
       </ul>
-      <div class="lang-toggle">
-        <button class="lang-btn active" data-lang="tr">TR</button>
-        <button class="lang-btn" data-lang="en">EN</button>
-      </div>
-      <a href="iletisim.html#teklif" class="btn btn-accent btn-sm ms-2"><i class="fas fa-file-alt"></i><span data-tr="Hızlı Teklif Al" data-en="Quick Quote">Hızlı Teklif Al</span></a>
+      <a href="iletisim.html#teklif" class="btn btn-accent btn-sm ms-2">
+        <i class="fas fa-file-alt"></i> Quick Quote
+      </a>
     </div>
   </div>
 </nav>
 
 <section class="page-banner">
   <div class="container">
-    <h1 data-aos="fade-up">Ürünlerimiz</h1>
+    <h1 data-aos="fade-up">Products</h1>
     <nav aria-label="breadcrumb" data-aos="fade-up" data-aos-delay="100">
       <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="index.html">Ana Sayfa</a></li>
-        <li class="breadcrumb-item active">Ürünlerimiz</li>
+        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+        <li class="breadcrumb-item active">Products</li>
       </ol>
     </nav>
   </div>
@@ -126,90 +104,90 @@
   <div class="container">
 
     <div class="section-header text-center" data-aos="fade-up">
-      <div class="section-tag">Ürün Portföyü</div>
-      <h2 class="section-title">Kapsamlı Yangın Söndürme Ürünleri</h2>
+      <div class="section-tag">Product Portfolio</div>
+      <h2 class="section-title">Comprehensive Fire Suppression Products</h2>
       <div class="divider mx-auto"></div>
-      <p class="section-subtitle">Bir kategoriye tıklayarak ürünleri inceleyin.</p>
+      <p class="section-subtitle">Click a category to explore products.</p>
     </div>
 
     <div class="cat-stats-bar" data-aos="fade-up" data-aos-delay="80">
-      <span class="stat-chip"><i class="fas fa-layer-group"></i>8 Ana Kategori</span>
-      <span class="stat-chip"><i class="fas fa-boxes-stacked"></i>50+ Ürün</span>
+      <span class="stat-chip"><i class="fas fa-layer-group"></i>8 Main Categories</span>
+      <span class="stat-chip"><i class="fas fa-boxes-stacked"></i>50+ Products</span>
       <span class="stat-chip"><i class="fas fa-certificate"></i>EN / NFPA / UL-FM / CE</span>
-      <span class="stat-chip"><i class="fas fa-headset"></i>Teknik Destek</span>
+      <span class="stat-chip"><i class="fas fa-headset"></i>Technical Support</span>
     </div>
 
     <div class="cat-grid" data-aos="fade-up" data-aos-delay="120">
 
       <a href="yangin-pompalari.html" class="cat-card">
-        <div class="cat-card-img"><img src="images/cat-yangin-pompalari.jpg" alt="Yangın Pompaları" loading="lazy"></div>
+        <div class="cat-card-img"><img src="images/cat-yangin-pompalari.jpg" alt="Fire Pumps" loading="lazy"></div>
         <div class="cat-card-body">
-          <h3>Yangın Pompaları</h3>
-          <p>NFPA 20 / UL / FM onaylı uçtan emişli (22,7–170 m³/h), ayrılabilir gövdeli çift emişli (68–1.700 m³/h), dikey türbin ve jokey pompa sistemleri. Elektrik veya dizel motor seçeneği.</p>
-          <div class="cat-card-btn">Ürünleri Görüntüle <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+          <h3>Fire Pumps</h3>
+          <p>NFPA 20 / UL / FM approved end-suction (22.7–170 m³/h), split case double-suction (68–1,700 m³/h), vertical turbine and jockey pump systems. Electric or diesel engine option.</p>
+          <div class="cat-card-btn">View Products <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
         </div>
       </a>
 
       <a href="alarm-vanalari.html" class="cat-card">
-        <div class="cat-card-img"><img src="images/p2-islak-alarm.jpg" alt="Alarm Vanaları" loading="lazy"></div>
+        <div class="cat-card-img"><img src="images/p2-islak-alarm.jpg" alt="Alarm Valves" loading="lazy"></div>
         <div class="cat-card-body">
-          <h3>Alarm Vanaları</h3>
-          <p>UL Listeli / FM Onaylı; ıslak (maks. 250 PSI), kuru (maks. 300 PSI), baskın (deluge) ve ön tepkimeli (pre-action) alarm vana sistemleri. Çap 1½″–8″; aksesuar setiyle eksiksiz teslim.</p>
-          <div class="cat-card-btn">Ürünleri Görüntüle <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+          <h3>Alarm Valves</h3>
+          <p>UL Listed / FM Approved; wet (max. 250 PSI), dry (max. 300 PSI), deluge and pre-action alarm valve systems. Diameter 1½″–8″; complete delivery with accessory kit.</p>
+          <div class="cat-card-btn">View Products <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
         </div>
       </a>
 
       <a href="sistem-vanalari.html" class="cat-card">
-        <div class="cat-card-img"><img src="images/cat-sistem-vana.png" alt="Sistem Vanaları" loading="lazy"></div>
+        <div class="cat-card-img"><img src="images/cat-sistem-vana.png" alt="System Valves" loading="lazy"></div>
         <div class="cat-card-body">
-          <h3>Sistem Vanaları</h3>
-          <p>Yangın söndürme sistemlerinin güvenli kontrolü için 12 farklı vana çözümü: izleme anahtarlı kelebek, çek, OS&amp;Y, NRS, küresel, test-drenaj, akış ölçer, post indikatör ve basınç vanaları. UL / FM onaylı.</p>
-          <div class="cat-card-btn">Ürünleri Görüntüle <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+          <h3>System Valves</h3>
+          <p>12 different valve solutions for safe control of fire suppression systems: tamper switch butterfly, check, OS&amp;Y, NRS, ball, test-drain, flow meter, post indicator and pressure valves. UL / FM approved.</p>
+          <div class="cat-card-btn">View Products <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
         </div>
       </a>
 
       <a href="sprinkler.html" class="cat-card">
         <div class="cat-card-img"><img src="images/cat-sprinkler.png" alt="Sprinkler" loading="lazy"></div>
         <div class="cat-card-body">
-          <h3>Sprinkler Başlıkları ve Aksesuarları</h3>
-          <p>EN 12259 / UL / FM onaylı 5 tip sprinkler başlığı: standart tepkili, hızlı tepkili (QR), geniş korumalı (CMSA), depo tipi (ESFR, K14–K25) ve kuru tip (-40°C). Aktivasyon 57°C–141°C.</p>
-          <div class="cat-card-btn">Ürünleri Görüntüle <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+          <h3>Sprinkler Heads & Accessories</h3>
+          <p>EN 12259 / UL / FM approved 5 types of sprinkler heads: standard response, quick response (QR), extended coverage (CMSA), storage type (ESFR, K14–K25) and dry type (-40°C). Activation 57°C–141°C.</p>
+          <div class="cat-card-btn">View Products <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
         </div>
       </a>
 
       <a href="yivli-boru.html" class="cat-card">
-        <div class="cat-card-img"><img src="images/cat-yivli-boru.png" alt="Yivli Boru Ek Parçaları" loading="lazy"></div>
+        <div class="cat-card-img"><img src="images/cat-yivli-boru.png" alt="Grooved Pipe Fittings" loading="lazy"></div>
         <div class="cat-card-body">
-          <h3>Yivli Boru Ek Parçaları</h3>
-          <p>NFPA 13 / UL 213 / FM 1920 onaylı kaynak gerektirmeyen yivli bağlantı elemanları: rijit kaplin, sismik esnek kaplin (±3°/±6 mm) ve 90°/45° yivli dirsek. Sfero dökme demir, çap DN 25–DN 300.</p>
-          <div class="cat-card-btn">Ürünleri Görüntüle <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+          <h3>Grooved Pipe Fittings</h3>
+          <p>NFPA 13 / UL 213 / FM 1920 approved welding-free grooved fittings: rigid coupling, seismic flexible coupling (±3°/±6 mm) and 90°/45° grooved elbows. Ductile iron, diameter DN 25–DN 300.</p>
+          <div class="cat-card-btn">View Products <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
         </div>
       </a>
 
       <a href="itfaiye-ekipmanlari.html" class="cat-card">
-        <div class="cat-card-img"><img src="images/cat-itfaiye.png" alt="İtfaiye Ekipmanları" loading="lazy"></div>
+        <div class="cat-card-img"><img src="images/cat-itfaiye.png" alt="Firefighting Equipment" loading="lazy"></div>
         <div class="cat-card-body">
-          <h3>İtfaiye Ekipmanları</h3>
-          <p>TS EN 671 uyumlu tüplü/tüpsüz sac ve cam kapaklı yangın dolapları; TSE belgeli zemin üstü/yer altı yangın hidrantları (DN100, PN16); UL/FM onaylı itfaiye bağlantı ağzı ve vanaları.</p>
-          <div class="cat-card-btn">Ürünleri Görüntüle <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+          <h3>Firefighting Equipment</h3>
+          <p>TS EN 671 compliant metal/glass door fire cabinets (with/without extinguisher); TSE certified above-ground/underground fire hydrants (DN100, PN16); UL/FM approved fire brigade inlets and valves.</p>
+          <div class="cat-card-btn">View Products <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
         </div>
       </a>
 
       <a href="kopuklu-sondurme.html" class="cat-card">
-        <div class="cat-card-img"><img src="images/ff2.jpeg" alt="Köpüklü Söndürme" loading="lazy"></div>
+        <div class="cat-card-img"><img src="images/ff2.jpeg" alt="Foam Suppression" loading="lazy"></div>
         <div class="cat-card-body">
-          <h3>Köpüklü Söndürme Sistemi</h3>
-          <p>NFPA 11 / CE / FM / UL onaylı tam köpük sistemi bileşenleri: dikey/yatay bladder tank (300–50.000 L), oranlayıcılar (%1/%3/%6), AFFF/AR-AFFF konsantreleri, su-köpük monitörleri ve boşaltıcı nozullar.</p>
-          <div class="cat-card-btn">Ürünleri Görüntüle <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+          <h3>Foam Suppression System</h3>
+          <p>NFPA 11 / CE / FM / UL approved complete foam system components: vertical/horizontal bladder tank (300–50,000 L), proportioners (1%/3%/6%), AFFF/AR-AFFF concentrates, water-foam monitors and discharge nozzles.</p>
+          <div class="cat-card-btn">View Products <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
         </div>
       </a>
 
       <a href="pasif-tedbirler.html" class="cat-card">
-        <div class="cat-card-img"><img src="images/cat-pasif.png" alt="Pasif Tedbirler" loading="lazy"></div>
+        <div class="cat-card-img"><img src="images/cat-pasif.png" alt="Passive Fire Protection" loading="lazy"></div>
         <div class="cat-card-body">
-          <h3>Pasif Tedbirler</h3>
-          <p>EN 12101-2 / CE sertifikalı duman tahliye sistemleri: Troke ısı ve duman tahliye sistemleri ile Lamilux duman tahliye kapakları. Pnömatik veya elektrikli tetikleme; 50/100 cm – 300/300 cm boyut aralığı.</p>
-          <div class="cat-card-btn">Ürünleri Görüntüle <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+          <h3>Passive Fire Protection</h3>
+          <p>EN 12101-2 / CE certified smoke exhaust systems: Troke heat and smoke exhaust systems and Lamilux smoke exhaust vents. Pneumatic or electric triggering; 50/100 cm – 300/300 cm size range.</p>
+          <div class="cat-card-btn">View Products <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
         </div>
       </a>
 
@@ -217,10 +195,10 @@
 
     <div class="text-center mt-5" data-aos="fade-up" data-aos-delay="150">
       <p class="text-muted" style="font-size:.88rem;">
-        <i class="fas fa-info-circle" style="color:#c8102e;"></i>
-        Fiyat teklifi için
-        <a href="iletisim.html#teklif" style="color:#0f1b35;font-weight:600;">iletişim formunu</a> kullanın
-        veya <a href="tel:+903125242539" style="color:#0f1b35;font-weight:600;">+90 312 524 25 39</a>'i arayın.
+        <i class="fas fa-info-circle" style="color:var(--accent);"></i>
+        For a quote, use our
+        <a href="iletisim.html#teklif" style="color:#0f1b35;font-weight:600;">contact form</a>
+        or email <a href="mailto:info@tatco.eu" style="color:#0f1b35;font-weight:600;">info@tatco.eu</a>.
       </p>
     </div>
 
@@ -229,80 +207,99 @@
 
 <div class="cta-banner" data-aos="fade-up">
   <div class="container">
-    <h2>İhtiyacınıza özel ürün ve sistem çözümleri</h2>
-    <p>Teknik ekibimiz, projeniz için en uygun ürün seçiminde size rehberlik eder.</p>
-    <a href="iletisim.html#teklif" class="btn btn-outline-white btn-lg"><i class="fas fa-file-alt"></i>Hızlı Teklif Al</a>
+    <h2>Custom product and system solutions for your needs</h2>
+    <p>Our technical team will guide you in selecting the most suitable products for your project.</p>
+    <a href="iletisim.html#teklif" class="btn btn-outline-white btn-lg"><i class="fas fa-file-alt"></i>Quick Quote</a>
   </div>
 </div>
 
+<!-- ===== FOOTER ===== -->
 <footer class="site-footer">
   <div class="container">
     <div class="row g-5">
       <div class="col-lg-4 col-md-6">
-        <div class="footer-brand mb-3"><img src="images/logo-buser.png" alt="Buser" style="height:130px;width:auto;display:block;max-width:320px;"></div>
-        <p>Endüstriyel yangın güvenliği alanında 20 yılı aşkın tecrübemizle uluslararası standartlarda ürün ve hizmet sunuyoruz.</p>
+        <div class="footer-brand mb-3">
+          <img src="images/tatco-logo.png" alt="TATCO">
+        </div>
+        <p>With over 20 years of expertise in industrial fire safety, we provide internationally certified products and services tailored to your needs.</p>
+        <div class="footer-social">
+          <a href="mailto:info@tatco.eu" title="Email"><i class="fas fa-envelope"></i></a>
+          <a href="mailto:sales@tatco.eu" title="Sales"><i class="fas fa-handshake"></i></a>
+        </div>
       </div>
       <div class="col-lg-2 col-md-6 col-sm-6">
-        <div class="footer-title">Hızlı Menü</div>
+        <div class="footer-title">Quick Menu</div>
         <div class="footer-links">
-          <a href="index.html"><i class="fas fa-chevron-right"></i>Ana Sayfa</a>
-          <a href="kurumsal.html"><i class="fas fa-chevron-right"></i>Kurumsal</a>
-          <a href="urunlerimiz.html"><i class="fas fa-chevron-right"></i>Ürünlerimiz</a>
-          <a href="hizmetlerimiz.html"><i class="fas fa-chevron-right"></i>Hizmetlerimiz</a>
-          <a href="sertifikalar.html"><i class="fas fa-chevron-right"></i>Sertifikalar</a>
-          <a href="referanslar.html"><i class="fas fa-chevron-right"></i>Referanslar</a>
-          <a href="medyada-biz.html"><i class="fas fa-chevron-right"></i>Medyada Biz</a>
-          <a href="iletisim.html"><i class="fas fa-chevron-right"></i>İletişim</a>
+          <a href="index.html"><i class="fas fa-chevron-right"></i>Home</a>
+          <a href="kurumsal.html"><i class="fas fa-chevron-right"></i>About</a>
+          <a href="urunlerimiz.html"><i class="fas fa-chevron-right"></i>Products</a>
+          <a href="hizmetlerimiz.html"><i class="fas fa-chevron-right"></i>Services</a>
+          <a href="sertifikalar.html"><i class="fas fa-chevron-right"></i>Certificates</a>
+          <a href="referanslar.html"><i class="fas fa-chevron-right"></i>References</a>
+          <a href="medyada-biz.html"><i class="fas fa-chevron-right"></i>Media</a>
+          <a href="iletisim.html"><i class="fas fa-chevron-right"></i>Contact</a>
         </div>
       </div>
       <div class="col-lg-3 col-md-6 col-sm-6">
-        <div class="footer-title">Ürünlerimiz</div>
+        <div class="footer-title">Products</div>
         <div class="footer-links">
-          <a href="yangin-pompalari.html"><i class="fas fa-chevron-right"></i>Yangın Pompaları</a>
-          <a href="alarm-vanalari.html"><i class="fas fa-chevron-right"></i>Alarm Vanaları</a>
-          <a href="sistem-vanalari.html"><i class="fas fa-chevron-right"></i>Sistem Vanaları</a>
-          <a href="sprinkler.html"><i class="fas fa-chevron-right"></i>Sprinkler</a>
-          <a href="itfaiye-ekipmanlari.html"><i class="fas fa-chevron-right"></i>İtfaiye Ekipmanları</a>
-          <a href="kopuklu-sondurme.html"><i class="fas fa-chevron-right"></i>Köpük Sistemi</a>
+          <a href="yangin-pompalari.html"><i class="fas fa-chevron-right"></i>Fire Pumps</a>
+          <a href="alarm-vanalari.html"><i class="fas fa-chevron-right"></i>Alarm Valves</a>
+          <a href="sistem-vanalari.html"><i class="fas fa-chevron-right"></i>System Valves</a>
+          <a href="sprinkler.html"><i class="fas fa-chevron-right"></i>Sprinkler Systems</a>
+          <a href="itfaiye-ekipmanlari.html"><i class="fas fa-chevron-right"></i>Firefighting Equipment</a>
+          <a href="kopuklu-sondurme.html"><i class="fas fa-chevron-right"></i>Foam Suppression</a>
+          <a href="yivli-boru.html"><i class="fas fa-chevron-right"></i>Grooved Pipe Fittings</a>
+          <a href="pasif-tedbirler.html"><i class="fas fa-chevron-right"></i>Passive Fire Protection</a>
         </div>
       </div>
       <div class="col-lg-3 col-md-6">
-        <div class="footer-title">İletişim</div>
-        <div class="footer-contact-item"><div class="icon"><i class="fas fa-phone"></i></div><div class="text"><a href="tel:+903125242539">+90 312 524 25 39</a></div></div>
-        <div class="footer-contact-item"><div class="icon"><i class="fas fa-envelope"></i></div><div class="text"><a href="mailto:info@buser.com">info@buser.com</a></div></div>
-        <div class="footer-contact-item"><div class="icon"><i class="fas fa-globe"></i></div><div class="text"><a href="https://www.buser.com" target="_blank" rel="noopener">www.buser.com</a></div></div>
+        <div class="footer-title">Contact</div>
+        <div class="footer-contact-item">
+          <div class="icon"><i class="fas fa-envelope"></i></div>
+          <div class="text">
+            <a href="mailto:info@tatco.eu">info@tatco.eu</a><br>
+            <a href="mailto:sales@tatco.eu">sales@tatco.eu</a>
+          </div>
+        </div>
+        <div class="footer-contact-item">
+          <div class="icon"><i class="fas fa-globe"></i></div>
+          <div class="text">
+            <a href="https://www.tatco.eu" target="_blank" rel="noopener">www.tatco.eu</a>
+          </div>
+        </div>
+        <div class="footer-contact-item">
+          <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
+          <div class="text">100. Yıl Bulvarı No:55 A Blok, Ostim OSB, Ankara, Turkey</div>
+        </div>
       </div>
     </div>
   </div>
   <div class="footer-bottom">
     <div class="container">
       <div class="row align-items-center">
-        <div class="col-md-6"><span>&copy; 2024 BUSER. Tüm hakları saklıdır.</span></div>
+        <div class="col-md-6">
+          <span>&copy; 2025 TATCO. All rights reserved.</span>
+        </div>
         <div class="col-md-6 text-md-end mt-2 mt-md-0">
-          <a href="#">Gizlilik Politikası</a>
+          <a href="#">Privacy Policy</a>
           <span class="mx-2" style="color:rgba(255,255,255,.2);">|</span>
-          <a href="#">Kullanım Koşulları</a>
+          <a href="#">Terms of Use</a>
         </div>
       </div>
     </div>
   </div>
 </footer>
 
-<a id="whatsappBtn" href="https://wa.me/903125242539" target="_blank" rel="noopener" title="WhatsApp ile iletişime geçin">
-  <i class="fab fa-whatsapp"></i>
-  <span class="wa-label">WhatsApp</span>
+<!-- Back to Top -->
+<button id="backToTop" title="Back to Top">
+  <i class="fas fa-chevron-up"></i>
+</button>
+
+<a id="whatsappBtn" href="mailto:info@tatco.eu" target="_blank" rel="noopener" title="Contact TATCO">
+  <i class="fas fa-envelope"></i>
+  <span class="wa-label">Email Us</span>
 </a>
-<button id="backToTop" title="Yukarı Çık"><i class="fas fa-chevron-up"></i></button>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script src="js/main.js"></script>
+
 </body>
 </html>
-
-
-
-
-
-
-
-

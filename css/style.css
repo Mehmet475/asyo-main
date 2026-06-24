@@ -1,13 +1,13 @@
 /* ================================================================
-   AYSO Yangın Söndürme Sistemleri — Ana Stil Dosyası
+   TATCO — Industrial Fire Safety Solutions — Main Stylesheet
    ================================================================ */
 
-/* ---- 1. CSS Değişkenleri ---- */
+/* ---- 1. CSS Variables ---- */
 :root {
   --primary:       #0f1b35;
-  --primary-light: #1e3268;
-  --accent:        #c8102e;
-  --accent-dark:   #a00d24;
+  --primary-light: #1a3a7a;
+  --accent:        #E8A020;
+  --accent-dark:   #c07d10;
   --bg-light:      #f8fafc;
   --bg-section:    #f1f5f9;
   --bg-dark:       #0a1228;
@@ -139,30 +139,30 @@ ul { list-style: none; padding: 0; margin: 0; }
   padding: .3rem 0;
   box-shadow: 0 4px 30px rgba(0,0,0,.12);
 }
-.main-navbar .navbar-brand { padding: 0; }
-.main-navbar .navbar-brand img {
-  height: 100px !important;
+.main-navbar .navbar-brand { padding: 4px 0; }
+/* TATCO logo is 587x267 (landscape ratio ~2.2:1) */
+.main-navbar .navbar-brand img,
+.main-navbar .navbar-logo {
+  height: 56px !important;
   width: auto !important;
-  max-width: 260px !important;
+  max-width: 240px !important;
   display: block !important;
 }
 
 /* ---- Mobile Navbar ---- */
 @media (max-width: 991.98px) {
   .main-navbar {
-    padding: .4rem 0 !important;
-    border-bottom: 3px solid var(--accent);
+    padding: .35rem 0 !important;
+    border-bottom: 2px solid var(--accent);
   }
-  .main-navbar .navbar-brand img {
-    height: 68px !important;
+  .main-navbar .navbar-brand img,
+  .main-navbar .navbar-logo {
+    height: 40px !important;
     width: auto !important;
-    max-width: 200px !important;
+    max-width: 160px !important;
   }
-  /* Top bar — mobilde sadece telefon göster */
-  .top-bar .contact-info a:not(:first-child) {
-    display: none;
-  }
-  .top-bar { padding: .45rem 0; }
+  .top-bar { padding: .35rem 0; }
+  .top-bar .contact-info { gap: .75rem; font-size: .78rem; }
 }
 .brand-text {
   font-size: 1.35rem;
@@ -942,11 +942,11 @@ ul { list-style: none; padding: 0; margin: 0; }
 .footer-brand .brand-text { color: #fff; }
 .footer-brand .brand-text span { color: rgba(255,255,255,.4); }
 .footer-brand img {
-  height: 90px !important;
+  height: 52px !important;
   width: auto !important;
-  max-width: 240px !important;
+  max-width: 220px !important;
   display: block !important;
-  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.35));
+  filter: brightness(0) invert(1);
 }
 .site-footer p {
   font-size: .875rem;
@@ -1540,7 +1540,7 @@ ul { list-style: none; padding: 0; margin: 0; }
   .site-footer { padding: 3rem 0 0; }
   .footer-bottom { margin-top: 2.5rem; padding: 1.2rem 0; }
   .footer-bottom .col-md-6:last-child { text-align: left !important; margin-top: .5rem; }
-  .footer-brand img { height: 70px !important; max-width: 180px !important; }
+  .footer-brand img { height: 44px !important; max-width: 160px !important; }
 }
 
 /* --- CTA Banner: mobil --- */
@@ -1566,6 +1566,95 @@ ul { list-style: none; padding: 0; margin: 0; }
   .page-banner h1 { font-size: 1.6rem; }
   .breadcrumb { font-size: .8rem; }
 }
+
+/* ================================================================
+   TATCO — Mobile & Performance Optimizations
+   ================================================================ */
+
+/* Prevent text overflow globally */
+* { word-break: break-word; }
+h1, h2, h3, h4, h5, h6 { overflow-wrap: break-word; }
+
+/* Product cards — mobile fix */
+@media (max-width: 575.98px) {
+  .product-card .product-body h4 { font-size: 1rem; }
+  .product-card .product-body p  { font-size: .85rem; }
+  .cat-card-body h3 { font-size: 1rem; }
+  .service-card { padding: 1.25rem; }
+  .feature-card { padding: 1.5rem 1.25rem; }
+  .section { padding: 3rem 0; }
+  .hero-content h1 { font-size: 1.8rem; }
+  .hero-content p  { font-size: .92rem; }
+  .hero-actions { flex-direction: column; gap: .75rem; }
+  .hero-actions .btn { width: 100%; justify-content: center; }
+  .stat-item { flex-direction: column; text-align: center; gap: .35rem; }
+}
+
+/* Navbar brand — no extra whitespace */
+.main-navbar .navbar-brand { line-height: 1; }
+
+/* Hamburger menu — accessible touch target */
+.navbar-toggler { min-width: 44px; min-height: 44px; }
+
+/* Buttons — minimum touch target 44px */
+.btn { min-height: 40px; }
+@media (max-width: 575.98px) {
+  .btn { min-height: 44px; font-size: .9rem; }
+}
+
+/* Images — prevent layout shift */
+img { aspect-ratio: attr(width) / attr(height); }
+.product-img { overflow: hidden; }
+.product-img img { width: 100%; object-fit: cover; }
+
+/* Google Maps — mobile responsive */
+.map-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; }
+.map-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+
+/* Footer — mobile stack */
+@media (max-width: 575.98px) {
+  .site-footer .row { gap: 2rem !important; }
+  .footer-links { columns: 2; }
+  .footer-links a { display: block; padding: .25rem 0; }
+}
+
+/* WhatsApp / Email button (was WhatsApp, now Email) */
+#whatsappBtn {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  background: var(--primary);
+  color: #fff;
+  border-radius: 50px;
+  padding: .65rem 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  font-size: .85rem;
+  font-weight: 600;
+  z-index: 990;
+  box-shadow: 0 4px 20px rgba(0,0,0,.2);
+  transition: all var(--transition);
+}
+#whatsappBtn:hover { background: var(--accent); color: var(--primary); transform: translateY(-2px); }
+#whatsappBtn .wa-label { font-size: .8rem; }
+@media (max-width: 575.98px) {
+  #whatsappBtn .wa-label { display: none; }
+  #whatsappBtn { padding: .75rem; border-radius: 50%; }
+}
+
+/* Preloader TATCO logo */
+.preloader-logo img { filter: brightness(0) invert(1); margin-bottom: 1.2rem; }
+
+/* TATCO accent color override — buttons */
+.btn-accent { background: var(--accent); border-color: var(--accent); color: var(--primary); font-weight: 700; }
+.btn-accent:hover { background: var(--accent-dark); border-color: var(--accent-dark); color: var(--primary); }
+.btn-outline-accent { border-color: var(--accent); color: var(--accent); }
+.btn-outline-accent:hover { background: var(--accent); color: var(--primary); }
+
+/* Core Web Vitals — reduce CLS by reserving space */
+.hero-slide-bg { background-size: cover; background-position: center; will-change: transform; }
+.product-img { min-height: 200px; background: var(--bg-section); }
 
 /* --- Genel overflow koruması --- */
 * { box-sizing: border-box; }
