@@ -140,6 +140,12 @@ ul { list-style: none; padding: 0; margin: 0; }
   box-shadow: 0 4px 30px rgba(0,0,0,.12);
 }
 .main-navbar .navbar-brand { padding: 0; }
+.main-navbar .navbar-brand img {
+  height: 100px !important;
+  width: auto !important;
+  max-width: 260px !important;
+  display: block !important;
+}
 
 /* ---- Mobile Navbar ---- */
 @media (max-width: 991.98px) {
@@ -148,9 +154,9 @@ ul { list-style: none; padding: 0; margin: 0; }
     border-bottom: 3px solid var(--accent);
   }
   .main-navbar .navbar-brand img {
-    height: 100px !important;
+    height: 68px !important;
     width: auto !important;
-    max-width: 300px !important;
+    max-width: 200px !important;
   }
   /* Top bar — mobilde sadece telefon göster */
   .top-bar .contact-info a:not(:first-child) {
@@ -936,9 +942,11 @@ ul { list-style: none; padding: 0; margin: 0; }
 .footer-brand .brand-text { color: #fff; }
 .footer-brand .brand-text span { color: rgba(255,255,255,.4); }
 .footer-brand img {
-  background: #fff;
-  border-radius: 8px;
-  padding: 6px 12px;
+  height: 90px !important;
+  width: auto !important;
+  max-width: 240px !important;
+  display: block !important;
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.35));
 }
 .site-footer p {
   font-size: .875rem;
@@ -1532,6 +1540,7 @@ ul { list-style: none; padding: 0; margin: 0; }
   .site-footer { padding: 3rem 0 0; }
   .footer-bottom { margin-top: 2.5rem; padding: 1.2rem 0; }
   .footer-bottom .col-md-6:last-child { text-align: left !important; margin-top: .5rem; }
+  .footer-brand img { height: 70px !important; max-width: 180px !important; }
 }
 
 /* --- CTA Banner: mobil --- */
