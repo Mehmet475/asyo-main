@@ -1,4 +1,4 @@
-/* ================================================================
+﻿/* ================================================================
    TATCO — Industrial Fire Safety Solutions — Main Stylesheet
    ================================================================ */
 
@@ -22,7 +22,7 @@
   --radius-lg:     14px;
 }
 
-/* ---- 2. Reset & Temel ---- */
+/* ---- 2. Reset & Base ---- */
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 body {
@@ -220,7 +220,7 @@ ul { list-style: none; padding: 0; margin: 0; }
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%230f1b35' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
-/* ---- Dil Toggle ---- */
+/* ---- Language Toggle ---- */
 .lang-toggle {
   display: inline-flex;
   align-items: center;
@@ -744,6 +744,63 @@ ul { list-style: none; padding: 0; margin: 0; }
   margin-bottom: 1.1rem;
   flex: 1;
 }
+
+/* ================================================================
+   12b. PRODUCT CARD — SHORTHAND ALIASES (.pci / .pcbd / .pcdbtn)
+   ================================================================ */
+.pci {
+  height: 220px;
+  position: relative;
+  overflow: hidden;
+  background: #f5f6f7;
+  flex-shrink: 0;
+}
+.pci img {
+  position: absolute;
+  inset: 14px;
+  width: calc(100% - 28px);
+  height: calc(100% - 28px);
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  transition: transform .5s ease;
+}
+.product-card:hover .pci img { transform: scale(1.06); }
+.pcbd {
+  padding: 1.4rem 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.pcbd h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: .55rem;
+  line-height: 1.35;
+}
+.pcbd p {
+  color: var(--text-muted);
+  font-size: .875rem;
+  line-height: 1.65;
+  margin-bottom: 1rem;
+  flex: 1;
+}
+.pcdbtn {
+  display: flex;
+  align-items: center;
+  gap: .45rem;
+  color: var(--accent);
+  font-size: .84rem;
+  font-weight: 700;
+  margin-top: auto;
+  padding-top: .5rem;
+  letter-spacing: .02em;
+  transition: gap var(--transition);
+}
+.pcdbtn i { font-size: .75rem; transition: transform var(--transition); }
+.product-card:hover .pcdbtn { gap: .75rem; }
+.product-card:hover .pcdbtn i { transform: translateX(3px); }
 
 /* ================================================================
    13. SERVICE CARDS
@@ -1516,11 +1573,11 @@ ul { list-style: none; padding: 0; margin: 0; }
   .divider.mx-auto { margin-left: auto !important; margin-right: auto !important; }
 }
 
-/* --- Ürün kartları: mobil --- */
+/* --- Product cards: mobile --- */
 @media (max-width: 575.98px) {
-  .product-img { height: 180px; }
-  .product-body { padding: 1.1rem 1.2rem; }
-  .product-body h4 { font-size: .95rem; }
+  .product-img, .pci { height: 180px; }
+  .product-body, .pcbd { padding: 1.1rem 1.2rem; }
+  .product-body h4, .pcbd h4 { font-size: .95rem; }
 }
 
 /* --- Feature & cert kartları: mobil --- */
@@ -1577,8 +1634,8 @@ h1, h2, h3, h4, h5, h6 { overflow-wrap: break-word; }
 
 /* Product cards — mobile fix */
 @media (max-width: 575.98px) {
-  .product-card .product-body h4 { font-size: 1rem; }
-  .product-card .product-body p  { font-size: .85rem; }
+  .product-card .product-body h4, .product-card .pcbd h4 { font-size: 1rem; }
+  .product-card .product-body p, .product-card .pcbd p  { font-size: .85rem; }
   .cat-card-body h3 { font-size: 1rem; }
   .service-card { padding: 1.25rem; }
   .feature-card { padding: 1.5rem 1.25rem; }
@@ -1670,7 +1727,7 @@ img { aspect-ratio: attr(width) / attr(height); }
 }
 
 /* ================================================================
-   27. ÜRÜN DETAY SAYFASI — EK STİLLER
+   27. PRODUCT DETAIL PAGE — EXTRA STYLES
    ================================================================ */
 .product-detail-section { padding: 5rem 0; }
 
@@ -1689,6 +1746,7 @@ img { aspect-ratio: attr(width) / attr(height); }
   min-height: 460px;
   padding: 3rem;
   position: relative;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
 }
 .product-visual-inner .big-icon {
   font-size: 7rem;
@@ -1711,11 +1769,12 @@ img { aspect-ratio: attr(width) / attr(height); }
   text-align: center;
 }
 .product-visual-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  width: calc(100% - 40px);
+  height: calc(100% - 40px);
+  object-fit: contain;
+  object-position: center;
   position: absolute;
-  inset: 0;
+  inset: 20px;
   display: none;
 }
 .product-visual-img.has-image { display: block; }

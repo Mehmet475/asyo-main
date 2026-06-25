@@ -1077,8 +1077,20 @@
   /* Basic fields */
   document.title = p.title + ' | TATCO Fire Safety';
 
-  var els = {
-    productMainImg:    function (el) { el.src = p.img; el.alt = p.alt || p.title; },
+  /* Set product image and make it visible */
+  var imgEl = document.getElementById('productMainImg');
+  if (imgEl) {
+    imgEl.src = p.img;
+    imgEl.alt = p.alt || p.title;
+    imgEl.classList.add('has-image');
+    /* Hide decorative icon/text when real image is shown */
+    var bigIcon = document.getElementById('visualIcon');
+    var visualLabel = document.getElementById('visualLabel');
+    if (bigIcon) bigIcon.style.display = 'none';
+    if (visualLabel) visualLabel.style.display = 'none';
+  }
+
+  var simpleEls = {
     productTitle:      function (el) { el.textContent = p.title; },
     productShortDesc:  function (el) { el.textContent = p.shortDesc; },
     categoryTag:       function (el) { el.textContent = p.category; },
@@ -1088,9 +1100,9 @@
     visualName:        function (el) { el.textContent = p.title; }
   };
 
-  Object.keys(els).forEach(function (id) {
+  Object.keys(simpleEls).forEach(function (id) {
     var el = document.getElementById(id);
-    if (el) els[id](el);
+    if (el) simpleEls[id](el);
   });
 
   /* Badge */
