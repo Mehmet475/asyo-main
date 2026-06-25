@@ -1707,8 +1707,8 @@ h1, h2, h3, h4, h5, h6 { overflow-wrap: break-word; }
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 460px;
-  padding: 3rem;
+  min-height: 360px;
+  padding: 2.5rem;
   position: relative;
   background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
 }
@@ -1861,8 +1861,8 @@ h1, h2, h3, h4, h5, h6 { overflow-wrap: break-word; }
 @media (max-width: 991.98px) {
   .product-visual { position: static; margin-bottom: 2rem; }
   .product-info { padding-left: 0; }
-  .product-visual-inner { min-height: 300px; }
-  .product-visual-inner .big-icon { font-size: 5rem; }
+  .product-visual-inner { min-height: 240px; }
+  .product-visual-inner .big-icon { font-size: 4rem; }
 }
 @media (max-width: 575.98px) {
   .spec-table td:first-child { white-space: normal; }
@@ -1901,7 +1901,135 @@ body:not(.aos-initialized) [data-aos] {
 .shadow-custom { box-shadow: var(--shadow-md) !important; }
 
 /* ================================================================
-   31. ÜRÜN KATEGORİ BAŞLIĞI (urunlerimiz.html)
+   31. KATEGORİ KART GRİDİ (urunlerimiz.html — cat-grid / cat-card)
+   ================================================================ */
+
+/* Stats bar above the grid */
+.cat-stats-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .6rem;
+  justify-content: center;
+  margin: 1.25rem 0 2rem;
+}
+.stat-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  background: var(--bg-light);
+  border: 1px solid var(--border);
+  border-radius: 30px;
+  padding: .35rem 1rem;
+  font-size: .78rem;
+  font-weight: 600;
+  color: var(--primary);
+}
+.stat-chip i { color: var(--accent); font-size: .75rem; }
+
+/* 4-column grid on desktop */
+.cat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+/* Full-height flex card */
+.cat-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition);
+  text-decoration: none;
+  color: inherit;
+  height: 100%;
+}
+.cat-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: transparent;
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Image area — contain so transparent PNGs show completely */
+.cat-card-img {
+  height: 190px;
+  background: #f5f6f8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.cat-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 1.1rem;
+  transition: transform .4s ease;
+  display: block;
+}
+.cat-card:hover .cat-card-img img { transform: scale(1.07); }
+
+/* Body — grows to fill card height */
+.cat-card-body {
+  padding: 1.2rem 1.3rem 1.1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.cat-card-body h3 {
+  font-size: .97rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: .5rem;
+  line-height: 1.3;
+}
+.cat-card-body p {
+  font-size: .79rem;
+  color: var(--text-muted);
+  line-height: 1.62;
+  flex: 1;
+  margin-bottom: .9rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* "View Products →" footer link */
+.cat-card-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  font-size: .8rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-top: auto;
+  transition: gap var(--transition);
+}
+.cat-card:hover .cat-card-btn { gap: .7rem; }
+.cat-card-btn svg { transition: transform var(--transition); flex-shrink: 0; }
+.cat-card:hover .cat-card-btn svg { transform: translateX(3px); }
+
+/* Responsive breakpoints */
+@media (max-width: 991.98px) {
+  .cat-grid { grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
+  .cat-card-img { height: 170px; }
+}
+@media (max-width: 575.98px) {
+  .cat-grid { grid-template-columns: 1fr; gap: 1rem; }
+  .cat-card-img { height: 150px; }
+  .cat-card-body { padding: 1rem 1.1rem .9rem; }
+  .cat-card-body p { -webkit-line-clamp: 3; }
+}
+
+/* ================================================================
+   31b. ÜRÜN KATEGORİ BAŞLIĞI — per-category page header
    ================================================================ */
 .product-cat-header {
   display: flex;
