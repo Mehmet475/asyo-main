@@ -61,14 +61,16 @@ ul { list-style: none; padding: 0; margin: 0; }
 #preloader.fade-out { opacity: 0; visibility: hidden; pointer-events: none; }
 
 .preloader-logo { text-align: center; }
-.preloader-logo .logo-text {
-  font-size: 2.5rem;
-  font-weight: 900;
-  color: #fff;
-  letter-spacing: .04em;
-  margin-bottom: 1.2rem;
+.preloader-logo-img {
+  height: 64px;
+  width: auto;
+  max-width: 220px;
+  margin: 0 auto 1.2rem;
+  background: #fff;
+  padding: 8px 16px;
+  border-radius: 8px;
+  display: block;
 }
-.preloader-logo .logo-text span { color: var(--accent); }
 .preloader-spinner {
   width: 36px;
   height: 36px;
@@ -157,9 +159,9 @@ ul { list-style: none; padding: 0; margin: 0; }
   }
   .main-navbar .navbar-brand img,
   .main-navbar .navbar-logo {
-    height: 52px !important;
+    height: 64px !important;
     width: auto !important;
-    max-width: 200px !important;
+    max-width: 240px !important;
   }
   .top-bar { padding: .35rem 0; }
   .top-bar .contact-info { gap: .75rem; font-size: .78rem; }
@@ -1010,7 +1012,9 @@ ul { list-style: none; padding: 0; margin: 0; }
   width: auto !important;
   max-width: 220px !important;
   display: block !important;
-  filter: brightness(0) invert(1);
+  background: rgba(255,255,255,0.9);
+  padding: 6px 12px;
+  border-radius: 6px;
 }
 .site-footer p {
   font-size: .875rem;
@@ -1684,8 +1688,7 @@ h1, h2, h3, h4, h5, h6 { overflow-wrap: break-word; }
   #whatsappBtn i { font-size: 1.35rem; }
 }
 
-/* Preloader TATCO logo */
-.preloader-logo img { filter: brightness(0) invert(1); margin-bottom: 1.2rem; }
+/* Preloader — logo image handled by .preloader-logo-img */
 
 /* TATCO accent color override — buttons */
 .btn-accent { background: var(--accent); border-color: var(--accent); color: var(--primary); font-weight: 700; }

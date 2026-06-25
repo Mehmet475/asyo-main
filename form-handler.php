@@ -52,7 +52,7 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 }
 
 /* Mail content */
-$to          = 'info@tatco.eu';
+$to          = 'ayso345934@gmail.com';
 $subjectText = 'New Quote Request — TATCO';
 $subject     = '=?UTF-8?B?' . base64_encode($subjectText) . '?=';
 

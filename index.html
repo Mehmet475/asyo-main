@@ -25,14 +25,6 @@
     "logo": "https://www.tatco.eu/images/tatco-logo.png",
     "description": "Industrial fire suppression systems, bladder tanks, foam systems and fire pumps — over 20 years of expertise.",
     "email": "info@tatco.eu",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "100. Yıl Bulvarı No:55 A Blok",
-      "postalCode": "06374",
-      "addressLocality": "Ostim OSB, Yenimahalle",
-      "addressRegion": "Ankara",
-      "addressCountry": "TR"
-    },
     "sameAs": []
   }
   </script>
@@ -44,6 +36,7 @@
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="images/tatco-logo.png">
   <!-- Custom CSS -->
   <link href="css/style.css" rel="stylesheet">
 </head>
@@ -52,7 +45,7 @@
 <!-- Preloader -->
 <div id="preloader">
   <div class="preloader-logo">
-    <div class="logo-text">TAT<span>CO</span></div>
+    <img src="images/tatco-logo.png" alt="TATCO" class="preloader-logo-img">
     <div class="preloader-spinner"></div>
   </div>
 </div>
@@ -568,20 +561,20 @@
         <div class="mt-4 d-flex flex-column gap-3">
           <div class="d-flex align-items-center gap-3">
             <div style="width:40px;height:40px;background:rgba(200,16,46,.2);border-radius:6px;display:flex;align-items:center;justify-content:center;">
-              <i class="fas fa-phone" style="color:var(--accent);"></i>
+              <i class="fas fa-envelope" style="color:var(--accent);"></i>
             </div>
             <div>
-              <div style="font-size:.75rem;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.08em;" >Phone</div>
-              <a href="tel:+903125242539" style="color:#fff;font-weight:600;">+90 312 524 25 39</a>
+              <div style="font-size:.75rem;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.08em;" >General Contact</div>
+              <a href="mailto:info@tatco.eu" style="color:#fff;font-weight:600;">info@tatco.eu</a>
             </div>
           </div>
           <div class="d-flex align-items-center gap-3">
             <div style="width:40px;height:40px;background:rgba(200,16,46,.2);border-radius:6px;display:flex;align-items:center;justify-content:center;">
-              <i class="fas fa-envelope" style="color:var(--accent);"></i>
+              <i class="fas fa-handshake" style="color:var(--accent);"></i>
             </div>
             <div>
-              <div style="font-size:.75rem;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.08em;" >E-mail</div>
-              <a href="mailto:info@tatco.eu" style="color:#fff;font-weight:600;">info@tatco.eu</a>
+              <div style="font-size:.75rem;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.08em;" >Sales &amp; Quotations</div>
+              <a href="mailto:sales@tatco.eu" style="color:#fff;font-weight:600;">sales@tatco.eu</a>
             </div>
           </div>
         </div>
@@ -593,27 +586,27 @@
             <div class="row g-3">
               <div class="col-sm-6">
                 <label class="form-label" >Full Name<span style="color:var(--accent);">*</span></label>
-                <input type="text" class="form-control" placeholder="Full Name" required>
+                <input type="text" name="Full Name" class="form-control" placeholder="Full Name" required>
                 <div class="invalid-feedback" >This field is required.</div>
               </div>
               <div class="col-sm-6">
                 <label class="form-label" >Company Name<span style="color:var(--accent);">*</span></label>
-                <input type="text" class="form-control" placeholder="Company Name" required>
+                <input type="text" name="Company" class="form-control" placeholder="Company Name" required>
                 <div class="invalid-feedback" >This field is required.</div>
               </div>
               <div class="col-sm-6">
                 <label class="form-label" >Phone<span style="color:var(--accent);">*</span></label>
-                <input type="tel" class="form-control" placeholder="+90 ___ ___ __ __" required>
+                <input type="tel" name="Phone" class="form-control" placeholder="+___ ___ __ __" required>
                 <div class="invalid-feedback" >Please enter a valid phone number.</div>
               </div>
               <div class="col-sm-6">
                 <label class="form-label" >E-mail<span style="color:var(--accent);">*</span></label>
-                <input type="email" class="form-control" placeholder="example@company.com" required>
+                <input type="email" name="Email" class="form-control" placeholder="example@company.com" required>
                 <div class="invalid-feedback" >Please enter a valid e-mail address.</div>
               </div>
               <div class="col-12">
                 <label class="form-label" >Message</label>
-                <textarea class="form-control" rows="4" placeholder="Briefly describe your project details and requirements..."></textarea>
+                <textarea name="Message" class="form-control" rows="4" placeholder="Briefly describe your project details and requirements..."></textarea>
               </div>
               <div class="col-12">
                 <button type="submit" class="btn btn-accent btn-lg w-100">
@@ -711,10 +704,7 @@
   <i class="fas fa-chevron-up"></i>
 </button>
 
-<a id="whatsappBtn" href="https://wa.me/905421441042" target="_blank" rel="noopener" title="WhatsApp: +90 542 144 10 42">
-  <i class="fab fa-whatsapp"></i>
-  <span class="wa-label">WhatsApp</span>
-</a>
+
 
 
 <!-- Bootstrap 5 JS -->

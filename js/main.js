@@ -158,13 +158,13 @@
           }
         }
 
-        /* Web3Forms — no backend required */
+        /* Web3Forms — register at web3forms.com with ayso345934@gmail.com to get access_key */
         var web3key = 'WEB3FORMS_ACCESS_KEY';
         var payload = Object.assign({
           access_key: web3key,
           subject: 'New Quote Request — TATCO',
           from_name: 'TATCO Website',
-          replyto: 'info@tatco.eu'
+          replyto: data['Email'] || 'info@tatco.eu'
         }, data);
 
         fetch('https://api.web3forms.com/submit', {

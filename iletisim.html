@@ -35,6 +35,7 @@
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="images/tatco-logo.png">
   <!-- Custom CSS -->
   <link href="css/style.css" rel="stylesheet">
 </head>
@@ -43,7 +44,7 @@
 <!-- Preloader -->
 <div id="preloader">
   <div class="preloader-logo">
-    <div class="logo-text">TAT<span>CO</span></div>
+    <img src="images/tatco-logo.png" alt="TATCO" class="preloader-logo-img">
     <div class="preloader-spinner"></div>
   </div>
 </div>
@@ -109,42 +110,18 @@
           <h4 style="color:#fff;margin-bottom:1.8rem;font-size:1.15rem;" >Contact Information</h4>
 
           <div class="contact-info-item">
-            <div class="icon"><i class="fas fa-phone"></i></div>
-            <div class="text">
-              <div class="label" >Phone</div>
-              <a href="tel:+903125242539" class="value">+90 312 524 25 39</a>
-            </div>
-          </div>
-
-          <div class="contact-info-item">
             <div class="icon"><i class="fas fa-envelope"></i></div>
             <div class="text">
-              <div class="label" >General</div>
+              <div class="label" >General Contact</div>
               <a href="mailto:info@tatco.eu" class="value">info@tatco.eu</a>
             </div>
           </div>
 
           <div class="contact-info-item">
-            <div class="icon"><i class="fas fa-shopping-cart"></i></div>
+            <div class="icon"><i class="fas fa-handshake"></i></div>
             <div class="text">
-              <div class="label" >Sales</div>
+              <div class="label" >Sales &amp; Quotations</div>
               <a href="mailto:sales@tatco.eu" class="value">sales@tatco.eu</a>
-            </div>
-          </div>
-
-          <div class="contact-info-item">
-            <div class="icon"><i class="fas fa-tools"></i></div>
-            <div class="text">
-              <div class="label" >Service</div>
-              <a href="mailto:info@tatco.eu" class="value">info@tatco.eu</a>
-            </div>
-          </div>
-
-          <div class="contact-info-item">
-            <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
-            <div class="text">
-              <div class="label" >Address</div>
-              <a href="https://maps.google.com/?q=100.+Yil+Bulvari+No:55+Ostim+OSB+Yenimahalle+Ankara" target="_blank" rel="noopener" class="value" style="color:rgba(255,255,255,.85);">100. Yıl Bulvarı No:55 A Blok,<br>06374 Ostim OSB,<br>Yenimahalle / Ankara</a>
             </div>
           </div>
 
@@ -163,40 +140,45 @@
             <span style="color:rgba(255,255,255,.6);font-size:.88rem;" >Technical Service</span>
             <span style="color:var(--accent);font-size:.88rem;font-weight:700;">7/24</span>
           </div>
-
-          <div class="separator" style="background:rgba(255,255,255,.12);margin:1.5rem 0;"></div>
-
-          <a href="https://www.google.com/maps/dir/?api=1&destination=100.+Y%C4%B1l+Bulvar%C4%B1+No:55+Ostim+OSB+Yenimahalle+Ankara+T%C3%BCrkiye" target="_blank" rel="noopener" class="btn btn-outline-white w-100" style="justify-content:center;">
-            <i class="fas fa-route"></i><span >Get Directions</span>
-          </a>
         </div>
       </div>
 
-      <!-- Map -->
+      <!-- Contact details panel -->
       <div class="col-lg-8" data-aos="fade-left">
-        <h4 style="color:var(--primary);margin-bottom:1.2rem;font-weight:800;" >Location</h4>
-        <div class="map-container mb-4">
-          <iframe
-            src="https://maps.google.com/maps?q=100.+Y%C4%B1l+Bulvar%C4%B1+No:55+A+Blok+Ostim+OSB+Yenimahalle+Ankara&output=embed&hl=en"
-            width="100%" height="420" style="border:0;border-radius:8px;" allowfullscreen="" loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            title="TATCO Location - Ostim OSB Ankara">
-          </iframe>
+        <h4 style="color:var(--primary);margin-bottom:1.5rem;font-weight:800;" >Get in Touch</h4>
+        <div class="row g-4 mb-4">
+          <div class="col-sm-6">
+            <div style="background:var(--bg-light);border-radius:12px;padding:2rem 1.5rem;border:1px solid var(--border);text-align:center;">
+              <div style="width:52px;height:52px;background:rgba(200,16,46,.08);border-radius:10px;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;">
+                <i class="fas fa-envelope" style="font-size:1.25rem;color:var(--accent);"></i>
+              </div>
+              <div style="font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;color:var(--text-muted);margin-bottom:.5rem;">General Contact</div>
+              <a href="mailto:info@tatco.eu" style="font-size:1rem;font-weight:700;color:var(--primary);word-break:break-all;">info@tatco.eu</a>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div style="background:var(--bg-light);border-radius:12px;padding:2rem 1.5rem;border:1px solid var(--border);text-align:center;">
+              <div style="width:52px;height:52px;background:rgba(200,16,46,.08);border-radius:10px;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;">
+                <i class="fas fa-handshake" style="font-size:1.25rem;color:var(--accent);"></i>
+              </div>
+              <div style="font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;color:var(--text-muted);margin-bottom:.5rem;">Sales &amp; Quotations</div>
+              <a href="mailto:sales@tatco.eu" style="font-size:1rem;font-weight:700;color:var(--primary);word-break:break-all;">sales@tatco.eu</a>
+            </div>
+          </div>
         </div>
         <!-- Quick contact banner -->
         <div style="background:var(--bg-light);border-radius:8px;padding:1.25rem 1.5rem;display:flex;flex-wrap:wrap;gap:1rem;align-items:center;justify-content:space-between;border:1px solid var(--border);">
           <div style="min-width:0;">
-            <div style="font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;color:var(--text-muted);margin-bottom:.3rem;" >Call Now</div>
-            <a href="tel:+903125242539" style="font-size:clamp(1.1rem,4vw,1.4rem);font-weight:800;color:var(--primary);text-decoration:none;word-break:break-all;">+90 312 524 25 39</a>
+            <div style="font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;color:var(--text-muted);margin-bottom:.3rem;" >General Contact</div>
+            <a href="mailto:info@tatco.eu" style="font-size:clamp(1rem,3vw,1.2rem);font-weight:800;color:var(--primary);text-decoration:none;word-break:break-all;">info@tatco.eu</a>
           </div>
           <div style="width:1px;height:40px;background:var(--border);flex-shrink:0;" class="d-none d-sm-block"></div>
           <div style="min-width:0;">
-            <div style="font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;color:var(--text-muted);margin-bottom:.3rem;" >Send Email</div>
-            <a href="mailto:info@tatco.eu" style="font-size:.95rem;font-weight:600;color:var(--primary);text-decoration:none;word-break:break-all;">info@tatco.eu</a>
+            <div style="font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;color:var(--text-muted);margin-bottom:.3rem;" >Sales &amp; Quotations</div>
+            <a href="mailto:sales@tatco.eu" style="font-size:clamp(1rem,3vw,1.2rem);font-weight:800;color:var(--primary);text-decoration:none;word-break:break-all;">sales@tatco.eu</a>
           </div>
           <div style="display:flex;gap:.5rem;flex-shrink:0;flex-wrap:wrap;">
-            <a href="tel:+903125242539" class="btn btn-accent"><i class="fas fa-phone"></i><span >Call Now</span></a>
-            <a href="https://www.google.com/maps/dir/?api=1&destination=100.+Y%C4%B1l+Bulvar%C4%B1+No:55+Ostim+OSB+Yenimahalle+Ankara+T%C3%BCrkiye" target="_blank" rel="noopener" class="btn btn-outline-accent"><i class="fas fa-route"></i><span >Directions</span></a>
+            <a href="mailto:info@tatco.eu" class="btn btn-accent"><i class="fas fa-envelope"></i><span >Send Email</span></a>
           </div>
         </div>
       </div>
@@ -422,10 +404,7 @@
   <i class="fas fa-chevron-up"></i>
 </button>
 
-<a id="whatsappBtn" href="https://wa.me/905421441042" target="_blank" rel="noopener" title="WhatsApp: +90 542 144 10 42">
-  <i class="fab fa-whatsapp"></i>
-  <span class="wa-label">WhatsApp</span>
-</a>
+
 
 
 <!-- Bootstrap 5 JS -->
