@@ -20,15 +20,21 @@
   /* ---- 2. Preloader ---- */
   var preloader = document.getElementById('preloader');
   if (preloader) {
-    function hidePreloader() {
-      if (preloader.classList.contains('fade-out')) return;
-      preloader.classList.add('fade-out');
-      setTimeout(function () { preloader.style.display = 'none'; }, 450);
+    /* Only show the preloader on the very first page load of a session.
+       On subsequent page navigations the preloader is hidden instantly
+       to prevent the "flash" between pages. */
+    if (sessionStorage.getItem('tatco_visited')) {
+      preloader.style.display = 'none';
+    } else {
+      sessionStorage.setItem('tatco_visited', '1');
+      function hidePreloader() {
+        if (preloader.classList.contains('fade-out')) return;
+        preloader.classList.add('fade-out');
+        setTimeout(function () { preloader.style.display = 'none'; }, 450);
+      }
+      window.addEventListener('load', function () { setTimeout(hidePreloader, 300); });
+      setTimeout(hidePreloader, 1500);
     }
-    window.addEventListener('load', function () {
-      setTimeout(hidePreloader, 300);
-    });
-    setTimeout(hidePreloader, 1500);
   }
 
   /* ---- 3. Navbar Scroll Effect ---- */
