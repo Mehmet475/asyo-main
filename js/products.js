@@ -1083,11 +1083,16 @@
     imgEl.src = p.img;
     imgEl.alt = p.alt || p.title;
     imgEl.classList.add('has-image');
+    /* Switch container to white background (eliminates JPEG white-bg vs dark gradient clash) */
+    var visualInner = document.getElementById('visualInner');
+    if (visualInner) visualInner.classList.add('has-image');
     /* Hide decorative icon/text when real image is shown */
     var bigIcon = document.getElementById('visualIcon');
     var visualLabel = document.getElementById('visualLabel');
+    var visualName = document.getElementById('visualName');
     if (bigIcon) bigIcon.style.display = 'none';
     if (visualLabel) visualLabel.style.display = 'none';
+    if (visualName) visualName.style.display = 'none';
   }
 
   var simpleEls = {

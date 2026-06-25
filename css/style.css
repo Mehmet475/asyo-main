@@ -682,7 +682,7 @@ ul { list-style: none; padding: 0; margin: 0; }
   height: 220px;
   position: relative;
   overflow: hidden;
-  background: #f5f6f7;
+  background: #fff;
 }
 .product-img img {
   position: absolute;
@@ -752,7 +752,7 @@ ul { list-style: none; padding: 0; margin: 0; }
   height: 220px;
   position: relative;
   overflow: hidden;
-  background: #f5f6f7;
+  background: #fff;
   flex-shrink: 0;
 }
 .pci img {
@@ -1675,7 +1675,6 @@ h1, h2, h3, h4, h5, h6 { overflow-wrap: break-word; }
 
 /* Core Web Vitals — reduce CLS by reserving space */
 .hero-slide-bg { background-size: cover; background-position: center; will-change: transform; }
-.product-img { min-height: 200px; background: var(--bg-section); }
 
 /* --- Genel overflow koruması --- */
 * { box-sizing: border-box; }
@@ -1707,8 +1706,8 @@ h1, h2, h3, h4, h5, h6 { overflow-wrap: break-word; }
   z-index: 1;
 }
 
-/* Dark gradient image container — explicit height (not just min-height)
-   so absolutely-positioned children can use height:100% reliably. */
+/* Dark gradient image container — explicit height so absolutely-positioned
+   children can use height:100% reliably. Default dark for no-image state. */
 .product-visual-inner {
   height: 420px;
   position: relative;
@@ -1718,9 +1717,15 @@ h1, h2, h3, h4, h5, h6 { overflow-wrap: break-word; }
   justify-content: center;
   overflow: hidden;
   background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+  transition: background .3s ease;
 }
 
-/* Decorative fallback elements (hidden by JS when real image loads) */
+/* When a real product image is loaded: switch to white so JPEG backgrounds blend */
+.product-visual-inner.has-image {
+  background: #fff;
+}
+
+/* Decorative fallback elements — visible only on dark background (no image) */
 .product-visual-inner .big-icon {
   font-size: 7rem;
   color: rgba(255,255,255,.22);
@@ -1748,9 +1753,8 @@ h1, h2, h3, h4, h5, h6 { overflow-wrap: break-word; }
   z-index: 1;
 }
 
-/* Product image — fills the panel with contain scaling.
-   inset:0 + width/height 100% on a parent with explicit height works
-   in all browsers without calc() percentage ambiguity. */
+/* Product image fills the panel.
+   On .has-image background (#fff), the JPEG's own white background is invisible. */
 .product-visual-img {
   position: absolute;
   inset: 0;
@@ -1758,7 +1762,7 @@ h1, h2, h3, h4, h5, h6 { overflow-wrap: break-word; }
   height: 100%;
   object-fit: contain;
   object-position: center;
-  padding: 2rem;
+  padding: 1.5rem;
   box-sizing: border-box;
   display: none;
   z-index: 2;
@@ -1855,25 +1859,6 @@ h1, h2, h3, h4, h5, h6 { overflow-wrap: break-word; }
 .detail-cta { display: flex; flex-wrap: wrap; gap: .75rem; }
 
 .related-section { background: var(--bg-section); padding: 4rem 0; }
-.related-card {
-  background: #fff;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  transition: all var(--transition);
-}
-.related-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: transparent; }
-.related-card-img {
-  height: 140px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 3rem;
-  color: rgba(255,255,255,.3);
-}
-.related-card-body { padding: 1.1rem 1.2rem; }
-.related-card-body h5 { font-size: .93rem; font-weight: 700; color: var(--primary); margin-bottom: .4rem; }
-.related-card-body p { font-size: .8rem; color: var(--text-muted); margin-bottom: .75rem; line-height: 1.55; }
 .thumb-strip { display: flex; gap: .6rem; margin-top: .75rem; flex-wrap: wrap; }
 .thumb-strip .thumb {
   width: 68px; height: 68px;
