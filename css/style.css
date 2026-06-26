@@ -1704,9 +1704,9 @@ h1, h2, h3, h4, h5, h6 { overflow-wrap: break-word; }
   transition: background .3s ease;
 }
 
-/* When a real product image is loaded: switch to white so JPEG backgrounds blend */
+/* When a real product image is loaded: switch to light gray so white-bg JPEGs are visible */
 .product-visual-inner.has-image {
-  background: #fff;
+  background: var(--bg-section);
 }
 
 /* Decorative fallback elements — visible only on dark background (no image) */
@@ -1958,7 +1958,7 @@ body:not(.aos-initialized) [data-aos] {
 /* Image area — contain so transparent PNGs show completely */
 .cat-card-img {
   height: 190px;
-  background: #f5f6f8;
+  background: var(--bg-section);
   display: flex;
   align-items: center;
   justify-content: center;

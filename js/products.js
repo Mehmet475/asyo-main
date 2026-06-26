@@ -477,6 +477,31 @@
       related: ['p3-basinc-rahatlatma', 'p3-osy', 'p3-kelebek-vana']
     },
 
+    'p3-threaded-fsfd': {
+      title: 'Threaded Flow Switch',
+      img: 'images/s3-fsfd.jpg',
+      alt: 'Threaded Flow Switch',
+      category: 'System Valves',
+      categoryLink: 'sistem-vanalari.html',
+      badge: 'UL Listed',
+      shortDesc: 'Threaded connection type paddle-sensor flow switch. Detects water flow in sprinkler systems and sends signal to alarm panel. ½″–2″ threaded NPT pipe connection. UL 346 / FM 1144 approved.',
+      features: [
+        'Threaded NPT pipe connection (½″–2″)',
+        'Paddle sensor flow detection',
+        'Sends alarm signal to fire alarm panel',
+        'Adjustable delay timer',
+        'UL 346 / FM 1144 approved'
+      ],
+      specs: [
+        ['Type', 'Threaded Flow Switch (Paddle Sensor)'],
+        ['Connection', 'Threaded NPT'],
+        ['Pipe Size', '½″–2″'],
+        ['Signal', 'Dry Contact to Alarm Panel'],
+        ['Standards', 'UL 346 / FM 1144']
+      ],
+      related: ['p3-fsfd', 'p3-kelebek-vana', 'p3-akis-olcer']
+    },
+
     /* ---- SPRINKLERS ---- */
     'p4-standart': {
       title: 'Standard Response Sprinklers',
