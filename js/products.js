@@ -1,4 +1,4 @@
-/* ================================================================
+﻿/* ================================================================
    TATCO — Product Data for urun-detay.html
    ================================================================ */
 (function () {
@@ -479,7 +479,7 @@
 
     'p3-threaded-fsfd': {
       title: 'Threaded Flow Switch',
-      img: 'images/s3-fsfd.jpg',
+      img: 'images/s3-threaded-fsfd.jpg',
       alt: 'Threaded Flow Switch',
       category: 'System Valves',
       categoryLink: 'sistem-vanalari.html',
@@ -881,7 +881,7 @@
 
     'p7-oranlayici': {
       title: 'Foam Proportioners',
-      img: 'images/p7-foam-prop.png',
+      img: 'images/p7-foam-prop.jpg',
       alt: 'Foam Proportioner',
       category: 'Foam Suppression',
       categoryLink: 'kopuklu-sondurme.html',

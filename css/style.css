@@ -691,7 +691,7 @@ ul { list-style: none; padding: 0; margin: 0; }
   height: 220px;
   position: relative;
   overflow: hidden;
-  background: var(--bg-section);
+  background: #fff;
   border-bottom: 1px solid var(--border);
 }
 .product-img img {
@@ -762,7 +762,7 @@ ul { list-style: none; padding: 0; margin: 0; }
   height: 220px;
   position: relative;
   overflow: hidden;
-  background: var(--bg-section);
+  background: #fff;
   border-bottom: 1px solid var(--border);
   flex-shrink: 0;
 }
@@ -1704,9 +1704,9 @@ h1, h2, h3, h4, h5, h6 { overflow-wrap: break-word; }
   transition: background .3s ease;
 }
 
-/* When a real product image is loaded: switch to light gray so white-bg JPEGs are visible */
+/* When a real product image is loaded: white background so white-bg product JPEGs blend seamlessly */
 .product-visual-inner.has-image {
-  background: var(--bg-section);
+  background: #fff;
 }
 
 /* Decorative fallback elements — visible only on dark background (no image) */
@@ -1958,7 +1958,7 @@ body:not(.aos-initialized) [data-aos] {
 /* Image area — contain so transparent PNGs show completely */
 .cat-card-img {
   height: 190px;
-  background: var(--bg-section);
+  background: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
