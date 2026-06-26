@@ -159,9 +159,9 @@ ul { list-style: none; padding: 0; margin: 0; }
   }
   .main-navbar .navbar-brand img,
   .main-navbar .navbar-logo {
-    height: 64px !important;
+    height: 76px !important;
     width: auto !important;
-    max-width: 240px !important;
+    max-width: 260px !important;
   }
   .top-bar { padding: .35rem 0; }
   .top-bar .contact-info { gap: .75rem; font-size: .78rem; }
@@ -169,8 +169,8 @@ ul { list-style: none; padding: 0; margin: 0; }
 @media (max-width: 400px) {
   .main-navbar .navbar-brand img,
   .main-navbar .navbar-logo {
-    height: 44px !important;
-    max-width: 170px !important;
+    height: 54px !important;
+    max-width: 190px !important;
   }
 }
 .brand-text {
@@ -691,7 +691,8 @@ ul { list-style: none; padding: 0; margin: 0; }
   height: 220px;
   position: relative;
   overflow: hidden;
-  background: #fff;
+  background: var(--bg-section);
+  border-bottom: 1px solid var(--border);
 }
 .product-img img {
   position: absolute;
@@ -761,7 +762,8 @@ ul { list-style: none; padding: 0; margin: 0; }
   height: 220px;
   position: relative;
   overflow: hidden;
-  background: #fff;
+  background: var(--bg-section);
+  border-bottom: 1px solid var(--border);
   flex-shrink: 0;
 }
 .pci img {
@@ -1589,7 +1591,6 @@ ul { list-style: none; padding: 0; margin: 0; }
 /* --- İletişim sayfası: mobil --- */
 @media (max-width: 767.98px) {
   .contact-info-card { margin-bottom: 1.5rem; }
-  .map-container iframe { height: 280px !important; }
 }
 
 /* --- Teklif formu: mobil --- */
@@ -1639,9 +1640,6 @@ h1, h2, h3, h4, h5, h6 { overflow-wrap: break-word; }
   .btn { min-height: 44px; font-size: .9rem; }
 }
 
-/* Google Maps — mobile responsive */
-.map-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; }
-.map-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
 
 /* Footer — mobile stack */
 @media (max-width: 575.98px) {
@@ -1650,43 +1648,6 @@ h1, h2, h3, h4, h5, h6 { overflow-wrap: break-word; }
   .footer-links a { display: block; padding: .25rem 0; }
 }
 
-/* WhatsApp fixed button */
-#whatsappBtn {
-  position: fixed;
-  bottom: 1.5rem;
-  right: 1.5rem;
-  background: #25d366;
-  color: #fff;
-  border-radius: 50px;
-  padding: .65rem 1.2rem;
-  display: flex;
-  align-items: center;
-  gap: .55rem;
-  font-size: .88rem;
-  font-weight: 700;
-  z-index: 990;
-  box-shadow: 0 4px 20px rgba(37,211,102,.4);
-  transition: all var(--transition);
-  text-decoration: none;
-}
-#whatsappBtn i { font-size: 1.2rem; }
-#whatsappBtn:hover {
-  background: #1ebe5d;
-  color: #fff;
-  transform: translateY(-3px);
-  box-shadow: 0 8px 28px rgba(37,211,102,.5);
-}
-#whatsappBtn .wa-label { font-size: .82rem; line-height: 1; }
-@media (max-width: 575.98px) {
-  #whatsappBtn {
-    padding: .8rem;
-    border-radius: 50%;
-    bottom: 1.2rem;
-    right: 1.2rem;
-  }
-  #whatsappBtn .wa-label { display: none; }
-  #whatsappBtn i { font-size: 1.35rem; }
-}
 
 /* Preloader — logo image handled by .preloader-logo-img */
 

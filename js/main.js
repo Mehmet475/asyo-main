@@ -158,21 +158,18 @@
           }
         }
 
-        /* Web3Forms — register at web3forms.com with ayso345934@gmail.com to get access_key */
-        var web3key = 'WEB3FORMS_ACCESS_KEY';
-        var payload = Object.assign({
-          access_key: web3key,
-          subject: 'New Quote Request — TATCO',
-          from_name: 'TATCO Website',
-          replyto: data['Email'] || 'info@tatco.eu'
-        }, data);
+        /* Submit to PHP handler — sends to ayso345934@gmail.com */
+        var handlerUrl = 'form-handler.php';
 
-        fetch('https://api.web3forms.com/submit', {
+        fetch(handlerUrl, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-          body: JSON.stringify(payload)
+          body: JSON.stringify(data)
         })
-        .then(function (r) { return r.json(); })
+        .then(function (r) {
+          if (!r.ok) throw new Error('HTTP ' + r.status);
+          return r.json();
+        })
         .then(function (res) { res && res.success ? onSuccess() : onError(); })
         .catch(function () { onError(); });
       }

@@ -831,7 +831,7 @@
 
     'p7-yatay-bladder': {
       title: 'Horizontal Bladder Tank',
-      img: 'images/p7-bladder-yatay.jpg',
+      img: 'images/p7-bladder-yatay-hd.jpg',
       alt: 'Horizontal Bladder Tank for Foam Suppression',
       category: 'Foam Suppression',
       categoryLink: 'kopuklu-sondurme.html',
@@ -856,7 +856,7 @@
 
     'p7-oranlayici': {
       title: 'Foam Proportioners',
-      img: 'images/p7-oranlayici.jpg',
+      img: 'images/p7-foam-prop.png',
       alt: 'Foam Proportioner',
       category: 'Foam Suppression',
       categoryLink: 'kopuklu-sondurme.html',
