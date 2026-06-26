@@ -2184,3 +2184,37 @@ body:not(.aos-initialized) [data-aos] {
   .stat-info .number { font-size: 1.1rem; }
   .stat-info .label { font-size: .62rem; }
 }
+
+/* ================================================================
+   WHATSAPP FLOAT BUTTON
+   ================================================================ */
+#whatsappBtn {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 9998;
+  width: 56px;
+  height: 56px;
+  background: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.45);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+#whatsappBtn:hover {
+  transform: scale(1.12);
+  box-shadow: 0 6px 28px rgba(37, 211, 102, 0.65);
+  text-decoration: none;
+}
+#whatsappBtn i {
+  font-size: 1.75rem;
+  color: #fff;
+  line-height: 1;
+}
+@media (max-width: 575.98px) {
+  #whatsappBtn { bottom: 16px; right: 16px; width: 50px; height: 50px; }
+  #whatsappBtn i { font-size: 1.5rem; }
+}
