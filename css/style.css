@@ -6,8 +6,8 @@
 :root {
   --primary:       #0f1b35;
   --primary-light: #1a3a7a;
-  --accent:        #E8A020;
-  --accent-dark:   #c07d10;
+  --accent:        #FFC000;
+  --accent-dark:   #D4A000;
   --bg-light:      #f8fafc;
   --bg-section:    #f1f5f9;
   --bg-dark:       #0a1228;
@@ -2194,24 +2194,24 @@ body:not(.aos-initialized) [data-aos] {
   align-items: flex-start;
 }
 .registered-mark {
-  font-size: 0.6rem;
+  font-size: 1rem;
   color: var(--accent);
-  font-weight: 700;
+  font-weight: 800;
   line-height: 1;
-  margin-top: 6px;
-  margin-left: 1px;
+  margin-top: 5px;
+  margin-left: 2px;
   flex-shrink: 0;
   align-self: flex-start;
 }
 @media (max-width: 991.98px) {
-  .registered-mark { margin-top: 8px; font-size: 0.65rem; }
+  .registered-mark { margin-top: 7px; font-size: 1.1rem; }
 }
 @media (max-width: 400px) {
-  .registered-mark { margin-top: 6px; font-size: 0.55rem; }
+  .registered-mark { margin-top: 5px; font-size: 0.9rem; }
 }
 
 /* ================================================================
-   VIEW PRODUCT BUTTON — GOLD TEXT
+   VIEW PRODUCT BUTTON — GOLD TEXT (product cards)
    ================================================================ */
 .btn-product-view {
   background: var(--primary);
@@ -2220,8 +2220,18 @@ body:not(.aos-initialized) [data-aos] {
   font-weight: 700;
 }
 .btn-product-view:hover {
-  background: rgba(232, 160, 32, 0.12);
+  background: rgba(255, 192, 0, 0.12);
   border-color: var(--accent);
+  color: var(--accent) !important;
+  transform: translateY(-1px);
+}
+
+/* Hero slider: View Products butonlarında hover'da da altın metin kalır */
+.hero-actions .btn-outline-accent {
+  background: rgba(0, 0, 0, 0.18);
+}
+.hero-actions .btn-outline-accent:hover {
+  background: rgba(255, 192, 0, 0.18);
   color: var(--accent) !important;
   transform: translateY(-1px);
 }
