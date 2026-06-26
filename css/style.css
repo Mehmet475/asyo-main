@@ -2186,6 +2186,47 @@ body:not(.aos-initialized) [data-aos] {
 }
 
 /* ================================================================
+   LOGO REGISTERED MARK
+   ================================================================ */
+.logo-wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: flex-start;
+}
+.registered-mark {
+  font-size: 0.6rem;
+  color: var(--accent);
+  font-weight: 700;
+  line-height: 1;
+  margin-top: 6px;
+  margin-left: 1px;
+  flex-shrink: 0;
+  align-self: flex-start;
+}
+@media (max-width: 991.98px) {
+  .registered-mark { margin-top: 8px; font-size: 0.65rem; }
+}
+@media (max-width: 400px) {
+  .registered-mark { margin-top: 6px; font-size: 0.55rem; }
+}
+
+/* ================================================================
+   VIEW PRODUCT BUTTON — GOLD TEXT
+   ================================================================ */
+.btn-product-view {
+  background: var(--primary);
+  border-color: var(--accent);
+  color: var(--accent) !important;
+  font-weight: 700;
+}
+.btn-product-view:hover {
+  background: rgba(232, 160, 32, 0.12);
+  border-color: var(--accent);
+  color: var(--accent) !important;
+  transform: translateY(-1px);
+}
+
+/* ================================================================
    WHATSAPP FLOAT BUTTON
    ================================================================ */
 #whatsappBtn {

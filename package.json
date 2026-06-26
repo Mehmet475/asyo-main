@@ -7,6 +7,7 @@
     "start": "live-server --port=3000 --open=index.html"
   },
   "devDependencies": {
+    "jimp": "^1.6.1",
     "live-server": "^1.2.2",
     "playwright": "^1.61.0"
   }
