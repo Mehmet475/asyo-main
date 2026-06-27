@@ -120,16 +120,18 @@
         var formId  = form.getAttribute('id') || '';
         var isQuote = QUOTE_FORM_IDS.indexOf(formId) !== -1 ||
                       (!formId && form.querySelector('[name="Message"]') !== null);
-
         var btn = form.querySelector('[type="submit"]');
         var originalHTML = btn ? btn.innerHTML : '';
 
-        if (btn) {
-          btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-          btn.disabled = true;
-        }
-
-        function onSuccess() {
+        if (isQuote) {
+          /* Teklif formu: FormSubmit.co native POST ile gönder */
+          if (btn) {
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            btn.disabled = true;
+          }
+          form.submit();
+        } else {
+          /* Diğer formlar: sadece doğrulama göster */
           if (btn) {
             btn.innerHTML = '<i class="fas fa-check"></i> Sent!';
             btn.style.background = '#198754';
@@ -144,46 +146,6 @@
             }, 3500);
           }
         }
-
-        function onError() {
-          if (btn) {
-            btn.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Error, please try again.';
-            btn.style.background = '#dc3545';
-            btn.style.borderColor = '#dc3545';
-            setTimeout(function () {
-              btn.innerHTML = originalHTML;
-              btn.disabled = false;
-              btn.style.background = '';
-              btn.style.borderColor = '';
-            }, 3500);
-          }
-        }
-
-        if (!isQuote) {
-          onSuccess();
-          form.classList.add('was-validated');
-          return;
-        }
-
-        var data = {};
-        form.querySelectorAll('[name]').forEach(function (el) {
-          if (el.name) data[el.name] = el.value;
-        });
-        data['_form_id']   = formId || 'quote-form';
-        data['_page_url']  = window.location.href;
-        data['_page_title'] = document.title;
-
-        fetch('form-handler.php', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-          body: JSON.stringify(data)
-        })
-        .then(function (r) {
-          if (!r.ok) throw new Error('HTTP ' + r.status);
-          return r.json();
-        })
-        .then(function (res) { res && res.success ? onSuccess() : onError(); })
-        .catch(function () { onError(); });
       }
 
       form.classList.add('was-validated');
