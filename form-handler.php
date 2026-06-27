@@ -76,9 +76,7 @@ $fieldLabels = [
 ];
 
 $lines   = [];
-$lines[] = '╔══════════════════════════════════════╗';
-$lines[] = '   YENİ TEKLİF TALEBİ — TATCO';
-$lines[] = '╚══════════════════════════════════════╝';
+$lines[] = '=== YENI TEKLIF TALEBI - TATCO ===';
 $lines[] = '';
 
 $orderedKeys = ['Full Name', 'Company', 'Phone', 'Email', 'Product / Service', 'Product', 'Message'];
@@ -87,7 +85,7 @@ $printed     = [];
 foreach ($orderedKeys as $key) {
     if (isset($data[$key]) && $data[$key] !== '') {
         $label     = $fieldLabels[$key] ?? $key;
-        $lines[]   = '▸ ' . $label . ': ' . trim($data[$key]);
+        $lines[]   = $label . ': ' . trim($data[$key]);
         $printed[] = $key;
     }
 }
@@ -98,21 +96,21 @@ foreach ($data as $key => $value) {
     if (in_array(strtolower($key), $skipKeys, true)) continue;
     if (trim($value) === '') continue;
     $label   = $fieldLabels[$key] ?? $key;
-    $lines[] = '▸ ' . $label . ': ' . trim($value);
+    $lines[] = $label . ': ' . trim($value);
 }
 
 $lines[] = '';
-$lines[] = str_repeat('─', 42);
+$lines[] = str_repeat('-', 40);
 
 /* Kaynak bilgisi */
 $pageTitle = trim($data['_page_title'] ?? '');
 $pageUrl   = trim($data['_page_url']   ?? '');
-if ($pageTitle) $lines[] = 'Sayfa    : ' . $pageTitle;
-if ($pageUrl)   $lines[] = 'URL      : ' . $pageUrl;
-$lines[] = 'Tarih    : ' . date('d.m.Y H:i:s');
-$lines[] = str_repeat('─', 42);
+if ($pageTitle) $lines[] = 'Sayfa   : ' . $pageTitle;
+if ($pageUrl)   $lines[] = 'URL     : ' . $pageUrl;
+$lines[] = 'Tarih   : ' . date('d.m.Y H:i:s');
+$lines[] = str_repeat('-', 40);
 
-$body = implode("\n", $lines);
+$body = implode("\r\n", $lines);
 
 /* Mail başlıkları — From cPanel'deki gerçek hesap */
 $senderEmail = 'info@tatco.eu';
