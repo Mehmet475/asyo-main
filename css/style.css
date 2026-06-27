@@ -691,7 +691,7 @@ ul { list-style: none; padding: 0; margin: 0; }
   height: 220px;
   position: relative;
   overflow: hidden;
-  background: radial-gradient(ellipse at 50% 45%, #f4f6fa 0%, #e6eaf3 55%, #d4dae8 100%);
+  background: #ffffff;
   border-bottom: 1px solid var(--border);
   isolation: isolate;
 }
@@ -763,7 +763,7 @@ ul { list-style: none; padding: 0; margin: 0; }
   height: 220px;
   position: relative;
   overflow: hidden;
-  background: radial-gradient(ellipse at 50% 45%, #f4f6fa 0%, #e6eaf3 55%, #d4dae8 100%);
+  background: #ffffff;
   border-bottom: 1px solid var(--border);
   flex-shrink: 0;
   isolation: isolate;
@@ -1706,9 +1706,9 @@ h1, h2, h3, h4, h5, h6 { overflow-wrap: break-word; }
   transition: background .3s ease;
 }
 
-/* When a real product image is loaded: studio radial gradient for consistency */
+/* When a real product image is loaded: clean white background for consistency */
 .product-visual-inner.has-image {
-  background: radial-gradient(ellipse at 50% 45%, #f4f6fa 0%, #e6eaf3 55%, #d4dae8 100%);
+  background: #ffffff;
   isolation: isolate;
 }
 
@@ -1960,7 +1960,7 @@ body:not(.aos-initialized) [data-aos] {
 /* Image area — contain so transparent PNGs show completely */
 .cat-card-img {
   height: 190px;
-  background: radial-gradient(ellipse at 50% 45%, #f4f6fa 0%, #e6eaf3 55%, #d4dae8 100%);
+  background: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
