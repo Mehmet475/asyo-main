@@ -108,6 +108,8 @@
   }
 
   /* ---- 7. Form Validation & Submission ---- */
+  var QUOTE_FORM_IDS = ['quoteForm', 'productQuoteForm'];
+
   var forms = document.querySelectorAll('.needs-validation');
   forms.forEach(function (form) {
     form.addEventListener('submit', function (event) {
@@ -115,6 +117,10 @@
       event.stopPropagation();
 
       if (form.checkValidity()) {
+        var formId  = form.getAttribute('id') || '';
+        var isQuote = QUOTE_FORM_IDS.indexOf(formId) !== -1 ||
+                      (!formId && form.querySelector('[name="Message"]') !== null);
+
         var btn = form.querySelector('[type="submit"]');
         var originalHTML = btn ? btn.innerHTML : '';
 
@@ -122,11 +128,6 @@
           btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
           btn.disabled = true;
         }
-
-        var data = {};
-        form.querySelectorAll('[name]').forEach(function (el) {
-          data[el.name] = el.value;
-        });
 
         function onSuccess() {
           if (btn) {
@@ -158,10 +159,21 @@
           }
         }
 
-        /* Submit to PHP handler — sends to ayso345934@gmail.com */
-        var handlerUrl = 'form-handler.php';
+        if (!isQuote) {
+          onSuccess();
+          form.classList.add('was-validated');
+          return;
+        }
 
-        fetch(handlerUrl, {
+        var data = {};
+        form.querySelectorAll('[name]').forEach(function (el) {
+          if (el.name) data[el.name] = el.value;
+        });
+        data['_form_id']   = formId || 'quote-form';
+        data['_page_url']  = window.location.href;
+        data['_page_title'] = document.title;
+
+        fetch('form-handler.php', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
           body: JSON.stringify(data)
