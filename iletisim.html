@@ -248,7 +248,12 @@
       <div class="col-lg-7" data-aos="fade-left">
         <div class="quote-form-card">
           <h4 style="color:var(--primary);margin-bottom:1.5rem;font-weight:800;" >Project Quote Form</h4>
-          <form action="form-handler.php" method="POST" class="needs-validation" id="quoteForm" novalidate>
+          <form action="https://api.web3forms.com/submit" method="POST" class="needs-validation" id="quoteForm" novalidate>
+            <input type="hidden" name="access_key" value="BURAYA_KEY_GELECEK">
+            <input type="hidden" name="subject" value="Yeni Teklif Talebi - TATCO">
+            <input type="hidden" name="from_name" value="TATCO Website">
+            <input type="hidden" name="redirect" value="false">
+            <input type="checkbox" name="botcheck" style="display:none;">
             <div class="row g-3">
               <div class="col-sm-6">
                 <label class="form-label" >Full Name<span style="color:var(--accent);">*</span></label>
