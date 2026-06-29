@@ -1,4 +1,4 @@
-/* ================================================================
+﻿/* ================================================================
    TATCO — Industrial Fire Safety Solutions
    Main JavaScript File
    ================================================================ */
@@ -124,12 +124,32 @@
         var originalHTML = btn ? btn.innerHTML : '';
 
         if (isQuote) {
-          /* Teklif formu: FormSubmit.co native POST ile gönder */
           if (btn) {
             btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
             btn.disabled = true;
           }
-          form.submit();
+          var formData = new FormData(form);
+          var actionUrl = form.getAttribute('action') || 'form-handler.php';
+          fetch(actionUrl, { method: 'POST', body: formData })
+            .then(function (r) { return r.json(); })
+            .then(function (data) {
+              if (btn) { btn.disabled = false; btn.innerHTML = originalHTML; }
+              if (data.success) {
+                form.reset();
+                form.classList.remove('was-validated');
+                var msg = form.querySelector('.form-success-msg');
+                if (msg) {
+                  msg.style.display = 'block';
+                  setTimeout(function () { msg.style.display = 'none'; }, 6000);
+                }
+              } else {
+                alert(data.message || 'An error occurred. Please email info@tatco.eu directly.');
+              }
+            })
+            .catch(function () {
+              if (btn) { btn.disabled = false; btn.innerHTML = originalHTML; }
+              alert('Connection error. Please email info@tatco.eu directly.');
+            });
         } else {
           /* Diğer formlar: sadece doğrulama göster */
           if (btn) {

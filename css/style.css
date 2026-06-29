@@ -145,9 +145,9 @@ ul { list-style: none; padding: 0; margin: 0; }
 /* TATCO logo is 587x267 (landscape ratio ~2.2:1) */
 .main-navbar .navbar-brand img,
 .main-navbar .navbar-logo {
-  height: 56px !important;
+  height: 76px !important;
   width: auto !important;
-  max-width: 240px !important;
+  max-width: 260px !important;
   display: block !important;
 }
 
@@ -156,12 +156,6 @@ ul { list-style: none; padding: 0; margin: 0; }
   .main-navbar {
     padding: .35rem 0 !important;
     border-bottom: 2px solid var(--accent);
-  }
-  .main-navbar .navbar-brand img,
-  .main-navbar .navbar-logo {
-    height: 76px !important;
-    width: auto !important;
-    max-width: 260px !important;
   }
   .top-bar { padding: .35rem 0; }
   .top-bar .contact-info { gap: .75rem; font-size: .78rem; }
@@ -2190,30 +2184,6 @@ body:not(.aos-initialized) [data-aos] {
   .stat-info .label { font-size: .62rem; }
 }
 
-/* ================================================================
-   LOGO REGISTERED MARK
-   ================================================================ */
-.logo-wrapper {
-  position: relative;
-  display: inline-flex;
-  align-items: flex-start;
-}
-.registered-mark {
-  font-size: 1.6rem;
-  color: var(--accent);
-  font-weight: 800;
-  line-height: 1;
-  margin-top: 3px;
-  margin-left: 3px;
-  flex-shrink: 0;
-  align-self: flex-start;
-}
-@media (max-width: 991.98px) {
-  .registered-mark { margin-top: 5px; font-size: 1.8rem; }
-}
-@media (max-width: 400px) {
-  .registered-mark { margin-top: 3px; font-size: 1.4rem; }
-}
 
 /* ================================================================
    VIEW PRODUCT BUTTON — GOLD TEXT (product cards)
