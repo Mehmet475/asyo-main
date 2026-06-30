@@ -38,6 +38,14 @@
   <link rel="preload" as="image" href="images/tatco-logo.png">
   <!-- Custom CSS -->
   <link href="css/style.css" rel="stylesheet">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VR70G2LZ0D"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-VR70G2LZ0D');
+  </script>
 </head>
 <body>
 
@@ -248,12 +256,10 @@
       <div class="col-lg-7" data-aos="fade-left">
         <div class="quote-form-card">
           <h4 style="color:var(--primary);margin-bottom:1.5rem;font-weight:800;" >Project Quote Form</h4>
-          <form action="https://api.web3forms.com/submit" method="POST" class="needs-validation" id="quoteForm" novalidate>
-            <input type="hidden" name="access_key" value="BURAYA_KEY_GELECEK">
-            <input type="hidden" name="subject" value="Yeni Teklif Talebi - TATCO">
-            <input type="hidden" name="from_name" value="TATCO Website">
-            <input type="hidden" name="redirect" value="false">
-            <input type="checkbox" name="botcheck" style="display:none;">
+          <form action="form-handler.php" method="POST" class="needs-validation" id="quoteForm" novalidate>
+            <input type="hidden" name="_page_title" value="İletişim — TATCO">
+            <input type="hidden" name="_page_url" value="iletisim.html">
+            <input type="text" name="_honey" style="display:none;" tabindex="-1" autocomplete="off">
             <div class="row g-3">
               <div class="col-sm-6">
                 <label class="form-label" >Full Name<span style="color:var(--accent);">*</span></label>
