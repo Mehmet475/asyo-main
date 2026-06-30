@@ -129,12 +129,25 @@
             btn.disabled = true;
           }
           var formData = new FormData(form);
-          var actionUrl = form.getAttribute('action') || 'form-handler.php';
-          fetch(actionUrl, { method: 'POST', body: formData })
-            .then(function (r) { return r.json(); })
+          var actionUrl = form.getAttribute('action');
+          fetch(actionUrl, {
+            method: 'POST',
+            body: formData,
+            headers: { 'Accept': 'application/json' }
+          })
+            .then(function (r) {
+              if (!r.ok) {
+                return r.text().then(function (txt) {
+                  throw new Error('HTTP ' + r.status + ': ' + txt.substring(0, 120));
+                });
+              }
+              return r.json();
+            })
             .then(function (data) {
               if (btn) { btn.disabled = false; btn.innerHTML = originalHTML; }
-              if (data.success) {
+              /* FormSubmit returns success:"true" (string); PHP handler returns success:true (bool) */
+              var ok = data.success === true || data.success === 'true';
+              if (ok) {
                 form.reset();
                 form.classList.remove('was-validated');
                 var msg = form.querySelector('.form-success-msg');
@@ -146,9 +159,10 @@
                 alert(data.message || 'An error occurred. Please email info@tatco.eu directly.');
               }
             })
-            .catch(function () {
+            .catch(function (err) {
               if (btn) { btn.disabled = false; btn.innerHTML = originalHTML; }
-              alert('Connection error. Please email info@tatco.eu directly.');
+              console.error('[TATCO Form Error]', err);
+              alert('Gönderim sırasında bir hata oluştu. Lütfen doğrudan info@tatco.eu adresine yazın.\n\n' + (err.message || ''));
             });
         } else {
           /* Diğer formlar: sadece doğrulama göster */
